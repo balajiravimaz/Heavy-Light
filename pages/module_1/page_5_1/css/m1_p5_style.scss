@@ -1,0 +1,646 @@
+@import "../../../sass/_templateVariables.scss";
+@import "../../../../sass/mixins.scss";
+@import "../../../../sass/media_query.scss";
+
+.f_page_content {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	text-align: left;
+	color: $white;
+}
+
+.dark {
+	background-color: $background-patch-color;
+}
+
+#section-1 {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: block;
+	overflow: hidden;
+
+	.bg-img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		transform: scale(1);
+		transform-origin: left top;
+		background-repeat: no-repeat;
+	}
+
+	.content-holder {
+		position: relative;
+		display: block;
+		width: 100%;
+		max-width: 1366px;
+		height: 100%;
+		margin: 0px auto;
+		overflow: hidden;
+
+		.col-left {
+			position: relative;
+			width: calc(100% - 100px);
+			height: 100%;
+			margin: 0px auto;
+
+			.content {
+				position: relative;
+				display: block;
+				height: 100%;
+
+				.content-bg {
+					padding: 20px 0px;
+					position: relative;
+					display: block;
+					height: 100%;
+
+					.content-style {
+						position: relative;
+						display: block;
+						width: 100%;
+						height: 100%;
+
+						&>h1 {
+							display: flex !important;
+							justify-content: center;
+							align-items: center;
+							color: $primary-title-text-color;
+							// margin-bottom: 15px;
+							position: relative;
+							margin: 0 auto;
+							// padding-bottom: 10px;
+							padding: 15px;
+							width: 40%;
+							border-radius: 15px;
+							color: #fff;
+							font-weight: bold;
+							background: rgba(0, 0, 0, 0.4);
+							// width: 100%;
+							font-size: 40px;
+						}
+
+						.ost {
+							margin-top: 15px;
+							text-align: center;
+
+							p {
+								text-align: center;
+								background: #e1ffff;
+								display: inline-block;
+								/* width: 65%; */
+								font-size: 25px;
+								font-weight: bolder;
+								margin-bottom: 0;
+								text-transform: uppercase;
+								color: #000;
+								border-radius: 15px;
+								padding: 10px 15px;
+							}
+						}
+
+						.inst {
+							margin-top: 15px;
+							text-align: center;
+
+							p {
+								text-align: center;
+								background: #e1ffff;
+								display: inline-block;
+								/* width: 65%; */
+								font-size: 25px;
+								font-weight: bolder;
+								margin-bottom: 0;
+								text-transform: uppercase;
+								color: #000;
+								border-radius: 15px;
+								padding: 10px 15px;
+							}
+						}
+
+						.instruction-bubble {
+							position: relative;
+							left: 60%;
+							transform: translateX(-50%);
+							width: 400px;
+
+							.instruction-box {
+								position: relative;
+								//color: $text-color;
+								font-weight: bold;
+								font-size: $page-title-font-size;
+								padding: 0.75rem 1.5rem;
+								border-radius: 9999px;
+								border: 2px solid #fff;
+								box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+
+								.instruction-tail {
+									position: absolute;
+									bottom: -8px;
+									right: 4rem;
+									width: 1rem;
+									height: 1rem;
+									transform: rotate(45deg);
+									border-bottom: 2px solid #fff;
+									border-right: 2px solid #fff;
+								}
+							}
+						}
+
+						&>.instruction-txt {
+							position: relative;
+							display: block;
+							margin-bottom: 10px;
+							margin-bottom: 5%;
+							font-size: $page-font-size;
+							justify-content: center;
+							align-items: center;
+						}
+
+						&>.body {
+							margin: 0px auto;
+							margin-top: 20px;
+							position: relative;
+							//display: flex;
+							flex-direction: row;
+							justify-content: center;
+							align-items: center;
+							font-size: $globle-font-size;
+							padding-bottom: 1%;
+							// overflow: hidden;
+
+							.app-container {
+								min-height: 100vh;
+								display: flex;
+								flex-direction: column;
+								align-items: center;
+								justify-content: center;
+								padding: 1rem;
+								position: relative;
+							}
+
+							/* === INSTRUCTION BUBBLE === */
+
+							/* === MAIN FLEX LAYOUT === */
+							.main-section {
+								display: flex;
+								align-items: center;
+								justify-content: center;
+								gap: 1.5rem;
+								width: 100%;
+								max-width: 1200px;
+
+								.formulas-section {
+									// display: block;
+									// opacity: 0;
+									// visibility: hidden;
+									opacity: 1;
+									font-weight: 900;
+									font-size: $page-font-size;
+									text-align: center;
+									width: 230px;
+
+									p {
+										font-weight: bold;
+									}
+
+									.area,
+									.perimeter {
+										background: url(../images/text_patch.svg) no-repeat center;
+										background-size: 100%;
+										width: 100%;
+										height: 100px;
+										display: flex;
+										// border: 2px solid red;
+										justify-content: center;
+										align-items: center;
+										color: #000;
+										font-size: 20px;
+										font-weight: bolder;
+
+										p {
+											margin-bottom: 0;
+										}
+									}
+								}
+
+								// @media (min-width: 1024px) {
+								// 	flex-direction: row;
+								// }
+							}
+
+							/* === TILE SOURCE PANEL === */
+							.tile-source {
+								background-color: rgba(0, 0, 0, 0.4);
+								border-radius: 8px;
+								box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+								padding: 15px 10px 0 15px;
+								width: 235px;
+								display: flex;
+								flex-direction: column;
+								gap: 10px;
+
+								.resize-toggle {
+									position: relative;
+									bottom: 10px;
+								}
+
+								label {
+									color: #fff;
+									display: flex;
+									justify-content: flex-start;
+									align-items: center;
+									cursor: pointer;
+									font-size: 18px;
+									// gap: 10px;
+								}
+
+								.tile-row {
+									display: flex;
+									align-items: center;
+									gap: 10px;
+									font-size: 18px;
+
+									p {
+										margin-bottom: 0;
+									}
+								}
+
+								#draggable-tile {
+									width: 25px;
+									height: 25px;
+									margin-left: 5px;
+									background: url("../images/drag.svg") no-repeat center/contain;
+									background-size: 70px;
+									// cursor: pointer;
+
+									&:active {
+										cursor: grabbing;
+									}
+								}
+
+								.formula-toggle {
+									#formula-toggle-button {
+										display: none;
+									}
+
+									.toggle {
+										display: inline-block;
+										width: 40px;
+										height: 40px;
+										background: url("../images/formula.svg") no-repeat center/contain;
+										background-size: cover;
+										background-position: center;
+										background-size: 30px;
+										cursor: pointer;
+										transition: 0.2s;
+									}
+								}
+
+								.resize-toggle {
+									#formula-toggle-button {
+										display: none;
+									}
+
+									.toggle {
+										display: inline-block;
+										width: 40px;
+										height: 40px;
+										background: url("../images/resize.svg") no-repeat center/contain;
+										background-size: cover;
+										background-position: center;
+										background-size: 30px;
+										cursor: pointer;
+										transition: 0.2s;
+									}
+								}
+
+								.checkbox-group {
+									display: flex;
+									flex-direction: column;
+									gap: 10px;
+
+									.checkbox-item {
+										display: flex;
+										align-items: center;
+										justify-content: flex-start;
+										cursor: pointer;
+										gap: 10px;
+
+										input[type="checkbox"] {
+											display: none;
+										}
+
+										/* Toggle container */
+										.toggle {
+											position: relative;
+											display: inline-block;
+											width: 35px;
+											height: 20px;
+											background-color: #ccc;
+											border-radius: 34px;
+											cursor: pointer;
+											transition: background-color 0.3s;
+										}
+
+										/* The round knob */
+										.toggle::before {
+											content: "";
+											position: absolute;
+											top: 3px;
+											left: 0px;
+											width: 15px;
+											height: 15px;
+											background-color: #fff;
+											border-radius: 50%;
+											transition: transform 0.3s;
+										}
+
+										/* "ON" and "OFF" text */
+										.toggle::after {
+											content: "";
+											position: absolute;
+											top: 6px;
+											right: 10px;
+											font-size: 12px;
+											color: white;
+											font-weight: bold;
+											opacity: 0.8;
+											transition:
+												opacity 0.3s,
+												transform 0.3s;
+										}
+
+										/* Checked (ON) state */
+										input[type="checkbox"]:checked+.toggle {}
+
+										/* Move knob to the right */
+										input[type="checkbox"]:checked+.toggle::before {
+											transform: translateX(18px);
+										}
+
+										/* Change text to "ON" */
+										input[type="checkbox"]:checked+.toggle::after {
+											content: "";
+											left: 10px;
+											right: auto;
+										}
+
+										.icon-grid {
+											width: 2.5rem;
+											height: 2.5rem;
+											color: #4b5563;
+										}
+
+										#settings-show-grid {}
+									}
+								}
+							}
+
+							/* === GRID SYSTEM === */
+							#grid-wrapper {
+								position: relative;
+								display: inline-block;
+								/* padding: 0.5rem; */
+								border: 1px solid #000;
+								box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+							}
+
+							#grid-container {
+								display: grid;
+								background-color: #fff;
+								border: 1px solid #ddd;
+								position: relative;
+							}
+
+							/* Each cell in grid */
+							#grid-container>div {
+								width: 32px;
+								height: 32px;
+								background-color: #fff;
+								//   border: 1px solid #d1d5db;
+								box-sizing: border-box;
+								transition: all 0.15s ease;
+
+								&:hover {
+									background-color: rgba(253, 178, 64, 0.5);
+								}
+							}
+
+							.grid-cell-lines {
+								box-shadow: inset 0 0 0 1px #ddd;
+							}
+
+							/* Tile colors */
+							.bg-orange-400 {
+								background-color: #f76e22 !important;
+							}
+
+							.bg-green-400 {
+								background-color: #4ade80 !important;
+							}
+
+							.bg-green-300\/50 {
+								background-color: rgba(134, 239, 172, 0.5) !important;
+							}
+
+							/* Borders for perimeter and internal lines */
+							.border-t-2 {
+								border-top: 2px solid black !important;
+							}
+
+							.border-b-2 {
+								border-bottom: 2px solid black !important;
+							}
+
+							.border-l-2 {
+								border-left: 2px solid black !important;
+							}
+
+							.border-r-2 {
+								border-right: 2px solid black !important;
+							}
+
+							.border-t-dotted {
+								border-top: 2px dotted black !important;
+							}
+
+							.border-b-dotted {
+								border-bottom: 2px dotted black !important;
+							}
+
+							.border-l-dotted {
+								border-left: 2px dotted black !important;
+							}
+
+							.border-r-dotted {
+								border-right: 2px dotted black !important;
+							}
+
+							.border-black {
+								border-color: black !important;
+							}
+
+							/* === DIMENSION LABELS === */
+							.dimension-label {
+								position: absolute;
+								font-weight: bold;
+								color: black;
+								background-color: rgba(255, 255, 255, 0.7);
+								padding: 0 4px;
+								border-radius: 4px;
+								font-size: $page-font-size;
+								pointer-events: none;
+								z-index: 10;
+							}
+
+							/* === INFO PANEL === */
+							.info-panel {
+								display: flex;
+								flex-direction: column;
+								// gap: 1rem;
+								width: 230px;
+
+								.info-box {
+									p {
+										font-weight: bold;
+										margin-bottom: 0;
+									}
+
+									.info-area,
+									.info-perimeter {
+										display: inline-block;
+										background: linear-gradient(90deg, #0099cc, #00bcd4);
+										color: #fff;
+										/* White text */
+										font-weight: bold;
+										font-size: 1.2rem;
+										padding: 20px;
+										width: 220px;
+										border: none;
+										border-radius: 12px;
+										/* Rounded corners */
+										box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.3);
+										// cursor: pointer;
+										transition:
+											transform 0.2s ease,
+											box-shadow 0.2s ease;
+									}
+
+									.info-perimeter {
+										margin: 15px 0;
+									}
+								}
+
+								.controls {
+									display: flex;
+									flex-direction: column;
+									gap: 0.5rem;
+
+									.btn {
+										// width: 160px;
+										padding: 10px 20px;
+										//background-color: $box-bg-color;
+										border-radius: 10px;
+										//color: $text-color;
+										box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+										transition: all 0.2s;
+										margin-right: auto;
+
+										&:hover {
+											//background-color: $text-color;
+											color: $white;
+										}
+									}
+
+									.btn-disabled {
+										padding: 0.5rem 1rem;
+										background-color: #e5e7eb;
+										color: #9ca3af;
+										border-radius: 0.5rem;
+										box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+										cursor: not-allowed;
+									}
+
+									.button-row {
+										display: flex;
+										justify-content: flex-end;
+										gap: 0.5rem;
+									}
+								}
+							}
+
+							/* === BOTTOM CONTROLS === */
+							.bottom-controls {
+								position: relative;
+								margin-top: 20px;
+								display: flex;
+								justify-content: space-between;
+								align-items: center;
+
+								.btn-remember {
+									display: flex;
+									align-items: center;
+									gap: 0.5rem;
+									//background-color: $box-bg-color;
+									padding: 0.5rem 1rem;
+									border-radius: 9999px;
+									box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+									font-weight: bold;
+									font-size: $page-font-size;
+									transition: all 0.2s;
+
+									&:hover {
+										background-color: #facc15;
+									}
+
+									.icon {
+										width: 1.5rem;
+										height: 1.5rem;
+									}
+								}
+
+								.btn-skip,
+								.btn-next {
+									background: #67b32f;
+									font-size: 30px;
+									font-weight: bold;
+									transition: all 0.2s;
+									cursor: pointer;
+									padding: 10px 30px;
+									border-radius: 30px;
+									border: none;
+									color: #fff;
+									box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.7);
+									transition:
+										background-color 0.2s ease,
+										transform 0.1s ease;
+
+									&:hover {
+										background-color: #4cae4c;
+										/* darker green on hover */
+										transform: scale(1.05);
+									}
+								}
+
+								.btn-next {
+									background: #32a8d0;
+
+									&:hover {
+										background: #1fb3e5;
+										transform: scale(1.05);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

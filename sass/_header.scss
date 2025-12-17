@@ -1,0 +1,136 @@
+#f_header {
+  // background-color: $header-bgcolor;
+
+  #f_companyLogo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 130px;
+    height: auto;
+    margin-right: 10px;
+
+    /*  &:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0%;
+        left: 5%;
+        width: 100%;
+        height: 100%;
+        background: #ffe600;
+    }*/
+    .logo-bg-patch {
+      position: relative;
+      width: 130px;
+      height: 40px;
+
+      /*  @include mobile-portrait {
+            width: 35px;
+            height: 35px;
+            margin-left: 5px;
+        }*/
+      img {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  #f_courseTitle {
+    position: relative;
+    width: auto;
+    height: 40px;
+    margin: 0px 0px 0 8px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    /* background-color: #ffe600; */
+    /* padding: 20px; */
+    text-align: center;
+    display: none !important;
+
+    p {
+      position: relative;
+      width: auto;
+      height: auto;
+      font-size: 1.2rem;
+      margin-bottom: 0px;
+      color: #ffe600;
+      text-align: center;
+      font-family: "EYInterstateRegular";
+    }
+  }
+
+  #f_hMenu {
+    position: relative;
+    display: block;
+    /*float: left;*/
+    top: 20px;
+    margin-left: 95px;
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0);
+
+      li {
+        float: left;
+        margin-bottom: 0px;
+
+        a {
+          display: block;
+          color: $white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          cursor: pointer;
+          font-size: 1.3rem;
+
+          &:hover {
+            color: $secondary-color;
+            text-decoration: underline;
+            text-decoration-color: $white;
+            -webkit-text-underline-position: under;
+            -ms-text-underline-position: below;
+            text-underline-position: under;
+            /*border-bottom: 2px solid $white;*/
+          }
+
+          &.active {
+            color: $secondary-color;
+            text-decoration: underline;
+            text-decoration-color: $secondary-color;
+            -webkit-text-underline-position: under;
+            -ms-text-underline-position: below;
+            text-underline-position: under;
+          }
+        }
+      }
+    }
+  }
+
+  #f_rightMenu {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    height: 40px;
+    right: 0px;
+    justify-content: space-between;
+    gap: 2rem;
+    bottom: 100%;
+    padding: 7px 20px 7px 60px;
+    /* border-radius: 20px 0px 0px 20px; */
+    top: 20px;
+
+    button {
+      position: relative;
+      cursor: pointer;
+      border: none;
+    }
+  }
+}

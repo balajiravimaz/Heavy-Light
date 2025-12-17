@@ -1,0 +1,51 @@
+{
+  "mainAudio": {
+    "audioSRC": "assets/audios/5sec.mp3",
+    "isEmptyAudio": false,
+    "audioIndex": 0
+  },
+  "bgImgs": [    
+
+  ],
+  "imgCollage": {
+    "desktop": [
+      {
+        "imageSRC": "assets/images/bg_img.png",
+        "altText": ""
+      }
+    ],
+    "portrait": [
+      {
+        "imageSRC": "assets/images/bg_img.png",
+        "altText": ""
+      }
+    ]
+  },
+  "sections": [
+    {
+      "slideType": "video",
+      "slideTitle": "overview",
+      "headerTitle": "",
+      "ost": "",
+      "content": {
+        "videoPlaceHolderURL":"",
+        "videoURL":"pages/module_1/page_4/videos/main.mp4",
+        "ccTextURL":""
+      }
+    }
+  ],
+  "transcriptText": [
+    [
+      "As we move toward the conclusion of this course, let’s take a moment to review some key takeaways."
+    ]
+  ],
+  "ccText": [
+    [
+      {
+        "text": "",
+        "startTime": 0,
+        "endTime": 6.2
+      }
+    ]
+  ]
+}

@@ -1,0 +1,57 @@
+{
+    "mainAudio": {
+        "audioSRC": "assets/audios/10sec.mp3",
+        "isEmptyAudio": false,
+        "audioIndex": 0
+    },
+    "bgImgs": [
+     
+    ],
+    "imgCollage": {
+        "desktop": [
+            {                
+                "imageSRC": "pages/module_1/page_5/images/bg_img.png",
+                "altText": ""
+            }
+        ],
+        "portrait": [
+            {
+                "imageSRC": "pages/module_1/page_5/images/bg_img.png",
+                "altText": ""
+            }
+        ]
+    },
+    "sections": [
+        {
+            "slideTitle": "Course Objectives",
+            "headerTitle": "AREA & PERIMETER",
+            "ost": "",
+            "iText":"Drag the coloured tiles to build a shape",
+            "content": {
+                "text": [
+                    [
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen.",
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                    ]
+                ]
+            }
+        }
+    ],
+    "transcriptText": [
+        [
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        ]
+    ],
+    "ccText": [
+        [
+            {
+                "text": "",
+                "startTime": 0,
+                "endTime": 6.2
+            }
+        ]
+    ]
+}

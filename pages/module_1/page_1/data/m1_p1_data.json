@@ -1,0 +1,140 @@
+{
+	"mainAudio": {
+		"audioSRC": "assets/audios/5sec.mp3",
+		"isEmptyAudio": false,
+		"audioIndex": 0
+	},
+	"bgImgs": [
+		{
+			"imageSRC": "pages/module_1/page_1/video/video_1.mp4",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_1/images/icon01_done.svg",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_1/images/icon02_done.svg",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_1/images/icon03_done.svg",
+			"altText": ""
+		}
+	],
+	"imgCollage": {
+		"desktop": [
+			{
+				"imageSRC": "",
+				"altText": ""
+			}
+		],
+		"portrait": [
+			{
+				"imageSRC": "",
+				"altText": ""
+			}
+		]
+	},
+	"bgVid": [
+		{
+			"videoSRC": ""
+		}
+	],
+	"sections": [
+		{
+			"slideType": "overview",
+			"slideTitle": "overview",
+			"headerTitle": "Numeracy<br/><span>Simulation</span>",
+			"ost": "",
+			"insText": "​",
+		  	"footer":"Copyright @ 2026 Macmillan Education India Private Limited. All rights reserved.",
+			"content": {
+				"text": [
+					""
+				],
+				"sectionArray": [
+					{
+						"imageURL": "pages/module_1/page_1/images/icon01_done.svg",
+						"titleText": "Test",
+						"imgVisisted": "pages/module_1/page_1/images/icon01_done.svg",
+						"imgActive": "pages/module_1/page_1/images/icon01_done.svg",
+						"sectionID": 1,
+						"sectionIndx": 1,
+						"audioSRC": "assets/audios/5sec.mp3",
+						"isEmptyAudio": false,
+						"audioIndex": 0
+					},
+					{
+						"imageURL": "pages/module_1/page_1/images/icon02_done.svg",
+						"titleText": "Simulation​",
+						"imgVisisted": "pages/module_1/page_1/images/icon02_done.svg",
+						"imgActive": "pages/module_1/page_1/images/icon02_done.svg",
+						"sectionID": 2,
+						"sectionIndx": 2,
+						"audioSRC": "assets/audios/5sec.mp3",
+						"isEmptyAudio": false,
+						"audioIndex": 1
+					},
+					{
+						"imageURL": "pages/module_1/page_1/images/icon03_done.svg",
+						"titleText": "Do it yourself",
+						"imgVisisted": "pages/module_1/page_1/images/icon03_done.svg",
+						"imgActive": "pages/module_1/page_1/images/icon03_done.svg",
+						"sectionID": 3,
+						"sectionIndx": 3,
+						"audioSRC": "assets/audios/5sec.mp3",
+						"isEmptyAudio": false,
+						"audioIndex": 2
+					}
+				]
+			}
+		}
+	],
+	"popup": {
+		"header": "Let’s Learn",
+		"title": "Heavy and Light!",
+		"content": [
+			{
+				"text": "Explore objects and see which ones are",
+				"highlightedText": "heavy"
+			},
+			{
+				"text": "and which are",
+				"highlightedText": "light"
+			},
+			{
+				"text": "Watch a short story, try the see-saw simulation, and play fun games to practice."
+			},
+			{
+				"text": "Learn by seeing, exploring, and playing!"
+			}
+		],
+		"closeButton": "✖",
+		"muteIcon": "🔇"
+	},
+	"transcriptText": [
+		[
+			"There are several key elements that must be addressed during an internal control test. Each button here represents a fundamental aspect of the internal control testing process.",
+			"To learn more about each subject, Select the respective button."
+		],
+		[
+			""
+		],
+		[
+			""
+		],
+		[
+			""
+		]
+	],
+	"ccText": [
+		[
+			{
+				"text": "",
+				"startTime": 0,
+				"endTime": 6.2
+			}
+		]
+	]
+}

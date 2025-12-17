@@ -1,0 +1,39 @@
+{
+  "__comment": "",
+  "images": [
+    {
+      "src": "assets/images/Main_BG.png"
+    },
+    {
+      "src": "assets/images/intro_bg.png"
+    },
+    {
+      "src": "assets/images/preload_sprites.png"
+    },
+
+    {
+      "src": "assets/images/logo.png"
+    },
+    {
+      "src": "assets/images/bgimg.png"
+    },
+    {
+      "src": "assets/images/ui/nav_icons.png"
+    }
+  ],
+  "audios": [
+    {
+      "src": "assets/audios/1sec.mp3"
+    },
+    {
+      "src": "assets/audios/BG.mp3"
+    },
+    {
+      "src": "assets/audios/5sec.mp3"
+    },
+    {
+      "src": "assets/audios/10sec.mp3"
+    }
+  ],
+  "videos": []
+}

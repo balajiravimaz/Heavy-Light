@@ -1,0 +1,181 @@
+{
+  "mainAudio": {
+    "audioSRC": "pages/module_1/page_6/audios/heavy.mp3",
+    "isEmptyAudio": false,
+    "audioIndex": 0
+  },
+  "bgImgs": [],
+  "imgCollage": {
+    "desktop": [
+      {
+        "imageSRC": "",
+        "altText": ""
+      }
+    ],
+    "portrait": [
+      {
+        "imageSRC": "",
+        "altText": ""
+      }
+    ]
+  },
+  "sections": [
+    {
+      "slideTitle": "Course Objectives",
+      "headerTitle": "Heavy - Light",
+      "headerImg": "pages/module_1/page_6/images/header_title.png",
+      "ost": "",
+      "iText": "Click on the <span>Heavy</span> object. <span class='audio'></span>",
+      "endAudio":"pages/module_1/page_6/audios/final_audio.mp3",
+      "infoImg":"pages/module_1/page_6/images/fun_game.png",
+      "infoAudio":"pages/module_1/page_6/audios/info_audio.mp3",
+      "content": {
+        "btnAudios": [
+          "pages/module_1/page_6/audios/click.mp3",
+          "pages/module_1/page_6/audios/bg_music.mp3"
+        ],
+        "text": [
+          [
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen.",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+          ]
+        ],
+
+        "flipObjects": [
+          {
+            "id": 1,
+            "name": "Heavy",
+            "instText": "Click on the <span>HEAVY</span> object.",
+            "instAudio": "pages/module_1/page_6/audios/heavy.mp3",
+            "images": [
+              {
+                "imageSrc": "pages/module_1/page_6/images/img_1.png",
+                "audioSrc": "pages/module_1/page_6/audios/book_heavy.mp3",
+                "flipImage": "pages/module_1/page_6/images/correct.png",
+                "flipText": "Good Job!",
+                "isCorrect": true
+              },
+
+              {
+                "imageSrc": "pages/module_1/page_6/images/img_2.png",
+                "audioSrc": "pages/module_1/page_6/audios/try_again.mp3",
+                "flipImage": "pages/module_1/page_6/images/wrong.png",
+                "flipText": "Try Again!",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "name": "Light",
+            "instText": "Click on the <span>LIGHT</span> object.",
+            "instAudio": "pages/module_1/page_6/audios/light.mp3",
+            "images": [
+              {
+                "imageSrc": "pages/module_1/page_6/images/img_3.png",
+                "audioSrc": "pages/module_1/page_6/audios/try_again.mp3",
+                "flipImage": "pages/module_1/page_6/images/wrong.png",
+                "flipText": "Try Again!",
+                "isCorrect": false
+              },
+              {
+                "imageSrc": "pages/module_1/page_6/images/img_4.png",
+                "audioSrc": "pages/module_1/page_6/audios/ballon_light.mp3",
+                "flipImage": "pages/module_1/page_6/images/correct.png",
+                "flipText": "Good Job!",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "name": "Heavy",
+            "instText": "Click on the <span>HEAVY</span> object.",
+            "instAudio": "pages/module_1/page_6/audios/heavy.mp3",
+            "images": [
+              {
+                
+                  "imageSrc": "pages/module_1/page_6/images/img_5.png",
+                  "audioSrc": "pages/module_1/page_6/audios/try_again.mp3",
+                  "flipImage": "pages/module_1/page_6/images/wrong.png",
+                  "flipText": "Try Again!",
+                  "isCorrect": false
+              },
+              {
+                "imageSrc": "pages/module_1/page_6/images/img_6.png",
+                "audioSrc": "pages/module_1/page_6/audios/pumkin_heavy.mp3",
+                "flipImage": "pages/module_1/page_6/images/correct.png",
+                "flipText": "Good Job!",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "name": "Light",
+            "instText": "Click on the <span>LIGHT</span> object.",
+            "instAudio": "pages/module_1/page_6/audios/light.mp3",
+            "images": [
+              {
+                "imageSrc": "pages/module_1/page_6/images/img_7.png",
+                "audioSrc": "pages/module_1/page_6/audios/try_again.mp3",
+                "flipImage": "pages/module_1/page_6/images/wrong.png",
+                "flipText": "Try Again!",
+                "isCorrect": false
+              },
+
+              {
+                "imageSrc": "pages/module_1/page_6/images/img_8.png",
+                "audioSrc": "pages/module_1/page_6/audios/boat_light.mp3",
+                "flipImage": "pages/module_1/page_6/images/correct.png",
+                "flipText": "Good Job!",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "id": 5,
+            "name": "Heavy",
+            "instText": "Click on the <span>HEAVY</span> object.",
+            "instAudio": "pages/module_1/page_6/audios/heavy.mp3",
+            "images": [
+              {
+                "imageSrc": "pages/module_1/page_6/images/img_9.png",
+                "audioSrc": "pages/module_1/page_6/audios/bucket_heavy.mp3",
+                "flipImage": "pages/module_1/page_6/images/correct.png",
+                "flipText": "Good Job!",
+                "isCorrect": true
+              },
+              {
+                "imageSrc": "pages/module_1/page_6/images/img_10.png",
+                "audioSrc": "pages/module_1/page_6/audios/try_again.mp3",
+                "flipImage": "pages/module_1/page_6/images/wrong.png",
+                "flipText": "Try Again!",
+                "isCorrect": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+
+  "transcriptText": [
+    [
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    ]
+  ],
+
+  "ccText": [
+    [
+      {
+        "text": "",
+        "startTime": 0,
+        "endTime": 6.2
+      }
+    ]
+  ]
+}

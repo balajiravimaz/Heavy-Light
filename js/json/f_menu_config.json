@@ -1,0 +1,72 @@
+[
+  {
+    "courseName": "Course Title Goes here​",
+    "module": [
+      {
+        "heading": "Module 01",
+        "URL": "#",
+        "hasAudio": "true",
+        "hasVideo": "false",
+        "page": [
+          {
+            "heading": "Static pages",
+            "dataURL": "#",
+            "URL": "#",
+            "hasAudio": "false",
+            "hasVideo": "false",
+            "subpage": [
+              {
+                "heading": "1",
+                "URL": "pages/module_1/page_2/page.html",
+                "hasAudio": "true",
+                "hasVideo": "true",
+                "page": [],
+                "inMenuShow": "true"
+              },
+              {
+                "heading": "2",
+                "URL": "pages/module_1/page_3/page.html",
+                "hasAudio": "true",
+                "hasVideo": "false",
+                "page": [],
+                "inMenuShow": "true"
+              },
+              {
+                "heading": "3",
+                "URL": "pages/module_1/page_4/page.html",
+                "hasAudio": "true",
+                "hasVideo": "true",
+                "page": [],
+                "inMenuShow": "true"
+              },
+              {
+                "heading": "4",
+                "URL": "pages/module_1/page_5/page.html",
+                "hasAudio": "true",
+                "hasVideo": "false",
+                "page": [],
+                "inMenuShow": "true"
+              },
+              {
+                "heading": "5",
+                "URL": "pages/module_1/page_6/page.html",
+                "hasAudio": "true",
+                "hasVideo": "false",
+                "page": [],
+                "inMenuShow": "true"
+              },
+              {
+                "heading": "6",
+                "URL": "pages/module_1/page_11/page.html",
+                "hasAudio": "true",
+                "hasVideo": "false",
+                "page": [],
+                "inMenuShow": "true"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
