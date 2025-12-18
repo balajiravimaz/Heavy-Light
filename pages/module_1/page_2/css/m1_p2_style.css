@@ -329,6 +329,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   border-radius: 5px;
   white-space: nowrap;
   opacity: 0;
+  font-family: "Times New Roman", Times, serif;
   pointer-events: none;
   transition: opacity 0.2s;
   margin-top: 4px;
@@ -405,6 +406,30 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
 #section-1 .home button {
   border: none;
 }
+#section-1 .home button::after {
+  content: attr(data-tooltip);
+  /* tooltip text from attribute */
+  position: absolute;
+  top: 100%;
+  /* below the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 6px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-family: "Times New Roman", Times, serif;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  margin-top: 4px;
+  z-index: 10;
+}
+#section-1 .home button:hover::after {
+  opacity: 1;
+}
 #section-1 .music {
   position: relative;
   width: 50px;
@@ -418,7 +443,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   background-size: contain;
 }
 #section-1 .music.mute {
-  background: url(../images/pause.png) no-repeat;
+  background: url(../images/bg_pause.png) no-repeat;
   background-size: contain;
 }
 #section-1 .information-icon {
@@ -658,10 +683,13 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
 }
 
 @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-  .ins_1_popup, .ins_2_popup, .ins_3_popup, .overlay {
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-    background-color: rgba(255, 255, 255, 0.1);
+  .ins_1_popup,
+  .ins_2_popup,
+  .ins_3_popup,
+  .overlay {
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.2);
   }
 }
 .ins_1_popup {

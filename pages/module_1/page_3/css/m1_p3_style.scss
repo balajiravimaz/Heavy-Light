@@ -25,7 +25,7 @@
 
 	.bg-img {
 		position: absolute;
-		width: 100%; 
+		width: 100%;
 		height: 100%;
 		left: 0;
 		top: 0;
@@ -341,80 +341,83 @@
 							}
 
 							.top-alignText {
-								    width: 50%;
-									margin-right: 50px;
+								width: 50%;
+								margin-right: 50px;
 							}
 
 							.instruction {
-								    width: 100%;
-									height: 120px;
-									display: flex;
-									flex-direction: row;
-									align-items: start;
-									justify-content: end;
-									
+								width: 100%;
+								height: 120px;
+								display: flex;
+								flex-direction: row;
+								align-items: start;
+								justify-content: end;
+
 							}
 
-							.i-txt-toolTip{
-										position: absolute;
-										background-color: transparent;
-											&::after {
-												content: attr(data-tooltip);
-												/* tooltip text from attribute */
-												position: absolute;
-												top: 100%;
-												/* below the button */
-												left: 50%;
-												transform: translateX(-50%);
-												background: #333;
-												color: #fff;
-												font-size: 12px;
-												padding: 4px 6px;
-												border-radius: 5px;
-												white-space: nowrap;
-												opacity: 0;
-												pointer-events: none;
-												transition: opacity 0.2s;
-												margin-top: 4px;
-												z-index: 10;
-											}
-											 /* Show tooltip on hover */
-												&:hover::after {
-													opacity: 1;
-												}
-									}
+							.i-txt-toolTip {
+								position: absolute;
+								background-color: transparent;
+
+								&::after {
+									content: attr(data-tooltip);
+									/* tooltip text from attribute */
+									position: absolute;
+									top: 100%;
+									/* below the button */
+									left: 50%;
+									transform: translateX(-50%);
+									background: #333;
+									color: #fff;
+									font-size: 12px;
+									padding: 4px 6px;
+									border-radius: 5px;
+									font-family: 'Times New Roman', Times, serif;
+									white-space: nowrap;
+									opacity: 0;
+									pointer-events: none;
+									transition: opacity 0.2s;
+									margin-top: 4px;
+									z-index: 10;
+								}
+
+								/* Show tooltip on hover */
+								&:hover::after {
+									opacity: 1;
+								}
+							}
 
 							.instruction_1 {
-								    width: 100%;
-									height: 100%;
-									background-image: url(../images/story1.png);
-									background-size: contain;
-									background-repeat: no-repeat;
-									background-position: center;
-									cursor: pointer;	
-									background-color: transparent;						
+								width: 100%;
+								height: 100%;
+								background-image: url(../images/story1.png);
+								background-size: contain;
+								background-repeat: no-repeat;
+								background-position: center;
+								cursor: pointer;
+								background-color: transparent;
 							}
 
 							.instruction_2 {
-								    width: 100%;
-									height: 100%;
-									background-image: url(../images/sim.png);
-									background-size: contain;
-									background-repeat: no-repeat;
-									background-position: center;
-									cursor: pointer;
-									background-color: transparent;	
+								width: 100%;
+								height: 100%;
+								background-image: url(../images/sim.png);
+								background-size: contain;
+								background-repeat: no-repeat;
+								background-position: center;
+								cursor: pointer;
+								background-color: transparent;
 							}
 
 							.instruction_3 {
-								    width: 100%;
-									height: 100%;
-									background-image: url(../images/game.png);
-									background-size: contain;
-									background-repeat: no-repeat;
-									background-position: center;
-									cursor: pointer;
-									    background-color: transparent;
+								width: 100%;
+								height: 100%;
+								background-image: url(../images/game.png);
+								background-size: contain;
+								background-repeat: no-repeat;
+								background-position: center;
+								cursor: pointer;
+								background-color: transparent;
 							}
 
 							.header-container-play {
@@ -467,6 +470,32 @@
 		button {
 			// background: transparent;
 			border: none;
+
+			&::after {
+				content: attr(data-tooltip);
+				/* tooltip text from attribute */
+				position: absolute;
+				top: 100%;
+				/* below the button */
+				left: 50%;
+				transform: translateX(-50%);
+				background: #333;
+				color: #fff;
+				font-size: 12px;
+				padding: 4px 6px;
+				border-radius: 5px;
+				white-space: nowrap;
+				font-family: 'Times New Roman', Times, serif;
+				opacity: 0;
+				pointer-events: none;
+				transition: opacity 0.2s;
+				margin-top: 4px;
+				z-index: 10;
+			}
+
+			&:hover::after {
+				opacity: 1;
+			}
 		}
 	}
 
@@ -479,13 +508,14 @@
 		background-repeat: no-repeat;
 		// margin: 15px;
 		cursor: pointer;
+
 		&.playing {
 			background: url(../images/music.png) no-repeat;
 			background-size: contain;
 		}
-		
+
 		&.mute {
-			background: url(../images/pause.png) no-repeat;
+			background: url(../images/bg_pause.png) no-repeat;
 			background-size: contain;
 		}
 	}
@@ -505,7 +535,7 @@
 		position: relative;
 		width: 50px;
 		height: 50px;
-		background: url(../images/home.png);
+		background: url(../images/back.png);
 		background-size: contain;
 		// margin: 15px;
 		background-repeat: no-repeat;
@@ -577,13 +607,14 @@
 	min-width: 1270px;
 	justify-content: flex-end;
 }
+
 .overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    top: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	top: 0;
 
 	.overlay-style {
 		position: relative;
@@ -592,14 +623,14 @@
 		top: 0%;
 		margin: 0 auto;
 
-		 .audio-style {
-				position: absolute;
-				top: 100px;
-				left: 75px;
-				width: 50px;
-				height: 50px;
-				z-index: 1;
-			}
+		.audio-style {
+			position: absolute;
+			top: 100px;
+			left: 75px;
+			width: 50px;
+			height: 50px;
+			z-index: 1;
+		}
 	}
 }
 
@@ -607,15 +638,15 @@
 
 /* White circular popup */
 .popup-circle {
-			position: relative;
-			width: 550px;
-			height: 550px;
-			background-image: url(../images/Game_Info.png);
-			background-size: contain;
-			background-repeat: no-repeat;
-			background-position: center;
-			top: 0%;
-			margin: 0 auto;
+	position: relative;
+	width: 550px;
+	height: 550px;
+	background-image: url(../images/Game_Info.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	top: 0%;
+	margin: 0 auto;
 }
 
 /* Mute icon */
@@ -667,40 +698,40 @@
 /* Close button */
 .close-btn {
 	position: absolute;
-    top: 100px;
-    right: 75px;
-    width: 50px;
-    height: 50px;
-    z-index: 1;
-    font-size: 40px;
-    color: red;
-    font-weight: bold;
-    cursor: pointer;
+	top: 100px;
+	right: 75px;
+	width: 50px;
+	height: 50px;
+	z-index: 1;
+	font-size: 40px;
+	color: red;
+	font-weight: bold;
+	cursor: pointer;
 	bottom: inherit !important;
-    left: inherit !important;
+	left: inherit !important;
 	transform: inherit !important;
 }
 
 #play {
 	position: relative;
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 	background-image: url(../images/play.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
 }
 
 #pause {
 	position: relative;
-    width: 100%;
-    height: 100%;
-    background-image: url(../images/pause.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
+	width: 100%;
+	height: 100%;
+	background-image: url(../images/pause.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
 
 }
 
@@ -818,60 +849,64 @@
 // }
 
 .ins_1 {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    /* right: 0; */
-    display: inline-block;
-    background-image: url(../images/info.png);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    cursor: pointer;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	/* right: 0; */
+	display: inline-block;
+	background-image: url(../images/info.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	cursor: pointer;
 }
 
 .ins_2 {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    /* right: 0; */
-    display: inline-block;
-    background-image: url(../images/info.png);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    cursor: pointer;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	/* right: 0; */
+	display: inline-block;
+	background-image: url(../images/info.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	cursor: pointer;
 }
 
 .ins_3 {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    /* right: 0; */
-    display: inline-block;
-    background-image: url(../images/info.png);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    cursor: pointer;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	/* right: 0; */
+	display: inline-block;
+	background-image: url(../images/info.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	cursor: pointer;
 }
 
- @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-        .ins_1_popup,.ins_2_popup,.ins_3_popup, .overlay {
-            -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-    }
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+
+	.ins_1_popup,
+	.ins_2_popup,
+	.ins_3_popup,
+	.overlay {
+		-webkit-backdrop-filter: blur(4px);
+		backdrop-filter: blur(4px);
+		background-color: rgba(0, 0, 0, 0.2);
+	}
+}
 
 .ins_1_popup {
 	position: absolute;
-    width: 100%;
-    height: 100%;
-    // background: rgba(0, 0, 0, 0.631372549);
-    justify-content: center;
-    align-items: center;
-    top: 0;
+	width: 100%;
+	height: 100%;
+	// background: rgba(0, 0, 0, 0.631372549);
+	justify-content: center;
+	align-items: center;
+	top: 0;
 	display: none;
 
 	.overlay-layer {
@@ -890,7 +925,7 @@
 			z-index: 1;
 		}
 
-		.text-pos{
+		.text-pos {
 			position: relative;
 			width: 550px;
 			height: 550px;
@@ -901,103 +936,103 @@
 			top: 0%;
 			margin: 0 auto;
 		}
-	
-
-	.mute {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		background-image: url(../images/pause.png);
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
-		cursor: pointer;
-	}
- 
-	.unmute {
-
-		position: relative;
-		width: 100%;
-		height: 100%;
-		background-image: url(../images/specker.png);
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
-		cursor: pointer;
-		display: none;
-	}
-
-	.heder-text {
-		position: relative;
-		width: 50%;
-		margin: 0 auto;
-		margin-top: 4%;
-		color: #000;
-		text-align: center;
-		font-size: 210%;
-		box-sizing: border-box;
-		font-family: "Comic Sans MS", Arial, sans-serif;
-		font-weight: bold;
-	}
 
 
-	.game-rule-1 {
-		position: relative;
-		width: 64%;
-		margin: 0 auto;
-		margin-top: 4%;
-		color: #000;
-		text-align: center;
-		font-size: 34px;
-		line-height: 48px;
-		font-family: 'Roboto', sans-serif;
-	}
-
-
-	.game-rule-2 {
-		position: relative;
-		width: 70%;
-		margin: 0 auto;
-		margin-top: 4%;
-		color: #000;
-		text-align: center;
-		font-size: 34px;
-		line-height: 48px;
-		font-family: 'Roboto', sans-serif;
-
-		span {
-			color: red;
+		.mute {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background-image: url(../images/pause.png);
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			cursor: pointer;
 		}
 
-	}
+		.unmute {
 
-
-	}
-
-	
-	.close_ins_1_popup {
-		    position: absolute;
-			top: 100px;
-			right: 75px;
-			width: 50px;
-			height: 50px;
-			z-index: 1;
-			font-size: 40px;
-			color: red;
-			font-weight: bold;
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background-image: url(../images/specker.png);
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
 			cursor: pointer;
+			display: none;
+		}
+
+		.heder-text {
+			position: relative;
+			width: 50%;
+			margin: 0 auto;
+			margin-top: 4%;
+			color: #000;
+			text-align: center;
+			font-size: 210%;
+			box-sizing: border-box;
+			font-family: "Comic Sans MS", Arial, sans-serif;
+			font-weight: bold;
+		}
+
+
+		.game-rule-1 {
+			position: relative;
+			width: 64%;
+			margin: 0 auto;
+			margin-top: 4%;
+			color: #000;
+			text-align: center;
+			font-size: 34px;
+			line-height: 48px;
+			font-family: 'Roboto', sans-serif;
+		}
+
+
+		.game-rule-2 {
+			position: relative;
+			width: 70%;
+			margin: 0 auto;
+			margin-top: 4%;
+			color: #000;
+			text-align: center;
+			font-size: 34px;
+			line-height: 48px;
+			font-family: 'Roboto', sans-serif;
+
+			span {
+				color: red;
+			}
+
+		}
+
+
+	}
+
+
+	.close_ins_1_popup {
+		position: absolute;
+		top: 100px;
+		right: 75px;
+		width: 50px;
+		height: 50px;
+		z-index: 1;
+		font-size: 40px;
+		color: red;
+		font-weight: bold;
+		cursor: pointer;
 	}
 }
 
 //2
 .ins_2_popup {
 	position: absolute;
-    width: 100%;
-    height: 100%;
-    // background: rgba(0, 0, 0, 0.631372549);
-    justify-content: center;
-    align-items: center;
-    top: 0;
+	width: 100%;
+	height: 100%;
+	// background: rgba(0, 0, 0, 0.631372549);
+	justify-content: center;
+	align-items: center;
+	top: 0;
 	display: none;
 
 	.overlay-layer {
@@ -1016,7 +1051,7 @@
 			z-index: 1;
 		}
 
-		.text-pos{
+		.text-pos {
 			position: relative;
 			width: 550px;
 			height: 550px;
@@ -1027,103 +1062,103 @@
 			top: 0%;
 			margin: 0 auto;
 		}
-	
-
-	.mute {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		background-image: url(../images/pause.png);
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
-		cursor: pointer;
-	}
- 
-	.unmute {
-
-		position: relative;
-		width: 100%;
-		height: 100%;
-		background-image: url(../images/specker.png);
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
-		cursor: pointer;
-		display: none;
-	}
-
-	.heder-text {
-		position: relative;
-		width: 50%;
-		margin: 0 auto;
-		margin-top: 4%;
-		color: #000;
-		text-align: center;
-		font-size: 210%;
-		box-sizing: border-box;
-		font-family: "Comic Sans MS", Arial, sans-serif;
-		font-weight: bold;
-	}
 
 
-	.game-rule-1 {
-		position: relative;
-		width: 64%;
-		margin: 0 auto;
-		margin-top: 4%;
-		color: #000;
-		text-align: center;
-		font-size: 34px;
-		line-height: 48px;
-		font-family: 'Roboto', sans-serif;
-	}
-
-
-	.game-rule-2 {
-		position: relative;
-		width: 70%;
-		margin: 0 auto;
-		margin-top: 4%;
-		color: #000;
-		text-align: center;
-		font-size: 34px;
-		line-height: 48px;
-		font-family: 'Roboto', sans-serif;
-
-		span {
-			color: red;
+		.mute {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background-image: url(../images/pause.png);
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			cursor: pointer;
 		}
 
-	}
+		.unmute {
 
-
-	}
-
-	
-	.close_ins_2_popup {
-		    position: absolute;
-			top: 100px;
-			right: 75px;
-			width: 50px;
-			height: 50px;
-			z-index: 1;
-			font-size: 40px;
-			color: red;
-			font-weight: bold;
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background-image: url(../images/specker.png);
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
 			cursor: pointer;
+			display: none;
+		}
+
+		.heder-text {
+			position: relative;
+			width: 50%;
+			margin: 0 auto;
+			margin-top: 4%;
+			color: #000;
+			text-align: center;
+			font-size: 210%;
+			box-sizing: border-box;
+			font-family: "Comic Sans MS", Arial, sans-serif;
+			font-weight: bold;
+		}
+
+
+		.game-rule-1 {
+			position: relative;
+			width: 64%;
+			margin: 0 auto;
+			margin-top: 4%;
+			color: #000;
+			text-align: center;
+			font-size: 34px;
+			line-height: 48px;
+			font-family: 'Roboto', sans-serif;
+		}
+
+
+		.game-rule-2 {
+			position: relative;
+			width: 70%;
+			margin: 0 auto;
+			margin-top: 4%;
+			color: #000;
+			text-align: center;
+			font-size: 34px;
+			line-height: 48px;
+			font-family: 'Roboto', sans-serif;
+
+			span {
+				color: red;
+			}
+
+		}
+
+
+	}
+
+
+	.close_ins_2_popup {
+		position: absolute;
+		top: 100px;
+		right: 75px;
+		width: 50px;
+		height: 50px;
+		z-index: 1;
+		font-size: 40px;
+		color: red;
+		font-weight: bold;
+		cursor: pointer;
 	}
 }
- 
+
 //3
 .ins_3_popup {
 	position: absolute;
-    width: 100%;
-    height: 100%;
-    // background: rgba(0, 0, 0, 0.631372549);
-    justify-content: center;
-    align-items: center;
-    top: 0;
+	width: 100%;
+	height: 100%;
+	// background: rgba(0, 0, 0, 0.631372549);
+	justify-content: center;
+	align-items: center;
+	top: 0;
 	display: none;
 
 	.overlay-layer {
@@ -1142,7 +1177,7 @@
 			z-index: 1;
 		}
 
-		.text-pos{
+		.text-pos {
 			position: relative;
 			width: 550px;
 			height: 550px;
@@ -1153,91 +1188,90 @@
 			top: 0%;
 			margin: 0 auto;
 		}
-	
-
-	.mute {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		background-image: url(../images/pause.png);
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
-		cursor: pointer;
-	}
- 
-	.unmute {
-
-		position: relative;
-		width: 100%;
-		height: 100%;
-		background-image: url(../images/specker.png);
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
-		cursor: pointer;
-		display: none;
-	}
-
-	.heder-text {
-		position: relative;
-		width: 50%;
-		margin: 0 auto;
-		margin-top: 4%;
-		color: #000;
-		text-align: center;
-		font-size: 210%;
-		box-sizing: border-box;
-		font-family: "Comic Sans MS", Arial, sans-serif;
-		font-weight: bold;
-	}
 
 
-	.game-rule-1 {
-		position: relative;
-		width: 64%;
-		margin: 0 auto;
-		margin-top: 4%;
-		color: #000;
-		text-align: center;
-		font-size: 34px;
-		line-height: 48px;
-		font-family: 'Roboto', sans-serif;
-	}
-
-
-	.game-rule-2 {
-		position: relative;
-		width: 70%;
-		margin: 0 auto;
-		margin-top: 4%;
-		color: #000;
-		text-align: center;
-		font-size: 34px;
-		line-height: 48px;
-		font-family: 'Roboto', sans-serif;
-
-		span {
-			color: red;
+		.mute {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background-image: url(../images/pause.png);
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			cursor: pointer;
 		}
 
-	}
+		.unmute {
 
-
-	}
-
-	
-	.close_ins_3_popup {
-		    position: absolute;
-			top: 100px;
-			right: 75px;
-			width: 50px;
-			height: 50px;
-			z-index: 1;
-			font-size: 40px;
-			color: red;
-			font-weight: bold;
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background-image: url(../images/specker.png);
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
 			cursor: pointer;
+			display: none;
+		}
+
+		.heder-text {
+			position: relative;
+			width: 50%;
+			margin: 0 auto;
+			margin-top: 4%;
+			color: #000;
+			text-align: center;
+			font-size: 210%;
+			box-sizing: border-box;
+			font-family: "Comic Sans MS", Arial, sans-serif;
+			font-weight: bold;
+		}
+
+
+		.game-rule-1 {
+			position: relative;
+			width: 64%;
+			margin: 0 auto;
+			margin-top: 4%;
+			color: #000;
+			text-align: center;
+			font-size: 34px;
+			line-height: 48px;
+			font-family: 'Roboto', sans-serif;
+		}
+
+
+		.game-rule-2 {
+			position: relative;
+			width: 70%;
+			margin: 0 auto;
+			margin-top: 4%;
+			color: #000;
+			text-align: center;
+			font-size: 34px;
+			line-height: 48px;
+			font-family: 'Roboto', sans-serif;
+
+			span {
+				color: red;
+			}
+
+		}
+
+
+	}
+
+
+	.close_ins_3_popup {
+		position: absolute;
+		top: 100px;
+		right: 75px;
+		width: 50px;
+		height: 50px;
+		z-index: 1;
+		font-size: 40px;
+		color: red;
+		font-weight: bold;
+		cursor: pointer;
 	}
 }
- 
