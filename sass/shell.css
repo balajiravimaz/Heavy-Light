@@ -602,7 +602,7 @@ html {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
 }
 #f_wrapper #f_start_course #intro #intro-text #intro-btns .introMusic {
   position: relative;
@@ -627,6 +627,9 @@ html {
   position: relative;
   cursor: pointer;
   /* Show tooltip on hover */
+}
+#f_wrapper #f_start_course #intro #intro-text #intro-btns button:hover {
+  animation: slowInFastOut 0.5s ease-in-out;
 }
 #f_wrapper #f_start_course #intro #intro-text #intro-btns button::after {
   content: attr(data-tooltip);
@@ -1408,6 +1411,34 @@ footer p {
   height: 20px;
   cursor: pointer;
   transition: transform 0.5s ease-in-out;
+  /* Show tooltip on hover */
+}
+#introPopup .popup-content .introPopclose:hover {
+  transform: scale(1.125);
+}
+#introPopup .popup-content .introPopclose::after {
+  content: attr(data-tooltip);
+  /* tooltip text from attribute */
+  position: absolute;
+  top: 100%;
+  /* below the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 6px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  font-family: "Times New Roman", Times, serif;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  margin-top: 4px;
+  z-index: 10;
+}
+#introPopup .popup-content .introPopclose:hover::after {
+  opacity: 1;
 }
 #introPopup .popup-content .introPopAudio {
   position: absolute;
@@ -1416,6 +1447,10 @@ footer p {
   top: 50px;
   left: 100px;
   cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+#introPopup .popup-content .introPopAudio:hover {
+  transform: scale(1.125);
 }
 #introPopup .popup-content .introPopAudio.playing {
   background: url(../assets/images/music.png) no-repeat;
@@ -1430,6 +1465,17 @@ footer p {
   height: auto;
 }
 
+@keyframes slowInFastOut {
+  0% {
+    transform: scale(1);
+  }
+  65% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 #f_header #f_companyLogo {
   position: relative;
   display: flex;

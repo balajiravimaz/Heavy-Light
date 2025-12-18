@@ -786,14 +786,13 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
 }
 .ins_1_popup .close_ins_1_popup {
   position: absolute;
-  top: 100px;
-  right: 75px;
-  width: 50px;
-  height: 50px;
+  top: 105px;
+  right: 100px;
+  width: 20px;
+  height: 20px;
   z-index: 1;
-  font-size: 40px;
-  color: red;
-  font-weight: bold;
+  background: url("../images/close.png") no-repeat;
+  background-size: contain;
   cursor: pointer;
 }
 
@@ -892,14 +891,13 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
 }
 .ins_2_popup .close_ins_2_popup {
   position: absolute;
-  top: 100px;
-  right: 75px;
-  width: 50px;
-  height: 50px;
+  top: 105px;
+  right: 100px;
+  width: 20px;
+  height: 20px;
   z-index: 1;
-  font-size: 40px;
-  color: red;
-  font-weight: bold;
+  background: url("../images/close.png") no-repeat;
+  background-size: contain;
   cursor: pointer;
 }
 
@@ -998,13 +996,157 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
 }
 .ins_3_popup .close_ins_3_popup {
   position: absolute;
-  top: 100px;
-  right: 75px;
-  width: 50px;
-  height: 50px;
+  top: 105px;
+  right: 100px;
+  width: 20px;
+  height: 20px;
   z-index: 1;
-  font-size: 40px;
-  color: red;
-  font-weight: bold;
+  background: url("../images/close.png") no-repeat;
+  background-size: contain;
+}
+
+.overlay-layer .audio-style {
+  top: 115px !important;
+  left: 75px !important;
+}
+.overlay-layer .mute {
+  width: 40px !important;
+  height: 40px !important;
+  transition: transform 0.5s ease-in-out !important;
+}
+.overlay-layer .mute:hover {
+  transform: scale(1.125);
+}
+.overlay-layer .unmute {
+  width: 40px !important;
+  height: 40px !important;
+  transition: transform 0.5s ease-in-out !important;
+}
+.overlay-layer .unmute:hover {
+  transform: scale(1.125);
+}
+
+.overlay-layer button {
+  /* Show tooltip on hover */
+  transition: transform 0.5s ease-in-out;
+}
+.overlay-layer button::after {
+  content: attr(data-tooltip);
+  /* tooltip text from attribute */
+  position: absolute;
+  top: 100%;
+  /* below the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 6px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  font-family: "Times New Roman", Times, serif;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  margin-top: 4px;
+  z-index: 10;
+}
+.overlay-layer button:hover::after {
+  opacity: 1;
+}
+.overlay-layer button:hover {
+  transform: scale(1.125);
+}
+
+#introPopup-1 {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  z-index: 10001;
+}
+#introPopup-1 .popup-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 85%;
+  max-height: 450px;
+  transform: translate(-50%, -50%);
+  animation: fadeInPopup 0.3s ease;
+  z-index: 10002;
+  pointer-events: auto;
+  padding: 1%;
+  background: transparent;
+}
+#introPopup-1 .popup-content .introPopclose {
+  position: absolute;
+  top: 30px;
+  right: 125px;
+  background: url("../images/close.png") no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+#introPopup-1 .popup-content .introPopclose:hover {
+  transform: scale(1.125);
+}
+#introPopup-1 .popup-content .introPopclose::after {
+  content: attr(data-tooltip);
+  /* tooltip text from attribute */
+  position: absolute;
+  top: 100%;
+  /* below the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 6px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-family: "Times New Roman", Times, serif;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  margin-top: 4px;
+  z-index: 10;
+}
+#introPopup-1 .popup-content .introPopclose:hover::after {
+  opacity: 1;
+}
+#introPopup-1 .popup-content .introPopAudio {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 50px;
+  left: 100px;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+#introPopup-1 .popup-content .introPopAudio:hover {
+  transform: scale(1.125);
+}
+#introPopup-1 .popup-content .introPopAudio.playing {
+  background: url(../images/music.png) no-repeat;
+  background-size: contain;
+}
+#introPopup-1 .popup-content .introPopAudio.mute {
+  background: url(../images/pause.png) no-repeat;
+  background-size: contain;
+}
+#introPopup-1 .popup-content img {
+  width: 100%;
+  height: auto;
 }/*# sourceMappingURL=m1_p3_style.css.map */

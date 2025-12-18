@@ -126,7 +126,7 @@ function addSectionData() {
         `);
         
          $('#section-' + sectionCnt)
-            .find('.content-holder').append(`<div class='header-container'><div class='home'><button data-tooltip="Back" class='home-go-to'></button><button data-tooltip="Music" class='music playing'></button><button class='information-icon' data-tooltip="Information"></button></div></div>`);
+            .find('.content-holder').append(`<div class='header-container'><div class='home'><button data-tooltip="Back" class='home-go-to'></button><button data-tooltip="Music" class='music playing'></button></div></div>`);
 
             $('.content-holder') .append(`<div class="overlay">
 

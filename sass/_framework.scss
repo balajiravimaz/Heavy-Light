@@ -212,7 +212,7 @@ h2 {}
                          display: flex;
                          justify-content: flex-start;
                          align-items: center;
-                         gap: 15px;
+                         gap: 10px;
 
                          .introMusic {
                               position: relative;
@@ -240,7 +240,9 @@ h2 {}
                          button {
                               position: relative;
                               cursor: pointer;
-
+                              &:hover{
+                                   animation: slowInFastOut 0.5s ease-in-out;
+                              }
                               &::after {
                                    content: attr(data-tooltip);
                                    /* tooltip text from attribute */
@@ -1142,7 +1144,34 @@ footer {
                transition: transform 0.5s ease-in-out;
 
                &:hover {
-                    // transform: scale(1.1);
+                    transform: scale(1.125);
+               }
+
+               &::after {
+                    content: attr(data-tooltip);
+                    /* tooltip text from attribute */
+                    position: absolute;
+                    top: 100%;
+                    /* below the button */
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: #333;
+                    color: #fff;
+                    font-size: 12px;
+                    padding: 4px 6px;
+                    border-radius: 5px;
+                    white-space: nowrap;
+                    opacity: 0;
+                    font-family: 'Times New Roman', Times, serif;
+                    pointer-events: none;
+                    transition: opacity 0.2s;
+                    margin-top: 4px;
+                    z-index: 10;
+               }
+
+               /* Show tooltip on hover */
+               &:hover::after {
+                    opacity: 1;
                }
           }
 
@@ -1153,6 +1182,11 @@ footer {
                top: 50px;
                left: 100px;
                cursor: pointer;
+               transition: transform 0.5s ease-in-out;
+
+               &:hover {
+                    transform: scale(1.125);
+               }
 
                &.playing {
                     background: url(../assets/images/music.png) no-repeat;
@@ -1172,3 +1206,17 @@ footer {
           }
      }
 }
+@keyframes slowInFastOut {
+		0% {
+			transform: scale(1);
+		}
+
+		65% {
+			transform: scale(1.10);
+
+		}
+
+		100% {
+			transform: scale(1);
+		}
+	}

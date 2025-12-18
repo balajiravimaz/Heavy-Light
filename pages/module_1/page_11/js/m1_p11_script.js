@@ -54,7 +54,7 @@ function _pageLoaded() {
     }
     addSectionData();
 
-    
+
     assignAudio(_audioId, _audioIndex, _pageAudioSync, _forceNavigation, _videoId, _popupAudio, _reloadRequired);
     pagePreLoad();
     setTimeout(function () {
@@ -62,7 +62,7 @@ function _pageLoaded() {
         showVisitedModule();
     }, 1500)
 
-    console.log("_audioId",_audioId);
+    console.log("_audioId", _audioId);
 
 }
 
@@ -79,7 +79,7 @@ function addSectionData() {
 
 
             let textObject = '', listObject = '', titleText = '';
-        
+
             let sectionData = _pageData.sections[sectionCnt - 1];
             let gameData = sectionData.content.sectionArray[0].game;
             let objectsArr = gameData.objects;
@@ -89,41 +89,41 @@ function addSectionData() {
 
             for (let i = 0; i < objectsArr.length; i++) {
                 objectsHTML +=
-                  "<div class='obj-cont' id='obj-cont-" + objectsArr[i].id + "' ><div class='object' " +
+                    "<div class='obj-cont' id='obj-cont-" + objectsArr[i].id + "' ><div class='object' " +
                     "id='" + objectsArr[i].id + "' " +
                     "data-type='" + objectsArr[i].weight + "' " +
                     "draggable='true'>" +
-                      "<img src='" + objectsArr[i].image + "' alt='' />" +
-                  "</div></div>";
-              }
+                    "<img src='" + objectsArr[i].image + "' alt='' />" +
+                    "</div></div>";
+            }
 
-            let htmlObj = '', 
-imgObj = 
- "<div class='game-completed'> <div class='game-completed-popup'><div class='replay'></div><div class='home'></div></div> </div>"+
-  "<div class='game-container'>" +
-    "<div class='dummy-box'></div>"+           
-    "<div class='box'>" +
-      "<div class='box-title'>" + sectionData.boxType1 + "</div>" +
-      "<div class='drop-area' id='heavyBox' data-type='heavy'></div>" +
-    "</div>" +
+            let htmlObj = '',
+                imgObj =
+                    "<div class='game-completed'> <div class='game-completed-popup'><div class='replay'></div><div class='home'></div></div> </div>" +
+                    "<div class='game-container'>" +
+                    "<div class='dummy-box'></div>" +
+                    "<div class='box'>" +
+                    "<div class='box-title'>" + sectionData.boxType1 + "</div>" +
+                    "<div class='drop-area' id='heavyBox' data-type='heavy'></div>" +
+                    "</div>" +
 
-    "<div class='box'>" +
-      "<div class='box-title'>" + sectionData.boxType2 + "</div>" +
-      "<div class='drop-area' id='lightBox' data-type='light'></div>" +
-    "</div>" +
+                    "<div class='box'>" +
+                    "<div class='box-title'>" + sectionData.boxType2 + "</div>" +
+                    "<div class='drop-area' id='lightBox' data-type='light'></div>" +
+                    "</div>" +
 
-    "<div class='objects-container' id='objectsContainer'>" +
-      objectsHTML +
-    "</div>" ;
+                    "<div class='objects-container' id='objectsContainer'>" +
+                    objectsHTML +
+                    "</div>";
 
             htmlObj += textObject + insText;
 
-         
+
 
             $('#section-' + sectionCnt).find('.content-holder').find('.col-left').find('.content').find('.content-bg').append('<div class="header-container"><div class="navBtns"><button id="home" data-tooltip="Back"></button><button id="music playing" data-tooltip="Music"></button><button id="info" data-tooltip="Information"></button></div><div class="titleText"><img src="pages/module_1/page_11/images/heading-text.png"></div></div><div class="body"><div class="dummypatch"></div><div class="top-alignText"><div class="instruction">' + sectionData.instruction + '</div><div class="intro-audio" data-audio=' + gameData.audio.instruction + '> </div><div class="completed-audio" data-audio=' + gameData.audio.success + '> </div><div class="completed-correct" data-audio=' + gameData.audio.correct + '> </div><div class="completed-wrong" data-audio=' + gameData.audio.wrong + '> </div></div><div class="image-container">' + imgObj + '</div></div><audio id="instructionAudio"></audio>');
 
 
-            $('.content-holder') .append(`<div class="overlay">
+            $('.content-holder').append(`<div class="overlay">
 
                         <div class="overlay-style">
                             <!-- Mute Icon -->
@@ -147,27 +147,34 @@ imgObj =
             $('.box').off('click mouseenter mouseleave').on('click mouseenter mouseleave', onClickHandler)
 
             $('.intro-audio').off('click').on('click', onClickAudioHandler);
-            
+
             $('.completed-audio').off('click').on('click', onClickAudioHandler2);
 
-            $('.replay').off('click').on('click', replayGame)
+            // $('.replay').off('click').on('click', replayGame)
 
-             $('#home').off('click').on('click', replayGameInfro)
+            // $('#home').off('click').on('click', replayGameInfro)
 
-             $('.stay-btn').off('click').on('click', staybtnClickPopup)
- 
+            $(".replay").on("click", function () {
+                jumtoPage(5);
+            });
+            $(".home").on("click", function () {
+                jumtoPage(1)
+            });
+
+            $('.stay-btn').off('click').on('click', staybtnClickPopup)
+
 
             totalObjects = $('#section-' + sectionCnt).find('.object').length;
             correctCount = 0;
 
-                $(".close-btn").on("click", function(){
-                    jumtoPage(1);///change after
-                });
-                // $("#home,#homeBack").on("click", function(){
-                //     jumtoPage(1)
-                // });
+            $(".close-btn").on("click", function () {
+                jumtoPage(1);///change after
+            });
+            // $("#home,#homeBack").on("click", function(){
+            //     jumtoPage(1)
+            // });
 
-                
+
 
         }
         setCSS(sectionCnt);
@@ -182,15 +189,15 @@ imgObj =
 
 }
 
-    function jumtoPage(pageNo) {
-            
-            _controller.pageCnt = pageNo;
+function jumtoPage(pageNo) {
 
-            _controller.updateViewNow();
-        }
+    _controller.pageCnt = pageNo;
+
+    _controller.updateViewNow();
+}
 
 
-function onClickAudioHandler(e){
+function onClickAudioHandler(e) {
     $('.dummy-box').show();
     e.stopPropagation();
     const audioSrc = $(this).data('audio');
@@ -218,7 +225,7 @@ function onClickAudioHandler(e){
     });
 }
 
-function onClickAudioHandler2(e){
+function onClickAudioHandler2(e) {
     //alert("Success");
     e.stopPropagation();
     const audioSrc = $(this).data('audio');
@@ -242,7 +249,7 @@ function onClickAudioHandler2(e){
 }
 
 
-   /* ================= DRAG START ================= */
+/* ================= DRAG START ================= */
 $(document).on('dragstart', '.object', function (e) {
     e.originalEvent.dataTransfer.setData('text/plain', this.id);
 });
@@ -252,18 +259,18 @@ $(document).on('dragover', '.drop-area', function (e) {
     e.preventDefault();
 });
 
-/* ================= DROP ================= */ 
- 
+/* ================= DROP ================= */
+
 function replayGame() {
-  location.reload();
+    location.reload();
 }
 
-function replayGameInfro(){
-    $('.overlay').css("display","flex");
+function replayGameInfro() {
+    $('.overlay').css("display", "flex");
 }
 
-function staybtnClickPopup(){
-    $('.overlay').css("display","none");
+function staybtnClickPopup() {
+    $('.overlay').css("display", "none");
 }
 
 $(document).on('drop', '.drop-area', function (e) {
@@ -286,14 +293,14 @@ $(document).on('drop', '.drop-area', function (e) {
         draggedEl.removeClass('wrong').addClass('correct');
 
         if (correctCount === totalObjects) {
-           $('.game-completed').show();
+            $('.game-completed').show();
             onClickAudioHandler2.call($('.completed-audio')[0], new Event('click'));
         }
 
-    } 
+    }
     else {
         draggedEl.addClass('wrong');
-        setTimeout(() => draggedEl.removeClass('wrong'), 800);        
+        setTimeout(() => draggedEl.removeClass('wrong'), 800);
         onClickAudioHandler2.call($('.completed-wrong')[0], new Event('click'));
         //alert("Incorrect");
     }
@@ -523,12 +530,12 @@ function withAudioSync() {
         _tweenTimeline.add(animateFadeIn(body.find('.text-container').find('li').eq(k), 0.5, 0).play(), rightListTiming[k])
     }
 
-         var boxTiming1 = [0.5, 0.9, 1.2, 1.5]
-        _tweenTimeline.add(animateFadeIn(body.find('.text-container').find('.ins-txt '), 0.5).play(), 1)
-        _tweenTimeline.add(animateFadeOut(body.find('.dummy-box'), 0.5).play(), 6)
-        for (var k = 0; k < boxTiming1.length; k++) {
-            _tweenTimeline.add(animateFadeIn(body.find('.box').eq(k), 0.5, 0).play(), boxTiming1[k])
-        }
+    var boxTiming1 = [0.5, 0.9, 1.2, 1.5]
+    _tweenTimeline.add(animateFadeIn(body.find('.text-container').find('.ins-txt '), 0.5).play(), 1)
+    _tweenTimeline.add(animateFadeOut(body.find('.dummy-box'), 0.5).play(), 6)
+    for (var k = 0; k < boxTiming1.length; k++) {
+        _tweenTimeline.add(animateFadeIn(body.find('.box').eq(k), 0.5, 0).play(), boxTiming1[k])
+    }
 
     // if (_currentAudioIndex == 0) {
     //     var boxTiming1 = [0.5, 0.9, 1.2, 1.5]

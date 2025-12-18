@@ -193,7 +193,7 @@
 								left: 0;
 								padding: 0 20px;
 								display: flex;
-								gap: 15px;
+								gap: 10px;
 								justify-content: flex-start;
 								align-items: center;
 
@@ -245,6 +245,9 @@
 
 								button {
 									position: relative;
+									&:hover{
+										animation: slowInFastOut 0.5s ease-in-out;
+									}
 
 									&::after {
 										content: attr(data-tooltip);
@@ -273,6 +276,56 @@
 										opacity: 1;
 									}
 								}
+
+								#playPauseBtn {
+									width: 50px;
+									height: 50px;
+									border: none;
+									cursor: pointer;
+									background-size: contain;
+									background-position: center;
+									background-repeat: no-repeat;
+									position: relative;
+									background-color: transparent;
+
+									&::after {
+										content: attr(data-tooltip);
+										/* tooltip text from attribute */
+										position: absolute;
+										top: 100%;
+										/* below the button */
+										left: 50%;
+										transform: translateX(-50%);
+										background: #333;
+										color: #fff;
+										font-size: 12px;
+										padding: 4px 6px;
+										border-radius: 5px;
+										white-space: nowrap;
+										font-family: 'Times New Roman', Times, serif;
+										opacity: 0;
+										pointer-events: none;
+										transition: opacity 0.2s;
+										margin-top: 4px;
+										z-index: 10;
+									}
+
+									&:hover::after {
+										opacity: 1;
+									}
+
+								}
+
+								/* Background images */
+								#playPauseBtn.play {
+									background-image: url("../images/play_sim.png");
+								}
+
+								#playPauseBtn.pause {
+									background-image: url("../images/pause_sim.png");
+								}
+
+
 							}
 
 							.titleText {
@@ -340,7 +393,7 @@
 										// border: 1px solid red;
 
 										p {
-											color: #000;											
+											color: #000;
 											font-size: 32px;
 											margin-bottom: 0;
 
@@ -956,6 +1009,7 @@
 									margin-bottom: 10px;
 									margin-top: 0;
 								}
+
 								&.modal-box {
 									background-color: #e0e0e0;
 									border-radius: 10px;
@@ -965,7 +1019,8 @@
 									width: 500px;
 									box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 									text-align: center;
-									p{
+
+									p {
 										text-align: center;
 										margin-bottom: 5px;
 									}
@@ -1099,3 +1154,17 @@
 		transform: translateY(0);
 	}
 }
+@keyframes slowInFastOut {
+		0% {
+			transform: scale(1);
+		}
+
+		65% {
+			transform: scale(1.10);
+
+		}
+
+		100% {
+			transform: scale(1);
+		}
+	}

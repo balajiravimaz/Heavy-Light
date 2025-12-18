@@ -194,7 +194,7 @@
 								left: 0;
 								padding: 0 20px;
 								display: flex;
-								gap: 15px;
+								gap: 10px;
 								justify-content: flex-start;
 								align-items: center;
 
@@ -246,6 +246,10 @@
 
 								button {
 									position: relative;
+
+									&:hover {
+										animation: slowInFastOut 0.5s ease-in-out;
+									}
 
 									&::after {
 										content: attr(data-tooltip);
@@ -781,10 +785,11 @@
 									padding: 25px;
 									min-width: 400px;
 									max-width: 600px;
-									width: 450px;
+									width: 500px;
 									box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 									text-align: center;
-									p{
+
+									p {
 										text-align: center;
 										margin-bottom: 5px;
 									}
@@ -916,3 +921,18 @@
 		transform: scale(1);
 	}
 }
+
+	@keyframes slowInFastOut {
+		0% {
+			transform: scale(1);
+		}
+
+		65% {
+			transform: scale(1.10);
+
+		}
+
+		100% {
+			transform: scale(1);
+		}
+	}

@@ -83,7 +83,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
 #section-1 .content-holder .col-left .content .content-bg .header-container {
   background-image: url(../images/header.png);
   width: 100%;
-  height: 120px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,7 +96,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   left: 0;
   padding: 0 20px;
   display: flex;
-  gap: 15px;
+  gap: 5px;
   justify-content: flex-start;
   align-items: center;
 }
@@ -109,6 +109,34 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   border: none;
   cursor: pointer;
   position: relative;
+  transition: transform 0.5s ease-in-out;
+}
+#section-1 .content-holder .col-left .content .content-bg .header-container .navBtns #home:hover {
+  transform: scale(1.125);
+}
+#section-1 .content-holder .col-left .content .content-bg .header-container .navBtns #home::after {
+  content: attr(data-tooltip);
+  /* tooltip text from attribute */
+  position: absolute;
+  top: 100%;
+  /* below the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 6px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-family: "Times New Roman", Times, serif;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  margin-top: 4px;
+  z-index: 10;
+}
+#section-1 .content-holder .col-left .content .content-bg .header-container .navBtns #home:hover::after {
+  opacity: 1;
 }
 #section-1 .content-holder .col-left .content .content-bg .header-container .navBtns #info {
   width: 50px;
@@ -119,6 +147,34 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   border: none;
   cursor: pointer;
   position: relative;
+  transition: transform 0.5s ease-in-out;
+}
+#section-1 .content-holder .col-left .content .content-bg .header-container .navBtns #info:hover {
+  transform: scale(1.125);
+}
+#section-1 .content-holder .col-left .content .content-bg .header-container .navBtns #info::after {
+  content: attr(data-tooltip);
+  /* tooltip text from attribute */
+  position: absolute;
+  top: 100%;
+  /* below the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 6px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-family: "Times New Roman", Times, serif;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  margin-top: 4px;
+  z-index: 10;
+}
+#section-1 .content-holder .col-left .content .content-bg .header-container .navBtns #info:hover::after {
+  opacity: 1;
 }
 #section-1 .content-holder .col-left .content .content-bg .header-container .titleText {
   position: relative;
@@ -127,7 +183,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   margin: 0 auto;
 }
 #section-1 .content-holder .col-left .content .content-bg .header-container .titleText img {
-  width: 100%;
+  width: 400px;
 }
 #section-1 .content-holder .col-left .content .content-bg > .main-text {
   display: flex !important;
@@ -375,7 +431,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   text-align: center;
   font-weight: bold;
   box-sizing: border-box;
-  font-family: "Comic Sans MS", Arial, sans-serif;
+  font-family: "Alphakind";
 }
 #section-1 .content-holder .col-left .content .content-bg > .body .game-container .objects-container {
   width: 420px;
@@ -442,13 +498,17 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   margin-bottom: 15px;
 }
 #section-1 .content-holder .col-left .content .content-bg > .body .game-completed {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   display: none;
-  background-color: rgba(255, 255, 255, 0.7019607843);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   background-image: url(../images/successes.gif);
   background-size: 100%;
+  z-index: 1111;
 }
 #section-1 .content-holder .col-left .content .content-bg > .body .game-completed .game-completed-popup {
   position: relative;
@@ -488,13 +548,14 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
 #section-1 .content-holder .col-left .content .content-bg > .body .game-completed .home {
   width: 15%;
   height: 75px;
-  background-image: url(../images/home.png);
+  background-image: url(../images/back.png);
   background-repeat: no-repeat;
   background-size: 100%;
   margin: 1% 0 2% 2%;
   position: relative;
   top: 47%;
   left: 51%;
+  cursor: pointer;
 }
 #section-1 .content-holder .col-left .content .content-bg > .body .object {
   visibility: visible !important;
@@ -595,10 +656,18 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   padding: 12px;
   text-align: center;
   background: #2F80FF;
-  border: 2px solid #5a5a5a;
   border-radius: 5px;
   font-size: 20px;
   cursor: pointer;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1.25rem;
+  font-weight: normal;
+  transition: transform 0.5s ease-in;
+}
+#section-1 .content-holder .stay-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.5);
 }
 #section-1 .content-holder .close-btn {
   position: absolute;
@@ -610,14 +679,22 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   text-align: center;
   color: #fff;
   background: #2F80FF;
-  border: 2px solid #5a5a5a;
   border-radius: 5px;
   font-size: 20px;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1.25rem;
+  font-weight: normal;
   cursor: pointer;
   transform: inherit !important;
   font-weight: normal;
   left: inherit !important;
   font-family: inherit !important;
+  transition: transform 0.5s ease-in;
+}
+#section-1 .content-holder .close-btn:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.5);
 }
 #section-1 .content-holder #play {
   position: relative;
@@ -676,7 +753,10 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   cursor: pointer;
 }
 @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-  #section-1 .content-holder .ins_1_popup, #section-1 .content-holder .ins_2_popup, #section-1 .content-holder .ins_3_popup, #section-1 .content-holder .overlay {
+  #section-1 .content-holder .ins_1_popup,
+  #section-1 .content-holder .ins_2_popup,
+  #section-1 .content-holder .ins_3_popup,
+  #section-1 .content-holder .overlay {
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     background-color: rgba(0, 0, 0, 0.5411764706);

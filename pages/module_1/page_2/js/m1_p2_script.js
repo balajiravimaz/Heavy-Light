@@ -129,22 +129,14 @@ function addSectionData() {
          $('#section-' + sectionCnt)
             .find('.content-holder').append(`<div class='header-container'><div class='home'><button onClick="location.reload()" data-tooltip="Home" class='home-go-to'></button><button class='music playing' data-tooltip="Music"></button><button class='information-icon' data-tooltip="Information"></button></div></div>`);
 
-           $('.content-holder') .append(`<div class="overlay">
-
-            <div class="overlay-style">
-                <!-- Mute Icon -->
-                <div class="audio-style">
-                    <div id="play" class="audio-toggle play"></div>
-                    <div id="pause" class="audio-toggle pause"></div>
+        $('.content-holder').append(`<div id="introPopup-1">                
+                <div class="popup-content">
+                    <button class="introPopAudio mute" onclick="togglePopAudio(this, 'assets/audios/info_audio.mp3')"></button>
+                    <button class="introPopclose" data-tooltip="Close" onClick="closePopup('introPopup-1')"></button>
+                    <img src="assets/images/home_info.png" alt="">
                 </div>
+            </div>`)
 
-                <div class="popup-circle">
-                </div>
-                
-                <!-- Close Button -->
-                    <div class="close-btn">X</div> 
-            </div>    
-</div>`)
 
 const popup = _pageData.popup; 
 const popup2 = _pageData.popup2; 
@@ -159,7 +151,7 @@ const container_popup = $('#section-' + sectionCnt).find('.content-holder');
                 <div class="unmute" id="ins-1-audio-unmute"></div> 
             </div>    
             <div class="text-pos"></div>
-            <div class="close_ins_1_popup">${popup.close}</div>
+            <button class="close_ins_1_popup" data-tooltip="Close"></button>
         </div> 
 
         </div>`);
@@ -172,7 +164,7 @@ const container_popup = $('#section-' + sectionCnt).find('.content-holder');
                     <div class="unmute" id="ins-2-audio-unmute"></div> 
                 </div>    
                 <div class="text-pos"></div>
-                <div class="close_ins_2_popup">${popup2.close}</div>
+                <button class="close_ins_2_popup" data-tooltip="Close"></button>
             </div> 
 
         </div>`);
@@ -185,14 +177,14 @@ const container_popup = $('#section-' + sectionCnt).find('.content-holder');
                     <div class="unmute" id="ins-3-audio-unmute"></div> 
                 </div>    
                 <div class="text-pos"></div>
-                <div class="close_ins_3_popup">${popup3.close}</div>
+                <button class="close_ins_3_popup" data-tooltip="Close"></button>
             </div> 
 
         </div>`);
 
             $('.ins-click').off('click').on('click', onClickHandler)
 
-            $('.information-icon').off('click').on('click', onClickinfo)
+            $('.information-icon').off('click').on('click', showInfoGlobal)
             
             $('.close-btn').off('click').on('click', onClickinfoClose)
 
@@ -238,6 +230,11 @@ const container_popup = $('#section-' + sectionCnt).find('.content-holder');
 
 }
 
+
+function showInfoGlobal(){
+    $("#introPopup-1").css("display", "flex")
+    $("#introPopup-1").css("opacity", "1")
+}
 function onClickinfo(){
     $('.overlay').show();
 }

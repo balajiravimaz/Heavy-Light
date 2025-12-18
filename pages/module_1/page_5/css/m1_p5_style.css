@@ -190,9 +190,10 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   left: 0;
   padding: 0 20px;
   display: flex;
-  gap: 15px;
+  gap: 10px;
   justify-content: flex-start;
   align-items: center;
+  /* Background images */
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style .header .navBtns #home {
   width: 50px;
@@ -237,6 +238,9 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   position: relative;
   /* Show tooltip on hover */
 }
+#section-1 .content-holder .col-left .content .content-bg .content-style .header .navBtns button:hover {
+  animation: slowInFastOut 0.5s ease-in-out;
+}
 #section-1 .content-holder .col-left .content .content-bg .content-style .header .navBtns button::after {
   content: attr(data-tooltip);
   /* tooltip text from attribute */
@@ -260,6 +264,47 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style .header .navBtns button:hover::after {
   opacity: 1;
+}
+#section-1 .content-holder .col-left .content .content-bg .content-style .header .navBtns #playPauseBtn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  background-color: transparent;
+}
+#section-1 .content-holder .col-left .content .content-bg .content-style .header .navBtns #playPauseBtn::after {
+  content: attr(data-tooltip);
+  /* tooltip text from attribute */
+  position: absolute;
+  top: 100%;
+  /* below the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 6px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-family: "Times New Roman", Times, serif;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  margin-top: 4px;
+  z-index: 10;
+}
+#section-1 .content-holder .col-left .content .content-bg .content-style .header .navBtns #playPauseBtn:hover::after {
+  opacity: 1;
+}
+#section-1 .content-holder .col-left .content .content-bg .content-style .header .navBtns #playPauseBtn.play {
+  background-image: url("../images/play_sim.png");
+}
+#section-1 .content-holder .col-left .content .content-bg .content-style .header .navBtns #playPauseBtn.pause {
+  background-image: url("../images/pause_sim.png");
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style .header .titleText img {
   width: 250px;
@@ -913,5 +958,16 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   }
   100% {
     transform: translateY(0);
+  }
+}
+@keyframes slowInFastOut {
+  0% {
+    transform: scale(1);
+  }
+  65% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }/*# sourceMappingURL=m1_p5_style.css.map */

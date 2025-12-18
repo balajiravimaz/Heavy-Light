@@ -192,7 +192,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   left: 0;
   padding: 0 20px;
   display: flex;
-  gap: 15px;
+  gap: 10px;
   justify-content: flex-start;
   align-items: center;
 }
@@ -238,6 +238,9 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
 #section-1 .content-holder .col-left .content .content-bg .content-style .header .navBtns button {
   position: relative;
   /* Show tooltip on hover */
+}
+#section-1 .content-holder .col-left .content .content-bg .content-style .header .navBtns button:hover {
+  animation: slowInFastOut 0.5s ease-in-out;
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style .header .navBtns button::after {
   content: attr(data-tooltip);
@@ -690,7 +693,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   padding: 25px;
   min-width: 400px;
   max-width: 600px;
-  width: 450px;
+  width: 500px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   text-align: center;
 }
@@ -778,6 +781,17 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
     transform: scale(1);
   }
   75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes slowInFastOut {
+  0% {
+    transform: scale(1);
+  }
+  65% {
     transform: scale(1.1);
   }
   100% {

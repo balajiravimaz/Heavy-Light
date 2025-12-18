@@ -48,9 +48,11 @@
 			"headerTitle": "Numeracy<br/><span>Simulation</span>",
 			"ost": "",
 			"insText": "​",
+			"infoImg":"pages/module_1/page_3/images/Game_Info.png",
 		  	"footer":"Copyright @ 2026 Macmillan Education India Private Limited. All rights reserved.",
 			  "audio1": "pages/module_1/page_3/audios/sortingGame.mp3",
 			  "audio2": "pages/module_1/page_3/audios/funGame.mp3",
+			  "audio3": "pages/module_1/page_3/audios/info_audio.mp3",
 			"content": {
 				"text": [
 					""

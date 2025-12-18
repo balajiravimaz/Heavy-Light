@@ -126,7 +126,7 @@ function addSectionData() {
         `);
 
             $('#section-' + sectionCnt)
-                .find('.content-holder').append(`<div class='header-container'><div class='home'><button data-tooltip="Back" class='home-go-to'></button><button data-tooltip="Music" class='music playing'></button><button class='information-icon' data-tooltip="Information"></button></div></div>`);
+                .find('.content-holder').append(`<div class='header-container'><div class='home'><button data-tooltip="Back" class='home-go-to'></button><button data-tooltip="Music" class='music playing'></button><button class='information-icon' data-tooltip="Information"></button></div></div>`)
 
             $('.content-holder').append(`<div class="overlay">
 
@@ -158,7 +158,7 @@ function addSectionData() {
                 <div class="unmute" id="ins-1-audio-unmute"></div> 
             </div>    
             <div class="text-pos"></div>
-            <div class="close_ins_1_popup">${popup.close}</div>
+            <button class="close_ins_1_popup" data-tooltip="close"></button>
         </div> 
 
         </div>`);
@@ -171,10 +171,18 @@ function addSectionData() {
                     <div class="unmute" id="ins-2-audio-unmute"></div> 
                 </div>    
                 <div class="text-pos"></div>
-                <div class="close_ins_2_popup">${popup2.close}</div>
+                <button class="close_ins_2_popup" data-tooltip="close"></button>
             </div> 
 
         </div>`);
+
+                $('.content-holder').append(`<div id="introPopup-1">                
+                <div class="popup-content">
+                    <button class="introPopAudio mute" onclick="togglePopAudio(this, '${_pageData.sections[sectionCnt - 1].audio3}')"></button>
+                    <button class="introPopclose" data-tooltip="Close" onClick="closePopup('introPopup-1')"></button>
+                    <img src="${_pageData.sections[sectionCnt - 1].infoImg}" alt="">
+                </div>
+            </div>`)
 
 
 
@@ -222,7 +230,8 @@ function addSectionData() {
 }
 
 function onClickinfo() {
-    $('.overlay').show();
+    $("#introPopup-1").css("display", "flex");
+    $("#introPopup-1").css("opacity", "1");
 }
 
 function onClickinfoClose() {

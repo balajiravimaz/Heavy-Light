@@ -1,0 +1,113 @@
+{
+	"mainAudio": {
+		"audioSRC": "pages/module_1/page_11/audios/audio1.mp3",
+		"isEmptyAudio": false,
+		"audioIndex": 0
+	},
+	"bgImgs": [
+		{
+			"imageSRC": "",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_11/images/icon01_done.svg",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_11/images/icon02_done.svg",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_11/images/icon03_done.svg",
+			"altText": ""
+		}
+	],
+	"imgCollage": {
+		"desktop": [
+			{
+				"imageSRC": "",
+				"altText": ""
+			}
+		],
+		"portrait": [
+			{
+				"imageSRC": "",
+				"altText": ""
+			}
+		]
+	},
+	"bgVid": [
+		{
+			"videoSRC": ""
+		}
+	],
+	"sections": [
+		{
+		  "slideType": "game",
+		  "slideTitle": "Heavy and Light Game",
+		  "headerTitle": "Sorting Game",
+		  "instruction": "Look at each object. Is it <span>heavy</span> or <span>light?</span> Drag it to the correct box.",
+		  "boxType1":"HEAVY",
+		  "boxType2":"LIGHT",
+		  "footer":"Copyright @ 2026 Macmillan Education India Private Limited. All rights reserved.",
+		  "content": {
+			"sectionArray": [
+			  {
+				"sectionID": 1,
+				"sectionIndx": 1,
+				"titleText": "Heavy or Light",
+				"game": {
+				  "type": "drag-drop",
+				  "audio": {
+					"instruction": "pages/module_1/page_11/audios/audio1.mp3",
+					"correct": "pages/module_1/page_11/audios/correctDragNDrop.mp3",
+					"wrong": "pages/module_1/page_11/audios/incorrectDragNDrop.mp3",
+					"success": "pages/module_1/page_11/audios/GoodJobAudio.mp3"
+				  },
+				  "dropZones": [
+					{ "id": "heavy", "label": "HEAVY", "accept": "heavy" },
+					{ "id": "light", "label": "LIGHT", "accept": "light" }
+				  ],
+				  "objects": [
+					{ "id": "leaf", "image": "pages/module_1/page_11/images/leaf.png", "weight": "light" },
+					{ "id": "stone", "image": "pages/module_1/page_11/images/stone.png", "weight": "heavy" },
+					{ "id": "car", "image": "pages/module_1/page_11/images/car.png", "weight": "heavy" },
+					{ "id": "chair", "image": "pages/module_1/page_11/images/chair.png", "weight": "heavy" },
+					{ "id": "flower", "image": "pages/module_1/page_11/images/flower.png", "weight": "light" },
+					{ "id": "sponge", "image": "pages/module_1/page_11/images/sponge.png", "weight": "light" }
+				  ],
+				  "completionPopup": {
+					"message": "Game Completed!",
+					"buttons": ["replay", "home"]
+				  }
+				}
+			  }
+			]
+				  }
+		}
+	  ],
+	"transcriptText": [
+		[
+			"There are several key elements that must be addressed during an internal control test. Each button here represents a fundamental aspect of the internal control testing process.",
+			"To learn more about each subject, Select the respective button."
+		],
+		[
+			""
+		],
+		[
+			""
+		],
+		[
+			""
+		]
+	],
+	"ccText": [
+		[
+			{
+				"text": "",
+				"startTime": 0,
+				"endTime": 6.2
+			}
+		]
+	]
+}

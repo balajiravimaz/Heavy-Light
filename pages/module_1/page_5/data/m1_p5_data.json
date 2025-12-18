@@ -67,6 +67,16 @@
             "duration":4000
           }          
         ],
+        "replayAudios":[
+          "pages/module_1/page_5/audios/reload_1.mp3",
+          "pages/module_1/page_5/audios/reload_2.mp3",
+          "pages/module_1/page_5/audios/reload_3.mp3",
+          "pages/module_1/page_5/audios/reload_4.mp3",
+          "pages/module_1/page_5/audios/reload_5.mp3",
+          "pages/module_1/page_5/audios/reload_6.mp3",
+          "pages/module_1/page_5/audios/reload_7.mp3",
+          "pages/module_1/page_5/audios/reload_8.mp3"                     
+        ],
         "text": [
           [
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
