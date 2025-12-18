@@ -120,7 +120,7 @@ function addSectionData() {
 
 
 
-            $('#section-' + sectionCnt).find('.content-holder').find('.col-left').find('.content').find('.content-bg').append('<div class="header-container"><div class="navBtns"><button id="home" data-tooltip="Back"></button><button id="music playing" data-tooltip="Music"></button><button id="info" data-tooltip="Information"></button></div><div class="titleText"><img src="pages/module_1/page_11/images/heading-text.png"></div></div><div class="body"><div class="dummypatch"></div><div class="top-alignText"><div class="instruction">' + sectionData.instruction + '</div><div class="intro-audio" data-audio=' + gameData.audio.instruction + '> </div><div class="completed-audio" data-audio=' + gameData.audio.success + '> </div><div class="completed-correct" data-audio=' + gameData.audio.correct + '> </div><div class="completed-wrong" data-audio=' + gameData.audio.wrong + '> </div></div><div class="image-container">' + imgObj + '</div></div><audio id="instructionAudio"></audio>');
+            $('#section-' + sectionCnt).find('.content-holder').find('.col-left').find('.content').find('.content-bg').append('<div class="header-container"><div class="navBtns"><button id="home" data-tooltip="Back"></button><button class="music playing" data-tooltip="Music"></button></div><div class="titleText"><img src="pages/module_1/page_11/images/heading-text.png"></div></div><div class="body"><div class="dummypatch"></div><div class="top-alignText"><div class="instruction">' + sectionData.instruction + '</div><div class="intro-audio" data-audio=' + gameData.audio.instruction + '> </div><div class="completed-audio" data-audio=' + gameData.audio.success + '> </div><div class="completed-correct" data-audio=' + gameData.audio.correct + '> </div><div class="completed-wrong" data-audio=' + gameData.audio.wrong + '> </div></div><div class="image-container">' + imgObj + '</div></div><audio id="instructionAudio"></audio>');
 
 
             $('.content-holder').append(`<div class="overlay">
@@ -160,6 +160,13 @@ function addSectionData() {
             $(".home").on("click", function () {
                 jumtoPage(1)
             });
+
+            $(".music").on("click", function (event) {
+        let el = event.currentTarget;
+        playClickThen(function () {
+          toggleAudio(el);
+        })
+      });
 
             $('.stay-btn').off('click').on('click', staybtnClickPopup)
 
@@ -436,6 +443,25 @@ function getModuleLevelpageVisited() {
     }
     console.log(getModuleLevelPageCount, "Module Level count end")
 
+}
+
+function toggleAudio(el) {
+  // const el = event.currentTarget;
+  const audio = document.getElementById("audio_src");
+
+  console.log(el, "Target class");
+
+  if (audio.paused) {
+    audio.muted = false;
+    audio.play();
+    el.classList.remove("mute");
+    el.classList.add("playing");
+  } else {
+    audio.pause();
+    audio.currentTime = 0;
+    el.classList.remove("playing");
+    el.classList.add("mute");
+  }
 }
 
 function onClickHandler(evt) {
