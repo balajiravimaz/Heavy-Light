@@ -123,7 +123,6 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   display: inline-block;
   /* width: 65%; */
   font-size: 25px;
-  font-weight: bolder;
   margin-bottom: 0;
   text-transform: uppercase;
   color: #000;
@@ -215,12 +214,12 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   position: relative;
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style .header .navBtns .music.playing {
-  background: url(../images/music.png) no-repeat;
+  background: url(../images/bg_music.png) no-repeat;
   background-size: contain;
   background-position: center;
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style .header .navBtns .music.mute {
-  background: url(../images/pause.png) no-repeat;
+  background: url(../images/bg_pause.png) no-repeat;
   background-size: contain;
   background-position: center;
 }
@@ -246,6 +245,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   /* below the button */
   left: 50%;
   transform: translateX(-50%);
+  font-family: "Times New Roman", Times, serif;
   background: #333;
   color: #fff;
   font-size: 12px;
@@ -318,7 +318,6 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style > .body .animat-container .left-side .wrap p {
   color: #000;
-  font-weight: bold;
   font-size: 32px;
   margin-bottom: 0;
 }
@@ -340,6 +339,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   opacity: 0;
   transition: opacity 0.5s ease;
   /* fade duration */
+  font-weight: normal;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -470,7 +470,6 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   color: #000;
   font-size: 46px;
   bottom: 100px;
-  font-weight: bold;
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style > .body .animat-container .left-side .sea-saw .sea-saw-wrap .bar-holding .right-holding.active p {
   color: red;
@@ -566,13 +565,16 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
 #section-1 .content-holder .col-left .content .content-bg .content-style .popup {
   display: none;
   opacity: 0;
-  background: rgba(255, 255, 255, 0.7);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  height: 100%;
+  height: 100vh;
   justify-content: center;
   align-items: center;
   z-index: 1111;
@@ -601,12 +603,62 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   gap: 15px;
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style .popup .popup-wrap .popBtns #refresh {
+  position: relative;
   background: url("../images/reload.png") no-repeat center;
   background-size: contain;
 }
+#section-1 .content-holder .col-left .content .content-bg .content-style .popup .popup-wrap .popBtns #refresh::after {
+  content: attr(data-tooltip);
+  /* tooltip text from attribute */
+  position: absolute;
+  top: 100%;
+  /* below the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 6px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-family: "Times New Roman", Times, serif;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  margin-top: 4px;
+  z-index: 10;
+}
+#section-1 .content-holder .col-left .content .content-bg .content-style .popup .popup-wrap .popBtns #refresh:hover::after {
+  opacity: 1;
+}
 #section-1 .content-holder .col-left .content .content-bg .content-style .popup .popup-wrap .popBtns #homeBack {
+  position: relative;
   background: url("../images/back.png") no-repeat center;
   background-size: contain;
+}
+#section-1 .content-holder .col-left .content .content-bg .content-style .popup .popup-wrap .popBtns #homeBack::after {
+  content: attr(data-tooltip);
+  /* tooltip text from attribute */
+  position: absolute;
+  top: 100%;
+  /* below the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 6px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-family: "Times New Roman", Times, serif;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  margin-top: 4px;
+  z-index: 10;
+}
+#section-1 .content-holder .col-left .content .content-bg .content-style .popup .popup-wrap .popBtns #homeBack:hover::after {
+  opacity: 1;
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style .popup .popup-wrap .popBtns button {
   width: 80px;
@@ -668,6 +720,33 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   cursor: pointer;
   transition: transform 0.5s ease-in-out;
 }
+#section-1 .content-holder .col-left .content .content-bg .content-style #introPopup-1 .popup-content .introPopclose:hover {
+  transform: scale(1.125);
+}
+#section-1 .content-holder .col-left .content .content-bg .content-style #introPopup-1 .popup-content .introPopclose::after {
+  content: attr(data-tooltip);
+  /* tooltip text from attribute */
+  position: absolute;
+  top: 100%;
+  /* below the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 6px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-family: "Times New Roman", Times, serif;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  margin-top: 4px;
+  z-index: 10;
+}
+#section-1 .content-holder .col-left .content .content-bg .content-style #introPopup-1 .popup-content .introPopclose:hover::after {
+  opacity: 1;
+}
 #section-1 .content-holder .col-left .content .content-bg .content-style #introPopup-1 .popup-content .introPopAudio {
   position: absolute;
   width: 40px;
@@ -675,6 +754,10 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   top: 50px;
   left: 100px;
   cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+#section-1 .content-holder .col-left .content .content-bg .content-style #introPopup-1 .popup-content .introPopAudio:hover {
+  transform: scale(1.125);
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style #introPopup-1 .popup-content .introPopAudio.playing {
   background: url(../images/music.png) no-repeat;
@@ -716,20 +799,24 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
 #section-1 .content-holder .col-left .content .content-bg .content-style #home-popup .popup-content h2 {
   font-family: "Alphakind", Arial, sans-serif;
   color: #ff0000;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: normal;
   margin-bottom: 10px;
   margin-top: 0;
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style #home-popup .popup-content.modal-box {
   background-color: #e0e0e0;
-  border-radius: clamp(10px, 1.5vw, 15px);
-  padding: clamp(20px, 2vw, 30px) clamp(15px, 2.5vw, 25px);
-  min-width: clamp(280px, 35%, 450px);
-  max-width: clamp(300px, 40%, 500px);
-  width: auto;
+  border-radius: 10px;
+  padding: 25px;
+  min-width: 400px;
+  max-width: 600px;
+  width: 500px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   text-align: center;
+}
+#section-1 .content-holder .col-left .content .content-bg .content-style #home-popup .popup-content.modal-box p {
+  text-align: center;
+  margin-bottom: 5px;
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style #home-popup .popup-content .modal-message {
   font-family: "Alphakind", Arial, sans-serif;
@@ -737,6 +824,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   font-size: 26px;
   line-height: 1.4;
   text-align: center;
+  margin: 20px 0;
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style #home-popup .popup-content .modal-question {
   font-family: "Alphakind", Arial, sans-serif;

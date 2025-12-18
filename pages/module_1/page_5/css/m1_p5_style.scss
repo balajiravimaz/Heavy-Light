@@ -116,7 +116,7 @@
 								display: inline-block;
 								/* width: 65%; */
 								font-size: 25px;
-								font-weight: bolder;
+								// font-weight: bolder;
 								margin-bottom: 0;
 								text-transform: uppercase;
 								color: #000;
@@ -206,7 +206,6 @@
 									border: none;
 									cursor: pointer;
 									position: relative;
-
 								}
 
 								.music {
@@ -220,14 +219,14 @@
 									position: relative;
 
 									&.playing {
-										background: url(../images/music.png) no-repeat;
+										background: url(../images/bg_music.png) no-repeat;
 										background-size: contain;
 										background-position: center;
 
 									}
 
 									&.mute {
-										background: url(../images/pause.png) no-repeat;
+										background: url(../images/bg_pause.png) no-repeat;
 										background-size: contain;
 										background-position: center;
 									}
@@ -255,6 +254,7 @@
 										/* below the button */
 										left: 50%;
 										transform: translateX(-50%);
+										font-family: 'Times New Roman', Times, serif;
 										background: #333;
 										color: #fff;
 										font-size: 12px;
@@ -340,8 +340,7 @@
 										// border: 1px solid red;
 
 										p {
-											color: #000;
-											font-weight: bold;
+											color: #000;											
 											font-size: 32px;
 											margin-bottom: 0;
 
@@ -367,6 +366,7 @@
 												opacity: 0;
 												transition: opacity 0.5s ease;
 												/* fade duration */
+												font-weight: normal;
 												position: absolute;
 												display: flex;
 												justify-content: center;
@@ -545,7 +545,7 @@
 														color: #000;
 														font-size: 46px;
 														bottom: 100px;
-														font-weight: bold;
+														// font-weight: bold;
 														// transform: rotate(-5deg);
 													}
 
@@ -689,13 +689,16 @@
 						.popup {
 							display: none;
 							opacity: 0;
-							background: rgba(255, 255, 255, 0.7);
+							inset: 0;
+							background: rgba(0, 0, 0, 0.2);
+							backdrop-filter: blur(4px);
+							-webkit-backdrop-filter: blur(4px);
 							position: absolute;
 							top: 50%;
 							left: 50%;
 							transform: translate(-50%, -50%);
 							width: 100%;
-							height: 100%;
+							height: 100vh;
 							justify-content: center;
 							align-items: center;
 							z-index: 1111;
@@ -725,16 +728,68 @@
 									gap: 15px;
 
 									#refresh {
-
+										position: relative;
 										background: url('../images/reload.png') no-repeat center;
 										background-size: contain;
+
+										&::after {
+											content: attr(data-tooltip);
+											/* tooltip text from attribute */
+											position: absolute;
+											top: 100%;
+											/* below the button */
+											left: 50%;
+											transform: translateX(-50%);
+											background: #333;
+											color: #fff;
+											font-size: 12px;
+											padding: 4px 6px;
+											border-radius: 5px;
+											white-space: nowrap;
+											font-family: 'Times New Roman', Times, serif;
+											opacity: 0;
+											pointer-events: none;
+											transition: opacity 0.2s;
+											margin-top: 4px;
+											z-index: 10;
+										}
+
+										&:hover::after {
+											opacity: 1;
+										}
 
 									}
 
 									#homeBack {
-
+										position: relative;
 										background: url('../images/back.png') no-repeat center;
 										background-size: contain;
+
+										&::after {
+											content: attr(data-tooltip);
+											/* tooltip text from attribute */
+											position: absolute;
+											top: 100%;
+											/* below the button */
+											left: 50%;
+											transform: translateX(-50%);
+											background: #333;
+											color: #fff;
+											font-size: 12px;
+											padding: 4px 6px;
+											border-radius: 5px;
+											white-space: nowrap;
+											font-family: 'Times New Roman', Times, serif;
+											opacity: 0;
+											pointer-events: none;
+											transition: opacity 0.2s;
+											margin-top: 4px;
+											z-index: 10;
+										}
+
+										&:hover::after {
+											opacity: 1;
+										}
 									}
 
 									button {
@@ -806,7 +861,33 @@
 									transition: transform 0.5s ease-in-out;
 
 									&:hover {
-										// transform: scale(1.1);
+										transform: scale(1.125);
+									}
+
+									&::after {
+										content: attr(data-tooltip);
+										/* tooltip text from attribute */
+										position: absolute;
+										top: 100%;
+										/* below the button */
+										left: 50%;
+										transform: translateX(-50%);
+										background: #333;
+										color: #fff;
+										font-size: 12px;
+										padding: 4px 6px;
+										border-radius: 5px;
+										white-space: nowrap;
+										font-family: 'Times New Roman', Times, serif;
+										opacity: 0;
+										pointer-events: none;
+										transition: opacity 0.2s;
+										margin-top: 4px;
+										z-index: 10;
+									}
+
+									&:hover::after {
+										opacity: 1;
 									}
 								}
 
@@ -817,6 +898,11 @@
 									top: 50px;
 									left: 100px;
 									cursor: pointer;
+									transition: transform 0.5s ease-in-out;
+
+									&:hover {
+										transform: scale(1.125);
+									}
 
 									&.playing {
 										background: url(../images/music.png) no-repeat;
@@ -865,21 +951,24 @@
 								h2 {
 									font-family: 'Alphakind', Arial, sans-serif;
 									color: #ff0000;
-									font-size: 28px;
+									font-size: 32px;
 									font-weight: normal;
 									margin-bottom: 10px;
 									margin-top: 0;
 								}
-
 								&.modal-box {
 									background-color: #e0e0e0;
-									border-radius: clamp(10px, 1.5vw, 15px);
-									padding: clamp(20px, 2vw, 30px) clamp(15px, 2.5vw, 25px);
-									min-width: clamp(280px, 35%, 450px);
-									max-width: clamp(300px, 40%, 500px);
-									width: auto;
+									border-radius: 10px;
+									padding: 25px;
+									min-width: 400px;
+									max-width: 600px;
+									width: 500px;
 									box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 									text-align: center;
+									p{
+										text-align: center;
+										margin-bottom: 5px;
+									}
 								}
 
 
@@ -891,6 +980,7 @@
 									line-height: 1.4;
 									// margin-bottom: 10px;
 									text-align: center;
+									margin: 20px 0;
 								}
 
 								.modal-question {

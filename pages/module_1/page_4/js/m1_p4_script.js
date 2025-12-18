@@ -107,19 +107,26 @@ function addSectionData() {
                 _pageData.sections[sectionCnt - 1].content.length
             );
 
-            htmlObj += '<div class="sub-section video">';
+            // htmlObj += '<div class="sub-section video">';
+
+            // htmlObj +=
+            //     '<div class="video-holder"><video class="video-js vjs-default-skin vjs-big-play-centered video-player" id="video-player-' +
+            //     sectionCnt +
+            //     '" poster="" width="1024" height="580" codecs="avc1.4D401E, mp4a.40.2"><source src="' +
+            //     _pageData.sections[sectionCnt - 1].content.videoURL +
+            //     '" type="video/mp4"></source><track kind="captions" src="" srclang="en" label="English" default></video><button class="play-btn" aria-label="Play Videos" tabindex="0"><div class="play-icon"></div></button><div>';
+            
+            // htmlObj += "</div>";
+            // htmlObj += "</div>";
+
+
+                        htmlObj += '<div class="sub-section video">';
 
             htmlObj +=
-                '<div class="video-holder"><video class="video-js vjs-default-skin vjs-big-play-centered video-player" id="video-player-' +
-                sectionCnt +
-                '" poster="" width="1024" height="580" codecs="avc1.4D401E, mp4a.40.2"><source src="' +
+                '<div class="video-holder"><video controls autoplay muted loop playsinline  preload="auto"class="video" id="video-player-' +sectionCnt +'" poster=""><source src="' +
                 _pageData.sections[sectionCnt - 1].content.videoURL +
                 '" type="video/mp4"></source><track kind="captions" src="" srclang="en" label="English" default></video><button class="play-btn" aria-label="Play Videos" tabindex="0"><div class="play-icon"></div></button><div>';
-            for (
-                let k = 0;
-                k < _pageData.sections[sectionCnt - 1].content.length;
-                k++
-            ) { }
+            
             htmlObj += "</div>";
             htmlObj += "</div>";
 
@@ -131,7 +138,7 @@ function addSectionData() {
                 .find(".content")
                 .find(".content-bg")
                 .append('<div class="header"><button id="home" data-tooltip="Back"></button></div><div class="body">' + htmlObj + '</div>');
-                onVideoPlayHandler();
+                // onVideoPlayHandler();
 
             // setTimeout(function(){
             //     $('.right-section').css({

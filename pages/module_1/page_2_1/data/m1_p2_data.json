@@ -1,0 +1,149 @@
+{
+	"mainAudio": {
+		"audioSRC": "assets/audios/5sec.mp3",
+		"isEmptyAudio": false,
+		"audioIndex": 0
+	},
+	"bgImgs": [
+		{
+			"imageSRC": "pages/module_1/page_2/video/video_1.mp4",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/icon01_done.svg",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/icon02_done.svg",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/icon03_done.svg",
+			"altText": ""
+		}
+	],
+	"imgCollage": {
+		"desktop": [
+			{
+				"imageSRC": "",
+				"altText": ""
+			}
+		],
+		"portrait": [
+			{
+				"imageSRC": "",
+				"altText": ""
+			}
+		]
+	},
+	"bgVid": [
+		{
+			"videoSRC": ""
+		}
+	],
+	"sections": [
+		{
+			"slideType": "overview",
+			"slideTitle": "overview",
+			"headerTitle": "Numeracy<br/><span>Simulation</span>",
+			"ost": "",
+			"insText": "​",
+			"globalInfo":"​pages/module_1/page_2/images/global_info.png",
+			"infoBtnImg1":"pages/module_1/page_2/images/btn_info_1.png",	
+			"globalInfo2":"pages/module_1/page_2/images/btn_info_2.png",
+			"infoBtnImg3":"pages/module_1/page_2/images/btn_info_3.png",				
+		  	"footer":"Copyright @ 2026 Macmillan Education India Private Limited. All rights reserved.",
+			 "audio1": "pages/module_1/page_2/audios/audio1.mp3",
+			 "audio2": "pages/module_1/page_2/audios/audio2.mp3",
+			 "audio3": "pages/module_1/page_2/audios/audio3.mp3",
+			"content": {
+				"text": [
+					""
+				],
+				"sectionArray": [
+					{
+						"imageURL": "pages/module_1/page_2/images/icon01_done.svg",
+						"titleText": "Test",
+						"imgVisisted": "pages/module_1/page_2/images/icon01_done.svg",
+						"imgActive": "pages/module_1/page_2/images/icon01_done.svg",
+						"sectionID": 1,
+						"sectionIndx": 1,
+						"audioSRC": "assets/audios/5sec.mp3",
+						"isEmptyAudio": false,
+						"audioIndex": 0
+					},
+					{
+						"imageURL": "pages/module_1/page_2/images/icon02_done.svg",
+						"titleText": "Simulation​",
+						"imgVisisted": "pages/module_1/page_2/images/icon02_done.svg",
+						"imgActive": "pages/module_1/page_2/images/icon02_done.svg",
+						"sectionID": 2,
+						"sectionIndx": 2,
+						"audioSRC": "assets/audios/5sec.mp3",
+						"isEmptyAudio": false,
+						"audioIndex": 1
+					},
+					{
+						"imageURL": "pages/module_1/page_2/images/icon03_done.svg",
+						"titleText": "Do it yourself",
+						"imgVisisted": "pages/module_1/page_2/images/icon03_done.svg",
+						"imgActive": "pages/module_1/page_2/images/icon03_done.svg",
+						"sectionID": 3,
+						"sectionIndx": 3,
+						"audioSRC": "assets/audios/5sec.mp3",
+						"isEmptyAudio": false,
+						"audioIndex": 2
+					}
+				]
+			}
+		}
+	],
+	"popup": {
+		"header": "Story Time!",
+		"text_1":"Join Tuffy the baby elephant and Mira the monkey on a fun jungle adventure!",
+		"text_2":"Watch how they discover what is <span>“heavy”</span> and what is <span>“light”</span> while exploring the forest together.",
+		"close":"X",
+		"closeButton": "✖",
+		"muteIcon": "🔇"
+	},
+	"popup2": {
+		"header": "Welcome to the <span>Heavy</span>-<span>Light</span> Simulation!",
+		"text_1":"Tap on two objects to put them on the see-saw! Have fun learning with the see-saw!",
+		"text_2":"",
+		"close":"X",
+		"closeButton": "✖",
+		"muteIcon": "🔇"
+	},
+	"popup3": {
+		"header": "Games Time!",
+		"text_1":"Let’s have some fun!",
+		"text_2":"Compare objects and choose which one is heavy or light.",
+		"close":"X",
+		"closeButton": "✖",
+		"muteIcon": "🔇"
+	},
+	"transcriptText": [
+		[
+			"There are several key elements that must be addressed during an internal control test. Each button here represents a fundamental aspect of the internal control testing process.",
+			"To learn more about each subject, Select the respective button."
+		],
+		[
+			""
+		],
+		[
+			""
+		],
+		[
+			""
+		]
+	],
+	"ccText": [
+		[
+			{
+				"text": "",
+				"startTime": 0,
+				"endTime": 6.2
+			}
+		]
+	]
+}

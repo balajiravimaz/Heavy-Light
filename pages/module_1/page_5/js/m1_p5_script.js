@@ -151,15 +151,15 @@ function addSectionData() {
       popupDiv += '<div class="popup-wrap">'
 
       popupDiv += '<div class="popBtns">'
-      popupDiv += '<button id="refresh"></button>'
-      popupDiv += '<button id="homeBack"></button>'
+      popupDiv += '<button id="refresh" data-tooltip="Replay"></button>'
+      popupDiv += '<button id="homeBack" data-tooltip="Back"></button>'
       popupDiv += '</div>'
       popupDiv += '</div>'
       popupDiv += '</div>'
 
       popupDiv +=`<div id="introPopup-1"><div class="popup-content">
                     <button class="introPopAudio mute" onclick="togglePop1Audio(this, '${_pageData.sections[sectionCnt - 1].infoAudio}')"></button>
-                    <button class="introPopclose" onClick="closePopup('introPopup-1')"></button>
+                    <button class="introPopclose" data-tooltip="Close" onClick="closePopup('introPopup-1')"></button>
                     <img src="${_pageData.sections[sectionCnt - 1].infoImg}" alt="">
                 </div>
             </div>`;
@@ -168,10 +168,10 @@ function addSectionData() {
     <div class="popup-content modal-box">
       <h2 class="modal-title">Oops!</h2>
       <div class="modal-message">
-        <p>If you leave the simulation then you</p>
-        <p>have to start from beginning.</p>
+        <p>If you leave the simulation then you ave to start from beginning.</p>
+        <p class="modal-question">Are you sure you want to leave?</p>
       </div>
-      <p class="modal-question">Are you sure you want to leave?</p>
+    
       <div class="modal-buttons">
         <button id="stay-btn" class="modal-btn" onClick="stayPage()">Stay</button>
         <button id="leave-btn" class="modal-btn" onClick="leavePage()">Leave</button>

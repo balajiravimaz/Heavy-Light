@@ -400,12 +400,12 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   height: 83px;
 }
 #section-1 .content-holder .col-left .content .content-bg > .body .game-container .objects-container #chair {
-  width: 75px;
-  height: 145px;
+  width: 62px;
+  height: 122px;
 }
 #section-1 .content-holder .col-left .content .content-bg > .body .game-container .objects-container #flower {
   width: 80px;
-  height: 107px;
+  height: 90px;
 }
 #section-1 .content-holder .col-left .content .content-bg > .body .game-container .objects-container #sponge {
   width: 95px;
@@ -541,6 +541,10 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   border-radius: 10px;
   background: #fff;
   border: 3px solid #5c5c62;
+  padding: inherit !important;
+  text-align: inherit !important;
+  left: inherit !important;
+  box-shadow: inherit !important;
 }
 #section-1 .content-holder .popup-circle span {
   color: red;
@@ -612,7 +616,8 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   cursor: pointer;
   transform: inherit !important;
   font-weight: normal;
-  left: inherit;
+  left: inherit !important;
+  font-family: inherit !important;
 }
 #section-1 .content-holder #play {
   position: relative;

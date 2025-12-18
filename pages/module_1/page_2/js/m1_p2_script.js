@@ -288,19 +288,28 @@ function onClickins_1_popup(){
     }
 
     $('.ins_1_popup').hide();
+
+    $("#ins-1-audio-unmute").hide();
+    $('#ins-1-audio-mute').show();
 }
 
 function onClickins_1_popup_show(){
     $('.ins_1_popup').css("display","flex");
-    onClickAudioHandler2.call($('.inst-1-audio')[0], new Event('click'));
+    //onClickAudioHandler2.call($('.inst-1-audio')[0], new Event('click'));
 }
 
 function onClickpauseAudio1(){
-    if (currentAudio) {
-        currentAudio.pause();   
-        //alert('Audio Paused');  
+    
+    onClickAudioHandler2.call($('.inst-1-audio')[0], new Event('click'));
+     if (currentAudio) {
+        currentAudio.play();   
+        $(currentAudio).off('ended').on('ended', function () {
+             $("#ins-1-audio-unmute").hide();
+             $('#ins-1-audio-mute').show();
+        });
+ 
     } else {
-        console.log('No audio is currently playing');
+        console.log('No audio is currently available');
     }
 
     $("#ins-1-audio-unmute").show();
@@ -309,21 +318,18 @@ function onClickpauseAudio1(){
 
 function onClickplayAudio1(){
     if (currentAudio) {
-        currentAudio.play();   
-        //alert('Audio Playing');  
+        currentAudio.pause();   
+        //alert('Audio Paused');  
     } else {
-        console.log('No audio is currently available');
+        console.log('No audio is currently playing');
     }
 
     $("#ins-1-audio-mute").show();
     $("#ins-1-audio-unmute").hide();
 }
-//Ins_2
-function onClickins_2_popup_show(){
-    
-    onClickAudioHandler2.call($('.inst-2-audio')[0], new Event('click'));
-    $('.ins_2_popup').show();
-}
+
+//ins2 
+
 function onClickins_2_popup(){
     if (currentAudio) {
         currentAudio.pause();   
@@ -331,15 +337,30 @@ function onClickins_2_popup(){
     } else {
         console.log('No audio is currently playing');
     }
+
     $('.ins_2_popup').hide();
+
+    $("#ins-2-audio-unmute").hide();
+    $('#ins-2-audio-mute').show();
+}
+
+function onClickins_2_popup_show(){
+    $('.ins_2_popup').css("display","flex");
+    //onClickAudioHandler2.call($('.inst-2-audio')[0], new Event('click'));
 }
 
 function onClickpauseAudio2(){
-    if (currentAudio) {
-        currentAudio.pause();   
-        //alert('Audio Paused');  
+    
+    onClickAudioHandler2.call($('.inst-2-audio')[0], new Event('click'));
+     if (currentAudio) {
+        currentAudio.play();   
+        $(currentAudio).off('ended').on('ended', function () {
+             $("#ins-2-audio-unmute").hide();
+             $('#ins-2-audio-mute').show();
+        });
+ 
     } else {
-        console.log('No audio is currently playing');
+        console.log('No audio is currently available');
     }
 
     $("#ins-2-audio-unmute").show();
@@ -348,23 +369,18 @@ function onClickpauseAudio2(){
 
 function onClickplayAudio2(){
     if (currentAudio) {
-        currentAudio.play();   
-        //alert('Audio Playing');  
+        currentAudio.pause();   
+        //alert('Audio Paused');  
     } else {
-        console.log('No audio is currently available');
+        console.log('No audio is currently playing');
     }
 
     $("#ins-2-audio-mute").show();
     $("#ins-2-audio-unmute").hide();
-    
 }
 
-//Ins_3
-function onClickins_3_popup_show(){
-    
-    onClickAudioHandler2.call($('.inst-3-audio')[0], new Event('click'));
-    $('.ins_3_popup').show();
-}
+// Ins_3
+
 function onClickins_3_popup(){
     if (currentAudio) {
         currentAudio.pause();   
@@ -372,15 +388,30 @@ function onClickins_3_popup(){
     } else {
         console.log('No audio is currently playing');
     }
+
     $('.ins_3_popup').hide();
+
+    $("#ins-3-audio-unmute").hide();
+    $('#ins-3-audio-mute').show();
+}
+
+function onClickins_3_popup_show(){
+    $('.ins_3_popup').css("display","flex");
+    //onClickAudioHandler3.call($('.inst-3-audio')[0], new Event('click'));
 }
 
 function onClickpauseAudio3(){
-    if (currentAudio) {
-        currentAudio.pause();   
-        //alert('Audio Paused');  
+    
+    onClickAudioHandler2.call($('.inst-3-audio')[0], new Event('click'));
+     if (currentAudio) {
+        currentAudio.play();   
+        $(currentAudio).off('ended').on('ended', function () {
+             $("#ins-3-audio-unmute").hide();
+             $('#ins-3-audio-mute').show();
+        });
+ 
     } else {
-        console.log('No audio is currently playing');
+        console.log('No audio is currently available');
     }
 
     $("#ins-3-audio-unmute").show();
@@ -389,15 +420,14 @@ function onClickpauseAudio3(){
 
 function onClickplayAudio3(){
     if (currentAudio) {
-        currentAudio.play();   
-        //alert('Audio Playing');  
+        currentAudio.pause();   
+        //alert('Audio Paused');  
     } else {
-        console.log('No audio is currently available');
+        console.log('No audio is currently playing');
     }
 
     $("#ins-3-audio-mute").show();
     $("#ins-3-audio-unmute").hide();
-    
 }
 
 var currentAudio = null; // Global reference to the current audio

@@ -55,13 +55,14 @@ function _pageLoaded() {
     addSectionData();
 
     
-    //assignAudio(_audioId, _audioIndex, _pageAudioSync, _forceNavigation, _videoId, _popupAudio, _reloadRequired);
+    assignAudio(_audioId, _audioIndex, _pageAudioSync, _forceNavigation, _videoId, _popupAudio, _reloadRequired);
     pagePreLoad();
     setTimeout(function () {
         initPageAnimations();
         showVisitedModule();
     }, 1500)
 
+    console.log("_audioId",_audioId);
 
 }
 
@@ -524,7 +525,7 @@ function withAudioSync() {
 
          var boxTiming1 = [0.5, 0.9, 1.2, 1.5]
         _tweenTimeline.add(animateFadeIn(body.find('.text-container').find('.ins-txt '), 0.5).play(), 1)
-        _tweenTimeline.add(animateFadeOut(body.find('.dummypatch '), 0.5).play(), 1)
+        _tweenTimeline.add(animateFadeOut(body.find('.dummy-box'), 0.5).play(), 6)
         for (var k = 0; k < boxTiming1.length; k++) {
             _tweenTimeline.add(animateFadeIn(body.find('.box').eq(k), 0.5, 0).play(), boxTiming1[k])
         }
