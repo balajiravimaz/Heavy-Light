@@ -9,7 +9,7 @@ var _pagePreloadArray = {
 var jsonSRC = "pages/module_1/page_5/data/m1_p5_data.json?v=";
 _pageAudioSync = true;
 _forceNavigation = false;
-_audioRequired = false;
+_audioRequired = true;
 _videoRequired = false;
 storeCurrentAudioTime = 0;
 _popupAudio = false;
@@ -17,8 +17,7 @@ _reloadRequired = true;
 _globalCicked = 0;
 _btnClicked = 0;
 _currentAudio = null;
-_totalClicked = 0;
-var _loadText = 2;
+_totalClicked=0;
 
 _checkAudioFlag = false;
 _tweenTimeline = null;
@@ -72,11 +71,9 @@ function _pageLoaded() {
 // -------- adding slide data ------------
 function addSectionData() {
   totalSection = _pageData.sections.length;
-
   for (let n = 0; n < _pageData.sections.length; n++) {
     sectionCnt = n + 1;
     if (sectionCnt == 1) {
-      playBtnSounds(_pageData.sections[sectionCnt - 1].content.replayAudios[0]);
       // $("#section-" + sectionCnt)
       //   .find(".content-holder")
       //   .find(".col-left")
@@ -106,8 +103,8 @@ function addSectionData() {
       htmlContent += '<div class="wrap">';
 
       htmlContent += `<div class="text"><p class="ost" tabindex="0">${_pageData.sections[sectionCnt - 1].ost
-        }<button class="wrapTextaudio playing" id="wrapTextaudio_1" onClick="replayLastAudio(this)"></button></p><p class="inst">${_pageData.sections[sectionCnt - 1].iText
-        }<button class="wrapTextaudio playing" id="wrapTextaudio_2"  onClick="replayLastAudio(this)"></button></p></div>`;
+        }<button class="wrapTextaudio playing" disabled="true" onClick="replayLastAudio(this)"></button></p><p class="inst">${_pageData.sections[sectionCnt - 1].iText
+        }<button class="wrapTextaudio playing" id="wrapTextaudio_1" disabled="true" onClick="replayLastAudio(this)"></button></p></div>`;
 
       htmlContent += '<div class="audio"></div>';
 
@@ -149,7 +146,7 @@ function addSectionData() {
       let headerConent = '';
       let popupDiv = '';
 
-      headerConent += `<div class="confetti"></div><div class="header"><div class="navBtns"><button id="home" data-tooltip="Back"></button><button id="music" class="music playing" data-tooltip="Music"></button><button id="info" data-tooltip="Information"></button><button class="play" id="playPauseBtn" data-tooltip="Play"></button></div><div class="titleText"><img src="${_pageData.sections[sectionCnt - 1].headerImg}"></div></div>`
+      headerConent += `<div class="confetti"></div><div class="header"><div class="navBtns"><button id="home" data-tooltip="Back"></button><button id="music" class="music playing" data-tooltip="Music"></button><button id="info" data-tooltip="Information"></button></div><div class="titleText"><img src="${_pageData.sections[sectionCnt - 1].headerImg}"></div></div>`
       popupDiv += '<div class="popup">'
       popupDiv += '<div class="popup-wrap">'
 
@@ -160,14 +157,14 @@ function addSectionData() {
       popupDiv += '</div>'
       popupDiv += '</div>'
 
-      popupDiv += `<div id="introPopup-1"><div class="popup-content">
+      popupDiv +=`<div id="introPopup-1"><div class="popup-content">
                     <button class="introPopAudio mute" onclick="togglePop1Audio(this, '${_pageData.sections[sectionCnt - 1].infoAudio}')"></button>
                     <button class="introPopclose" data-tooltip="Close" onClick="closePopup('introPopup-1')"></button>
                     <img src="${_pageData.sections[sectionCnt - 1].infoImg}" alt="">
                 </div>
             </div>`;
 
-      popupDiv += `<div id="home-popup" class="popup-home" role="dialog" aria-label="Exit confirmation" aria-hidden="false">
+            popupDiv +=`<div id="home-popup" class="popup-home" role="dialog" aria-label="Exit confirmation" aria-hidden="false">
     <div class="popup-content modal-box">
       <h2 class="modal-title">Oops!</h2>
       <div class="modal-message">
@@ -209,121 +206,105 @@ function addSectionData() {
 
         onClickHanlder(e);
       });
-      $("#refresh").on("click", function () {
+      $("#refresh").on("click", function(){
         jumtoPage(3);
       });
-      $("#homeBack").on("click", function () {
+      $("#homeBack").on("click", function(){
         jumtoPage(0)
       });
-      $("#home").on("click", function () {
+      $("#home").on("click", function(){
         $("#home-popup").css('display', 'flex');
       });
-      $(".music").on("click", function (event) {
-        let el = event.currentTarget;
-        playClickThen(function () {
+      $(".music").on("click", function(event){
+        let el=event.currentTarget;
+        playClickThen(function() {
           toggleAudio(el);
         })
-      });
-      const btnPlayPause = document.getElementById("playPauseBtn");
-
-      
-      // _currentAudio = _pageData.sections[sectionCnt - 1].initAudio;
+      }); 
+      _currentAudio = _pageData.sections[sectionCnt - 1].initAudio;
       // $(".wrapTextAudio").on("click", replayLastAudio);
 
       // IdleAudioManager.init(_pageData.sections[sectionCnt - 1].idleAudio); 
-      $('#courseAudio').on('ended', function () {
-        IdleAudioManager.init(_pageData.sections[sectionCnt - 1].idleAudio);
-      })
+          $('#courseAudio').on('ended', function() {
+            IdleAudioManager.init(_pageData.sections[sectionCnt - 1].idleAudio); 
+          })
 
-      document.querySelector("#info").addEventListener("click", function (event) {
-        const el = event.currentTarget;
-        playClickThen(function () {
-          // console.log("its wokring")
-          $("#introPopup-1").css('display', 'flex')
-          $("#introPopup-1").css('opacity', '1')
-          $(".introPopAudio").removeClass('playing');
-          $(".introPopAudio").addClass('mute');
-
-
-          // $(".introPopAudio").on("click",function(){  
-          //     console.log("its working");
-
-          // })       
-        });
-
-      });
+              document.querySelector("#info").addEventListener("click", function (event) {
+    const el = event.currentTarget;
+    playClickThen(function() {
+      // console.log("its wokring")
+        $("#introPopup-1").css('display','flex')
+        $("#introPopup-1").css('opacity','1') 
+        $(".introPopAudio").removeClass('playing');
+    $(".introPopAudio").addClass('mute');
+    
+  
+    // $(".introPopAudio").on("click",function(){  
+    //     console.log("its working");
+        
+    // })       
+    });
+    
+});
 
       // setCSS(sectionCnt);
     }
   }
-  //    $("#courseAudio").on("ended", function() {        
-  //       console.log("Course audio was ended");
-  //       $("#wrapTextaudio_1").prop('disabled', false);
-  // });
+   $("#courseAudio").on("ended", function() {        
+      console.log("Course audio was ended");
+      $("#wrapTextaudio_1").prop('disabled', false);
+});
 }
 
-function togglePlayPause(){
-  btnPlayPause.addEventListener("click", () => {
-        const isPause = btn.classList.toggle("pause");
-        btnPlayPause.classList.toggle("play", !isPause);
-
-        btnPlayPause.dataset.tooltip = isPause ? "Pause" : "Play";
-      });
-}
-
-function stayPage() {
+function stayPage(){
   $("#home-popup").hide();
 }
-function leavePage() {
+function leavePage(){
   jumtoPage(0);
 }
 
 function jumtoPage(pageNo) {
-
+  
   _controller.pageCnt = pageNo;
   _controller.updateViewNow();
 }
 
-function replayLastAudio(btnElement) {
-  var btnId = btnElement.getAttribute("id");
-  var number = btnId.split("_")[1];
-
-  var index = parseInt(number, 10) - 1;
-  console.log(btnElement, index, "Audio plaing",);
-  togglePop1Audio(btnElement, _pageData.sections[sectionCnt - 1].content.replayAudios[index]);
+function replayLastAudio(btnElement){
+  console.log(_currentAudio,btnElement, "Audio plaing", _currentAudio);
+  togglePop1Audio(btnElement, _currentAudio);
   disableButtons();
-
-  audioEnd(function () {
+  // playBtnSounds(_currentAudio);
+  // disableButtons();
+  audioEnd(function(){
     console.log("enabling buttons");
     enableButtons();
   })
 }
 
 function togglePop1Audio(el, src) {
-  const audio = document.getElementById("simulationAudio");
+    const audio = document.getElementById("simulationAudio");
 
-  // If this is a different audio source, load it
-  if (audio.src !== el.baseURI + src) {
-    audio.src = src;
-    audio.load();
-    audio.muted = false;
-    // Reset all buttons' states (optional)
-    audio.play();
-    el.classList.replace("mute", "playing");
-    return;
-  }
+    // If this is a different audio source, load it
+    if (audio.src !== el.baseURI + src) {
+        audio.src = src;
+        audio.load();
+        audio.muted = false;
+        // Reset all buttons' states (optional)
+        audio.play();
+        return;
+    }
 
-  // Toggle play/pause for the same audio
-  if (audio.paused) {
-    audio.play();
-    el.classList.replace("mute", "playing");
-  } else {
-    audio.pause();
-    audio.currentTime = 0;
-    el.classList.replace("playing", "mute");
-    console.log("Enabling buttons");
-    enableButtons();
-  }
+    // Toggle play/pause for the same audio
+    if (audio.paused) {
+        audio.play();
+        el.classList.replace("mute", "playing");
+    } else {
+        audio.pause();
+        audio.currentTime = 0;        
+        el.classList.replace("playing", "mute");
+        console.log("Enabling buttons");
+        enableButtons();
+    }
 }
 
 
@@ -333,7 +314,7 @@ var IdleAudioManager = (function () {
   var idleInterval = null;
   var idleTimeout = null;
   var audioIdle = null;
-
+  
   var activityEvents = ['mousemove', 'keydown', 'scroll', 'touchstart'];
 
   function init(audioSrc) {
@@ -435,26 +416,26 @@ function playBtnSounds(soundFile) {
 }
 
 function toggleTextAudio(el, src) {
-  const audio = document.getElementById("simulationAudio");
+    const audio = document.getElementById("simulationAudio");
 
-  // If this is a different audio source, load it
-  if (audio.src !== el.baseURI + src) {
-    audio.src = src;
-    audio.load();
-    audio.muted = false;
-    audio.play();
-    return;
-  }
+    // If this is a different audio source, load it
+    if (audio.src !== el.baseURI + src) {
+        audio.src = src;
+        audio.load();
+        audio.muted = false;
+        audio.play();
+        return;
+    }
 
-  // Toggle play/pause for the same audio
-  if (audio.paused) {
-    audio.play();
-    el.classList.replace("mute", "playing");
-  } else {
-    audio.pause();
-    audio.currentTime = 0;
-    el.classList.replace("playing", "mute");
-  }
+    // Toggle play/pause for the same audio
+    if (audio.paused) {
+        audio.play();
+        el.classList.replace("mute", "playing");
+    } else {
+        audio.pause();
+        audio.currentTime = 0;
+        el.classList.replace("playing", "mute");
+    }
 }
 
 function audioEnd(callback) {
@@ -477,7 +458,7 @@ function onClickHanlder(e) {
   var imgWeight = Number(parentBtn.data("weight"));
   var imgSrc = parentBtn.data("url");
 
-  // _currentAudio = _pageData.sections[sectionCnt - 1].content.ostAudios[_totalClicked].audioSRC;
+  _currentAudio = _pageData.sections[sectionCnt - 1].content.ostAudios[_totalClicked].audioSRC;
   _totalClicked++;
   // Disable button
   parentBtn.prop("disabled", true);
@@ -495,19 +476,19 @@ function onClickHanlder(e) {
 
   // Create moving image
   var $img = $(`<img src="${imgSrc}" class="movingImg">`).appendTo("body");
-  $img.css({ position: "absolute", zIndex: 9999 });
+$img.css({ position: "absolute", zIndex: 9999 });
 
-  // Get exact position of image inside button
-  var imgInsideBtn = parentBtn.find("img")[0]; // the <img> element inside the button
-  var imgRect = imgInsideBtn.getBoundingClientRect();
-  var scrollTop = $(window).scrollTop();
-  var scrollLeft = $(window).scrollLeft();
+// Get exact position of image inside button
+var imgInsideBtn = parentBtn.find("img")[0]; // the <img> element inside the button
+var imgRect = imgInsideBtn.getBoundingClientRect();
+var scrollTop = $(window).scrollTop();
+var scrollLeft = $(window).scrollLeft();
 
-  // Set starting position of moving image
-  $img.css({
+// Set starting position of moving image
+$img.css({
     left: imgRect.left + scrollLeft - 70,
     top: imgRect.top + scrollTop
-  });
+});
 
 
   // Target position
@@ -526,7 +507,7 @@ function onClickHanlder(e) {
         position: "relative",
         left: 0,
         top: 5,
-
+        
       });
 
       // Store weights
@@ -572,7 +553,7 @@ function onClickHanlder(e) {
 
 function checkHeavyLight(leftWeight, rightWeight) {
   var imgObjects = _pageData.sections[sectionCnt - 1].content.imgObjects;
-
+  
 
   const leftObj = imgObjects.find(o => o.weight === leftWeight);
   const rightObj = imgObjects.find(o => o.weight === rightWeight);
@@ -621,7 +602,7 @@ function playNextOst() {
 
 
   if (_globalCicked == _pageData.sections[sectionCnt - 1].content.imgObjects.length - 1) {
-    $(".animations").addClass('show');
+    $(".animations").addClass('show');  
     showEndAnimations();
     setTimeout(function () {
       $(".animations").removeClass('show');
@@ -633,16 +614,16 @@ function playNextOst() {
 
     });
 
-  }
+  } 
   else if (_globalCicked == _pageData.sections[sectionCnt - 1].content.imgObjects.length - 2) {
-    $(".image-container").addClass('completed');
+   $(".image-container").addClass('completed');   
   }
   else {
     loadText(_pageData.sections[sectionCnt - 1].content.ostAudios[_globalCicked].ost, _pageData.sections[sectionCnt - 1].content.ostAudios[_globalCicked].duration);
     audioEnd(function () {
       enableButtons();
     });
-  }
+  }  
   playBtnSounds(_pageData.sections[sectionCnt - 1].content.ostAudios[_globalCicked].audioSRC);
 
 }
@@ -742,21 +723,19 @@ function loadText(txtArr, duration = 2000) {
 
   if (!txtArr || txtArr.length === 0) return;
 
-  _loadText++;
   const pTags = txtArr.map(text => {
     const p = document.createElement("p");
     p.innerHTML = text;
-    p.id
     console.log(_totalClicked, _pageData.sections[sectionCnt - 1].content.imgObjects.length, "ttoal")
-    if (_totalClicked !== _pageData.sections[sectionCnt - 1].content.imgObjects.length) {
-      p.innerHTML += `<button class="wrapTextaudio playing" id="wrapTextaudio_${_loadText}"; onClick="replayLastAudio(this)"></button>`;
+    if(_totalClicked !== _pageData.sections[sectionCnt - 1].content.imgObjects.length ){
+      p.innerHTML +='<button class="wrapTextaudio playing" onClick="replayLastAudio(this)"></button>';
     }
     if (_globalCicked == _pageData.sections[sectionCnt - 1].content.imgObjects.length - 1) {
       p.style.fontSize = '55px';
       $(".wrap").css('max-width', '750px')
     }
     container.appendChild(p);
-
+    
     return p;
   });
 

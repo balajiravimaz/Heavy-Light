@@ -25,7 +25,7 @@
       "headerTitle": "Heavy - Light",
       "headerImg":"pages/module_1/page_5/images/header_title.png",
       "ost": "<span>Welcome</span> to the playground, look there is a <span>see-saw</span> waiting for us.",
-      "iText": "<span>Tap</span> on any object to begin.",
+      "iText": ["<span>Tap</span> on any object to begin."],
       "idleAudio":"pages/module_1/page_5/audios/idle_audio.mp3",
       "infoAudio":"pages/module_1/page_5/audios/info_audio.mp3",
       "infoImg":"pages/module_1/page_5/images/simulation_pop.png",

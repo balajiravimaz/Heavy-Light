@@ -370,7 +370,9 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   color: red;
   display: contents;
 }
-#section-1 .content-holder .col-left .content .content-bg .content-style > .body .animat-container .left-side .wrap .ost,
+#section-1 .content-holder .col-left .content .content-bg .content-style > .body .animat-container .left-side .wrap .ost {
+  opacity: 0;
+}
 #section-1 .content-holder .col-left .content .content-bg .content-style > .body .animat-container .left-side .wrap .inst {
   opacity: 0;
 }
@@ -398,6 +400,8 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   position: relative;
   width: 25px;
   height: 25px;
+  min-width: 25px;
+  max-width: 25px;
   cursor: pointer;
   top: 3px;
   margin-left: 5px;

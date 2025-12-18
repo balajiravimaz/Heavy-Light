@@ -403,7 +403,9 @@
 											}
 										}
 
-										.ost,
+										.ost{
+											opacity: 0; 
+										}
 										.inst {
 											opacity: 0;
 										}
@@ -434,6 +436,8 @@
 													position: relative;
 													width: 25px;
 													height: 25px;
+													min-width: 25px;
+													max-width: 25px;
 													cursor: pointer;
 													top: 3px;
 													margin-left: 5px;

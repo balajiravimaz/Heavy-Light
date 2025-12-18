@@ -527,43 +527,43 @@
         			  document.getElementById("f_wrapper").style.transformOrigin = "top left";
         			}
         			// ----------------- Resize Functionality ------------------------
-        				window.onload = function () {
-        			          setTimeout(fnResize, 150);
-        			      }
-        			      window.onresize = function () {
-        			          setTimeout(fnResize, 150);
-        			      }
+        				// window.onload = function () {
+        			    //       setTimeout(fnResize, 150);
+        			    //   }
+        			    //   window.onresize = function () {
+        			    //       setTimeout(fnResize, 150);
+        			    //   }
         			
-        			      function fnResize() {
-        			          activityScaleFn();
-        			          document.getElementById("f_wrapper").style.transform = "scale( "+activityScaleX+")";
-        			          if(isIE11) {
-        			              $('body').css({'display':'block'})
-        			              document.getElementById("f_wrapper").style.transformOrigin = "top left";
-        			          }
-        			          //document.getElementById("f_wrapper").style.transformOrigin = "top left";
-        			      }
+        			    //   function fnResize() {
+        			    //       activityScaleFn();
+        			    //       document.getElementById("f_wrapper").style.transform = "scale( "+activityScaleX+")";
+        			    //       if(isIE11) {
+        			    //           $('body').css({'display':'block'})
+        			    //           document.getElementById("f_wrapper").style.transformOrigin = "top left";
+        			    //       }
+        			    //       //document.getElementById("f_wrapper").style.transformOrigin = "top left";
+        			    //   }
         			
-        			      function activityScaleFn() {
-        			          var winWidth = $(window).outerWidth(); //document.getElementById('f_wrapper').offsetWidth;
-        			          var winHight = $(window).outerHeight();
-        			          var pageWidth = 1366
-        			          var pageHeight = 768
+        			    //   function activityScaleFn() {
+        			    //       var winWidth = $(window).outerWidth(); //document.getElementById('f_wrapper').offsetWidth;
+        			    //       var winHight = $(window).outerHeight();
+        			    //       var pageWidth = 1366
+        			    //       var pageHeight = 768
         			
-        			          activityScaleX = Math.min(winWidth / pageWidth);
-        			          activityScaleY = Math.min(winHight / pageHeight);
-        			          if (activityScaleX > 1) {
-        			              activityScaleX = 1;
-        			          }
-        			          if (activityScaleY > 1) {
-        			              activityScaleY = 1;
-        			          }
-        			          scaleTo = (winWidth == pageWidth) ? activityScaleY : activityScaleX;
-        			          scaleTo = (winWidth < pageWidth) ? activityScaleX : activityScaleY;
-        			          scaleTo = (winWidth > pageHeight) ? activityScaleY : activityScaleX;
-        			          //console.log("winWidth::: ", winWidth, $("#f_wrapper").outerWidth());
+        			    //       activityScaleX = Math.min(winWidth / pageWidth);
+        			    //       activityScaleY = Math.min(winHight / pageHeight);
+        			    //       if (activityScaleX > 1) {
+        			    //           activityScaleX = 1;
+        			    //       }
+        			    //       if (activityScaleY > 1) {
+        			    //           activityScaleY = 1;
+        			    //       }
+        			    //       scaleTo = (winWidth == pageWidth) ? activityScaleY : activityScaleX;
+        			    //       scaleTo = (winWidth < pageWidth) ? activityScaleX : activityScaleY;
+        			    //       scaleTo = (winWidth > pageHeight) ? activityScaleY : activityScaleX;
+        			    //       //console.log("winWidth::: ", winWidth, $("#f_wrapper").outerWidth());
         			          //console.log(' >>>  	',activityScaleY, scaleTo)
-        			      }
+        			    //   }
         			//-----------------
     </script>
     <script>

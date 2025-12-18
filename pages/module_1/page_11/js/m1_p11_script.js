@@ -99,7 +99,7 @@ function addSectionData() {
 
             let htmlObj = '',
                 imgObj =
-                    "<div class='game-completed'> <div class='game-completed-popup'><div class='replay'></div><div class='home'></div></div> </div>" +
+                    "<div class='game-completed'> <div class='game-completed-popup'><button class='replay' data-tooltip='Replay'></button><button data-tooltip='Home' class='home'></button></div> </div>" +
                     "<div class='game-container'>" +
                     "<div class='dummy-box'></div>" +
                     "<div class='box'>" +
@@ -123,26 +123,20 @@ function addSectionData() {
             $('#section-' + sectionCnt).find('.content-holder').find('.col-left').find('.content').find('.content-bg').append('<div class="header-container"><div class="navBtns"><button id="home" data-tooltip="Back"></button><button class="music playing" data-tooltip="Music"></button></div><div class="titleText"><img src="pages/module_1/page_11/images/heading-text.png"></div></div><div class="body"><div class="dummypatch"></div><div class="top-alignText"><div class="instruction">' + sectionData.instruction + '</div><div class="intro-audio" data-audio=' + gameData.audio.instruction + '> </div><div class="completed-audio" data-audio=' + gameData.audio.success + '> </div><div class="completed-correct" data-audio=' + gameData.audio.correct + '> </div><div class="completed-wrong" data-audio=' + gameData.audio.wrong + '> </div></div><div class="image-container">' + imgObj + '</div></div><audio id="instructionAudio"></audio>');
 
 
-            $('.content-holder').append(`<div class="overlay">
-
-                        <div class="overlay-style">
-                            <!-- Mute Icon -->
-                            <div class="audio-style">
-                                <div id="play" class="audio-toggle play"></div>
-                                <div id="pause" class="audio-toggle pause"></div>
-                            </div>
-
-                            <div class="popup-circle">
-                                <p><span>Oops!</span></p>
-                                <p>If you leave the sorting game then you have to start from beginning. Are you sure you want to leave?</p>
-                            </div>
-                            
-                            <!-- Close Button -->
-                                <div class="stay-btn">Stay</div> 
-                                <div class="close-btn">Leave</div> 
-                        </div>
-
-            </div>`)
+            $('.content-holder').append(`<div id="home-popup" class="popup-home" role="dialog" aria-label="Exit confirmation" aria-hidden="false">
+    <div class="popup-content modal-box">
+      <h2 class="modal-title">Oops!</h2>
+      <div class="modal-message">
+        <p>  If you leave the sorting game then you have to start from beginning. </p>
+        <p class="modal-question">Are you sure you want to leave?</p>
+      </div>
+    
+      <div class="modal-buttons">
+        <button id="stay-btn" class="modal-btn" onClick="stayPage()">Stay</button>
+        <button id="leave-btn" class="modal-btn" onClick="leavePage()">Leave</button>
+      </div>
+    </div>
+  </div>`)
 
             $('.box').off('click mouseenter mouseleave').on('click mouseenter mouseleave', onClickHandler)
 
@@ -179,10 +173,9 @@ function addSectionData() {
             });
             // $("#home,#homeBack").on("click", function(){
             //     jumtoPage(1)
-            // });
+            // });$()
 
-
-
+            $("#home").on("click", showHome);
         }
         setCSS(sectionCnt);
 
@@ -192,8 +185,18 @@ function addSectionData() {
     if ((bookMarkArray[0] == '1') || (bookMarkArray[0] == 1)) {
         _visitedArr = bookMarkArray;
     }
+}
 
 
+function showHome(){
+    $("#home-popup").css("display", "flex");
+}
+
+function stayPage() {
+    $("#home-popup").hide();
+}
+function leavePage() {
+    jumtoPage(1);
 }
 
 function jumtoPage(pageNo) {
