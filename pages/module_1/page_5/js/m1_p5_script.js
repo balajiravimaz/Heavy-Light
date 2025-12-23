@@ -259,6 +259,7 @@ function addSectionData() {
       // showEndScreen();
 
       // setCSS(sectionCnt);
+      IdleAudioManager.init(_pageData.sections[sectionCnt - 1].idleAudio);
     }
   }
   // $("#courseAudio").on("ended", function () {
@@ -488,12 +489,12 @@ function toggleAudio(el) {
 var audioStep = 0;
 
 
-let activeAudioSequence = null;
-let currentAudioObj = null;
+var activeAudioSequence = null;
+var currentAudioObj = null;
 
-let audioOneCompleted = false;
-let audioTwoCompleted = false;
-let counter = 0;
+var audioOneCompleted = false;
+var audioTwoCompleted = false;
+var counter = 0;
 
 
 // function playBtnSounds(audioObj, callback) {

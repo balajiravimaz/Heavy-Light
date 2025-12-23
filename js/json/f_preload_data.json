@@ -5,20 +5,19 @@
       "src": "assets/images/Main_BG.png"
     },
     {
-      "src": "assets/images/intro_bg.png"
+      "src": "assets/images/common_bg.png"
     },
     {
       "src": "assets/images/preload_sprites.png"
     },
-
     {
-      "src": "assets/images/logo.png"
+      "src": "assets/images/main_logo.png"
     },
     {
-      "src": "assets/images/bgimg.png"
+      "src": "assets/images/bg_img.png"
     },
     {
-      "src": "assets/images/ui/nav_icons.png"
+      "src": "assets/images/home_info.png"
     }
   ],
   "audios": [
@@ -33,7 +32,23 @@
     },
     {
       "src": "assets/audios/10sec.mp3"
+    },
+    {
+      "src": "assets/audios/info_audio.mp3"
+    },
+    {
+      "src": "assets/audios/click.mp3"
     }
   ],
-  "videos": []
+  "videos": [
+    {
+      "src": "assets/video/video_1.mp4"
+    },
+    {
+      "src": "pages/module_1/page_2/video/video_1.mp4"
+    },
+    {
+      "src": "pages/module_1/page_3/video/bg_video.mp4"
+    }
+  ]
 }

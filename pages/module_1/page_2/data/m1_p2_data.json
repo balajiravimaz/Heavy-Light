@@ -20,6 +20,66 @@
 		{
 			"imageSRC": "pages/module_1/page_2/images/icon03_done.svg",
 			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/H_L.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/sim.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/story.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/music.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/pause.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/bg_pause.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/Simulation_info.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/specker.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/info.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/music.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/home.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/Global_Info.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/Game_Info.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/close.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/back.png",
+			"altText": ""
 		}
 	],
 	"imgCollage": {
@@ -36,11 +96,9 @@
 			}
 		]
 	},
-	"bgVid": 
-		{
-			"videoSRC": "pages/module_1/page_2/video/video_1.mp4"
-		},
-	
+	"bgVid": {
+		"videoSRC": "pages/module_1/page_2/video/video_1.mp4"
+	},
 	"sections": [
 		{
 			"slideType": "overview",
@@ -48,10 +106,10 @@
 			"headerTitle": "Numeracy<br/><span>Simulation</span>",
 			"ost": "",
 			"insText": "​",
-		  	"footer":"Copyright @ 2026 Macmillan Education India Private Limited. All rights reserved.",
-			 "audio1": "pages/module_1/page_2/audios/audio1.mp3",
-			 "audio2": "pages/module_1/page_2/audios/audio2.mp3",
-			 "audio3": "pages/module_1/page_2/audios/audio3.mp3",
+			"footer": "Copyright @ 2026 Macmillan Education India Private Limited. All rights reserved.",
+			"audio1": "pages/module_1/page_2/audios/audio1.mp3",
+			"audio2": "pages/module_1/page_2/audios/audio2.mp3",
+			"audio3": "pages/module_1/page_2/audios/audio3.mp3",
 			"content": {
 				"text": [
 					""
@@ -96,25 +154,25 @@
 	],
 	"popup": {
 		"header": "Story Time!",
-		"text_1":"Join Tuffy the baby elephant and Mira the monkey on a fun jungle adventure!",
-		"text_2":"Watch how they discover what is <span>“heavy”</span> and what is <span>“light”</span> while exploring the forest together.",
-		"close":"X",
+		"text_1": "Join Tuffy the baby elephant and Mira the monkey on a fun jungle adventure!",
+		"text_2": "Watch how they discover what is <span>“heavy”</span> and what is <span>“light”</span> while exploring the forest together.",
+		"close": "X",
 		"closeButton": "✖",
 		"muteIcon": "🔇"
 	},
 	"popup2": {
 		"header": "Welcome to the <span>Heavy</span>-<span>Light</span> Simulation!",
-		"text_1":"Tap on two objects to put them on the see-saw! Have fun learning with the see-saw!",
-		"text_2":"",
-		"close":"X",
+		"text_1": "Tap on two objects to put them on the see-saw! Have fun learning with the see-saw!",
+		"text_2": "",
+		"close": "X",
 		"closeButton": "✖",
 		"muteIcon": "🔇"
 	},
 	"popup3": {
 		"header": "Games Time!",
-		"text_1":"Let’s have some fun!",
-		"text_2":"Compare objects and choose which one is heavy or light.",
-		"close":"X",
+		"text_1": "Let’s have some fun!",
+		"text_2": "Compare objects and choose which one is heavy or light.",
+		"close": "X",
 		"closeButton": "✖",
 		"muteIcon": "🔇"
 	},
