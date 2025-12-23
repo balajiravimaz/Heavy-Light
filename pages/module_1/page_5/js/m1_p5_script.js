@@ -314,7 +314,9 @@ function enableAll() {
     audio.muted = false;
     audio.play();
   }
-  enableButtons();
+  if((audioOneCompleted && audioTwoCompleted) || (audioOneCompleted)){
+    enableButtons();
+  }
   $(".image-container").removeClass("paused");
 }
 
@@ -418,6 +420,7 @@ var IdleAudioManager = (function () {
   }
 
   function stop() {
+    console.log("Setimout out stopped");
     clearTimeout(idleTimeout);
     clearInterval(idleInterval);
     _removeActivityListeners();
@@ -962,12 +965,13 @@ function showEndAnimations() {
   var $audio = $("#simulationAudio");
   clearText();
   console.log("Audio ending");
+  IdleAudioManager.stop();
 
   $audio.on("timeupdate", function () {
     var currentTime = this.currentTime;
     $(".greetingsPop").css("display", "flex");
     $(".greetingsPop").css("opacity", "1");
-    IdleAudioManager.stop();
+    
 
     if (currentTime >= 1) {
       $(".confetti").addClass("show");
@@ -1179,12 +1183,12 @@ function playVisualAudioChainSync(
 function enableButtons() {
   console.log("its enalling", _globalCicked, _btnClicked);
   $(".btn").not(".visited").prop("disabled", false);
-  IdleAudioManager.start();
+  // IdleAudioManager.start();
 }
 
 function disableButtons() {
   $(".btn").not(".visited").prop("disabled", true);
-  IdleAudioManager.stop();
+  // IdleAudioManager.stop();
 }
 
 
