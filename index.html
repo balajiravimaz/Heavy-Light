@@ -57,12 +57,13 @@
                   <div id="f_companyLogo_main">
                <a href="https://macmillaneducation.in/" taget="_blank"><img tabindex="-1" alt="e y logo" src="./assets/images/logo.png" /></a> 
             </div> 
+            <button id="full-screen" class="full-screen fullScreen" onclick="toggleFullscreen(this)" data-tooltip="Full Screen"></button>
             </div>
             <div id="intro">
                   <video autoplay muted loop playsinline src="assets/video/video_1.mp4"></video>
                 <div id="intro-text">
                     <div id="intro-btns">
-                        <button data-tooltip="Music" class="introMusic mute"></button>
+                        <button data-tooltip="Music" class="music mute"></button>
                         <button data-tooltip="Information" class="introInfo"></button>
                     </div>
                     <div id="intro-header">
@@ -142,6 +143,7 @@
                         <a href="https://macmillaneducation.in/" target="_blank"><img tabindex="0" alt="e y logo" src="./assets/images/logo.png" /></a>
                     </div>
                 </div>
+                <button id="full-screen" class="full-screen fullScreen" onclick="toggleFullscreen(this)" data-tooltip="Full Screen"></button>
                 <div id="f_courseTitle">
                     <p tabindex="0"></p>
                 </div>
@@ -601,7 +603,7 @@ var clickSound = new Audio("assets/audios/click.mp3");
 let clickLocked = false;
 
 
-document.querySelector(".introMusic").addEventListener("click", function (event) {
+document.querySelector(".music").addEventListener("click", function (event) {
     const el = event.currentTarget;
     playClickThen(function() {
         toggleAudio(el);
@@ -656,7 +658,7 @@ function playClickThen(callback) {
 
 function toggleAudio(el) {
     const audio = document.getElementById("audio_src");
-    audio.volume = 0.7;
+    audio.volume = 0.6;
 
     if (audio.paused) {
         audio.muted = false;

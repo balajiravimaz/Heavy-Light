@@ -214,17 +214,21 @@ h2 {}
                          align-items: center;
                          gap: 10px;
 
-                         .introMusic {
+                         .music {
                               position: relative;
                               width: 50px;
                               height: 50px;
 
                               &.playing {
+                                   width: 50px;
+                                   height: 50px;
                                    background: url(../assets/images/music.png) no-repeat;
                                    background-size: contain;
                               }
 
                               &.mute {
+                                   width: 50px;
+                                   height: 50px;
                                    background: url(../assets/images/pause.png) no-repeat;
                                    background-size: contain;
                               }
@@ -240,9 +244,13 @@ h2 {}
                          button {
                               position: relative;
                               cursor: pointer;
-                              &:hover{
+                              width: 50px;
+                              height: 50px;
+
+                              &:hover {
                                    animation: slowInFastOut 0.5s ease-in-out;
                               }
+
                               &::after {
                                    content: attr(data-tooltip);
                                    /* tooltip text from attribute */
@@ -285,12 +293,16 @@ h2 {}
                          width: 100%;
                          margin: 0 auto;
                          color: #44c3ee;
-                         font-weight: bold;
-                         font-weight: bold;
                          font-size: 100px;
-                         text-shadow: 0.1vw 0.1vw 0 #000, 0.2vw 0.2vw 0 #000;
-                         font-family: 'Alphakind', Arial, sans-serif;
+                         font-family: 'Alphakind', Arial, sans-serif !important;
                          line-height: 0.9;
+                         text-shadow: 0.1vw 0.1vw 0 #000, 0.26vw 0.26vw 0 #000000, 0.31vw 0.31vw 0 #0a0808;
+                         margin: 0;
+                         font-weight: normal;
+                         // display: flex;
+                         // justify-content: center;
+                         gap: 0.1vw;
+                         line-height: 1;
 
                          span {
                               color: #894bca;
@@ -558,11 +570,11 @@ h2 {}
           height: 60px;
           margin: 0;
           overflow: visible;
-          top: 0px;
-          right: 0;
+          top: 10px;
+          right: 15px;
           z-index: 11 !important;
           min-width: auto;
-          justify-content: flex-end;
+          justify-content: center;
      }
 
      #f_content {
@@ -900,9 +912,10 @@ footer {
      margin: 0;
      overflow: visible;
      z-index: 2;
-     justify-content: start;
+     justify-content: center;
      top: 15px;
      right: 15px;
+     gap: 5px;
 
      p {
           margin: 0px;
@@ -915,15 +928,67 @@ footer {
           align-items: center;
           /* float: left; */
           width: 140px;
-          height: 100px;
+          height: auto;
           /* margin-top: 15px; */
           display: block;
 
           img {
                position: relative;
-               width: 100%;
+               width: 130px;
                height: auto;
           }
+     }
+
+     .full-screen {
+          position: relative;
+          width: 50px;
+          height: 50px;
+          transition:transform 0.5s ease-in-out;
+          cursor: pointer;
+
+          &:hover{
+               transform: scale(1.125);
+          }
+
+          &.fullScreen {
+               background: url('../assets/images/nav-fullscreen-on.png') no-repeat;
+               background-size: contain;
+               background-position: center;
+          }
+
+          &.offScreen {
+               background: url('../assets/images/nav-fullscreen-off.png') no-repeat;
+               background-size: contain;
+               background-position: center;
+          }
+
+          &::after {
+               content: attr(data-tooltip);
+               /* tooltip text from attribute */
+               position: absolute;
+               top: 100%;
+               /* below the button */
+               left: 50%;
+               transform: translateX(-50%);
+               background: #333;
+               color: #fff;
+               font-size: 12px;
+               padding: 4px 6px;
+               border-radius: 5px;
+               white-space: nowrap;
+               opacity: 0;
+               font-family: 'Times New Roman', Times, serif;
+               pointer-events: none;
+               transition: opacity 0.2s;
+               margin-top: 4px;
+               z-index: 10;
+          }
+
+          /* Show tooltip on hover */
+          &:hover::after {
+               opacity: 1;
+          }
+
      }
 }
 
@@ -985,10 +1050,10 @@ footer {
      margin: 0;
      overflow: visible;
      top: 0px;
-     right: 0;
+     right: 10px;
      z-index: 1 !important;
      min-width: auto;
-     justify-content: flex-end;
+     justify-content: center;
 }
 
 /* Dark background */
@@ -1189,12 +1254,12 @@ footer {
                }
 
                &.playing {
-                    background: url(../assets/images/music.png) no-repeat;
+                    background: url(../assets/images/sound.png) no-repeat;
                     background-size: contain;
                }
 
                &.mute {
-                    background: url(../assets/images/pause.png) no-repeat;
+                    background: url(../assets/images/sound_pause.png) no-repeat;
                     background-size: contain;
                }
           }
@@ -1206,17 +1271,18 @@ footer {
           }
      }
 }
+
 @keyframes slowInFastOut {
-		0% {
-			transform: scale(1);
-		}
+     0% {
+          transform: scale(1);
+     }
 
-		65% {
-			transform: scale(1.10);
+     65% {
+          transform: scale(1.10);
 
-		}
+     }
 
-		100% {
-			transform: scale(1);
-		}
-	}
+     100% {
+          transform: scale(1);
+     }
+}

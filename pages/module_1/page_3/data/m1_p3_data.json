@@ -36,11 +36,9 @@
 			}
 		]
 	},
-	"bgVid": [
-		{
-			"videoSRC": ""
-		}
-	],
+	"bgVid": {
+		"videoSRC": "pages/module_1/page_3/video/bg_video.mp4"
+	},
 	"sections": [
 		{
 			"slideType": "overview",
@@ -48,11 +46,11 @@
 			"headerTitle": "Numeracy<br/><span>Simulation</span>",
 			"ost": "",
 			"insText": "​",
-			"infoImg":"pages/module_1/page_3/images/Game_Info.png",
-		  	"footer":"Copyright @ 2026 Macmillan Education India Private Limited. All rights reserved.",
-			  "audio1": "pages/module_1/page_3/audios/sortingGame.mp3",
-			  "audio2": "pages/module_1/page_3/audios/funGame.mp3",
-			  "audio3": "pages/module_1/page_3/audios/info_audio.mp3",
+			"infoImg": "pages/module_1/page_3/images/Game_Info.png",
+			"footer": "Copyright @ 2026 Macmillan Education India Private Limited. All rights reserved.",
+			"audio1": "pages/module_1/page_3/audios/sortingGame.mp3",
+			"audio2": "pages/module_1/page_3/audios/funGame.mp3",
+			"audio3": "pages/module_1/page_3/audios/info_audio.mp3",
 			"content": {
 				"text": [
 					""
@@ -97,21 +95,20 @@
 	],
 	"popup": {
 		"header": "Sorting Game!",
-		"text_1":"Sort the objects into the <span>Heavy</span> basket and the <span>Light</span> basket.",
-		"text_2":"Look carefully and place each object where it belongs.",
-		"close":"X",
+		"text_1": "Sort the objects into the <span>Heavy</span> basket and the <span>Light</span> basket.",
+		"text_2": "Look carefully and place each object where it belongs.",
+		"close": "X",
 		"closeButton": "✖",
 		"muteIcon": "🔇"
 	},
 	"popup2": {
 		"header": "Fun Game!",
-		"text_1":"Listen to the question and tap the <span>heavy</span> or <span>light</span> object as asked.",
-		"text_2":"Look closely and choose carefully!",
-		"close":"X",
+		"text_1": "Listen to the question and tap the <span>heavy</span> or <span>light</span> object as asked.",
+		"text_2": "Look closely and choose carefully!",
+		"close": "X",
 		"closeButton": "✖",
 		"muteIcon": "🔇"
 	},
-	
 	"transcriptText": [
 		[
 			"There are several key elements that must be addressed during an internal control test. Each button here represents a fundamental aspect of the internal control testing process.",

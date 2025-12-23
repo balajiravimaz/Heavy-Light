@@ -54,6 +54,7 @@ function _pageLoaded() {
 
     }
     addSectionData();
+    checkGlobalAudio();
     //assignAudio(_audioId, _audioIndex, _pageAudioSync, _forceNavigation, _videoId, _popupAudio, _reloadRequired);
     pagePreLoad();
     setTimeout(function () {
@@ -108,7 +109,7 @@ function addSectionData() {
                 
                 
                 
-            </div>'<audio id="instructionAudio"></audio>'
+            </div><audio id="instructionAudio"></audio>
         `);
 
             $('#section-' + sectionCnt)
@@ -121,7 +122,7 @@ function addSectionData() {
                 playsinline
                 preload="auto"
             >
-                <source src="pages/module_1/page_2/video/video_1.mp4" type="video/mp4">
+                <source src="${_pageData.bgVid.videoSRC}" type="video/mp4">
             </video>
         `);
 
@@ -232,6 +233,9 @@ function addSectionData() {
 function onClickinfo() {
     $("#introPopup-1").css("display", "flex");
     $("#introPopup-1").css("opacity", "1");
+       $(".introPopAudio")
+        .removeClass("playing")
+        .addClass("mute");
 }
 
 function onClickinfoClose() {
@@ -258,10 +262,12 @@ function toggleAudio(event) {
         audio.play();
         el.classList.remove("mute");
         el.classList.add("playing");
+        _controller._globalMusicPlaying = true;
     } else {
         audio.pause();
         el.classList.remove("playing");
         el.classList.add("mute");
+        _controller._globalMusicPlaying = false;
     }
 }
 

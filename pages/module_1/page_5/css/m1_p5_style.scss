@@ -169,6 +169,8 @@
 							bottom: 0;
 							width: 100%;
 							height: 100%;
+							z-index: 1111;
+							display: none;
 
 							&.show {
 								background: url('../images/confetti.gif') no-repeat center;
@@ -194,6 +196,7 @@
 								padding: 0 20px;
 								display: flex;
 								gap: 10px;
+								top: 18px;
 								justify-content: flex-start;
 								align-items: center;
 
@@ -206,6 +209,11 @@
 									border: none;
 									cursor: pointer;
 									position: relative;
+
+									&:disabled {
+										background: url('../images/back_disabled.png') no-repeat;
+										background-size: contain;
+									}
 								}
 
 								.music {
@@ -223,12 +231,22 @@
 										background-size: contain;
 										background-position: center;
 
+										&:disabled {
+											background: url('../images/nav-music-off.png') no-repeat;
+											background-size: contain;
+										}
+
 									}
 
 									&.mute {
 										background: url(../images/bg_pause.png) no-repeat;
 										background-size: contain;
 										background-position: center;
+
+										&:disabled {
+											background: url('../images/music_disabled.png') no-repeat;
+											background-size: contain;
+										}
 									}
 								}
 
@@ -241,11 +259,22 @@
 									border: none;
 									cursor: pointer;
 									position: relative;
+
+									&:disabled {
+										background: url('../images/info_disabled.png') no-repeat;
+										background-size: contain;
+									}
 								}
 
 								button {
 									position: relative;
-									&:hover{
+									background-position: center !important;
+
+									&:disabled {
+										pointer-events: none;
+									}
+
+									&:hover {
 										animation: slowInFastOut 0.5s ease-in-out;
 									}
 
@@ -277,7 +306,7 @@
 									}
 								}
 
-								#playPauseBtn {
+								#simulationToggle {
 									width: 50px;
 									height: 50px;
 									border: none;
@@ -314,16 +343,28 @@
 										opacity: 1;
 									}
 
+									&.play {
+										background-image: url("../images/pause_sim.png");
+
+										// background-size: contain;
+										&:disabled {
+											background-image: url("../images/audio_mute_disabled.png");
+										}
+									}
+
+									&.pause {
+										background-image: url("../images/play_sim.png");
+
+										// background-size: contain;
+										&:disabled {
+											background-image: url("../images/audio_disabled.png");
+										}
+									}
+
 								}
 
 								/* Background images */
-								#playPauseBtn.play {
-									background-image: url("../images/play_sim.png");
-								}
 
-								#playPauseBtn.pause {
-									background-image: url("../images/pause_sim.png");
-								}
 
 
 							}
@@ -387,7 +428,7 @@
 										justify-content: center;
 										align-items: flex-start;
 										padding: 20px 15px 0px 15px;
-										max-width: 700px;
+										max-width: 680px;
 										margin: 0 auto;
 										height: 150px;
 										// border: 1px solid red;
@@ -403,9 +444,10 @@
 											}
 										}
 
-										.ost{
-											opacity: 0; 
+										.ost {
+											opacity: 1 !important;
 										}
+
 										.inst {
 											opacity: 0;
 										}
@@ -416,6 +458,7 @@
 											// display: flex;
 											justify-content: center;
 											align-items: center;
+											height: 160px;
 
 											p {
 												opacity: 0;
@@ -429,7 +472,9 @@
 												align-items: center;
 												text-align: center;
 												/* so texts overlap */
+												// top: 5px;
 												width: 100%;
+												height: fit-content;
 
 
 												.wrapTextaudio {
@@ -441,6 +486,9 @@
 													cursor: pointer;
 													top: 3px;
 													margin-left: 5px;
+													background-position: center !important;
+													background-size: contain !important;
+													background-repeat: no-repeat !important;
 
 													&:disabled {
 														pointer-events: none;
@@ -449,11 +497,19 @@
 													&.playing {
 														background: url(../images/music.png) no-repeat;
 														background-size: contain;
+
+														&:disabled {
+															background: url("../images/audio_disabled.png");
+														}
 													}
 
-													&.mute {
+													&.paused {
 														background: url(../images/pause.png) no-repeat;
 														background-size: contain;
+
+														&:disabled {
+															background: url("../images/audio_mute_disabled.png");
+														}
 													}
 												}
 
@@ -697,7 +753,14 @@
 											background-position: bottom;
 											background-size: contain;
 											z-index: 111;
-											animation: moveUpDown 1s ease-in-out infinite
+											animation: moveUpDown 1s ease-in-out infinite;
+											animation-play-state: running;
+										}
+
+										&.paused {
+											&::after {
+												animation-play-state: paused;
+											}
 										}
 
 										&.completed {
@@ -770,19 +833,19 @@
 								background: url(../images/simulation.png) no-repeat;
 								background-size: contain;
 								position: relative;
-								background-position: bottom;
+								background-position: center;
 								animation: slowInFastOut 4s ease-in-out infinite;
 								animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 
 								.popBtns {
 									position: absolute;
-									top: 87%;
+									top: 80%;
 									width: 100%;
 									display: flex;
 									justify-content: center;
 									align-items: center;
-									gap: 15px;
+									gap: 30px;
 
 									#refresh {
 										position: relative;
@@ -850,14 +913,15 @@
 									}
 
 									button {
-										width: 80px;
-										height: 80px;
+										width: 60px;
+										height: 60px;
 										background: transparent;
 										cursor: pointer;
 										background-size: contain;
+										transition: 0.5s ease-in-out;
 
 										&:hover {
-											animation: beat 0.4s ease-in-out 1;
+											transform: scale(1.125);
 										}
 									}
 								}
@@ -875,6 +939,52 @@
 
 							}
 						}
+
+						.greetingsPop {
+							display: none;
+							opacity: 0;
+							inset: 0;
+							background: rgba(0, 0, 0, 0.2);
+							backdrop-filter: blur(4px);
+							-webkit-backdrop-filter: blur(4px);
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%, -50%);
+							width: 100%;
+							height: 100vh;
+							justify-content: center;
+							align-items: center;
+							z-index: 1111;
+							transition: opacity 0.5s ease-in-out;
+
+							.popup-wrap {
+								width: 400px;
+								height: 400px;
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								background: url(../images/great_job.png) no-repeat;
+								background-size: contain;
+								position: relative;
+								background-position: center;
+								// animation: slowInFastOut 4s ease-in-out infinite;
+								// animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+								.popup-text {
+									width: 100%;
+									height: 100%;
+
+									p {
+										font-size: 28px;
+										font-weight: bold;
+										color: #fff;
+									}
+								}
+
+							}
+						}
+
 
 						#introPopup-1 {
 							display: none;
@@ -1158,17 +1268,18 @@
 		transform: translateY(0);
 	}
 }
+
 @keyframes slowInFastOut {
-		0% {
-			transform: scale(1);
-		}
-
-		65% {
-			transform: scale(1.10);
-
-		}
-
-		100% {
-			transform: scale(1);
-		}
+	0% {
+		transform: scale(1);
 	}
+
+	65% {
+		transform: scale(1.10);
+
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}

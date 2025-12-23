@@ -602,16 +602,20 @@ html {
   align-items: center;
   gap: 10px;
 }
-#f_wrapper #f_start_course #intro #intro-text #intro-btns .introMusic {
+#f_wrapper #f_start_course #intro #intro-text #intro-btns .music {
   position: relative;
   width: 50px;
   height: 50px;
 }
-#f_wrapper #f_start_course #intro #intro-text #intro-btns .introMusic.playing {
+#f_wrapper #f_start_course #intro #intro-text #intro-btns .music.playing {
+  width: 50px;
+  height: 50px;
   background: url(../assets/images/music.png) no-repeat;
   background-size: contain;
 }
-#f_wrapper #f_start_course #intro #intro-text #intro-btns .introMusic.mute {
+#f_wrapper #f_start_course #intro #intro-text #intro-btns .music.mute {
+  width: 50px;
+  height: 50px;
   background: url(../assets/images/pause.png) no-repeat;
   background-size: contain;
 }
@@ -624,6 +628,8 @@ html {
 #f_wrapper #f_start_course #intro #intro-text #intro-btns button {
   position: relative;
   cursor: pointer;
+  width: 50px;
+  height: 50px;
   /* Show tooltip on hover */
 }
 #f_wrapper #f_start_course #intro #intro-text #intro-btns button:hover {
@@ -665,12 +671,14 @@ html {
   width: 100%;
   margin: 0 auto;
   color: #44c3ee;
-  font-weight: bold;
-  font-weight: bold;
   font-size: 100px;
-  text-shadow: 0.1vw 0.1vw 0 #000, 0.2vw 0.2vw 0 #000;
-  font-family: "Alphakind", Arial, sans-serif;
+  font-family: "Alphakind", Arial, sans-serif !important;
   line-height: 0.9;
+  text-shadow: 0.1vw 0.1vw 0 #000, 0.26vw 0.26vw 0 #000000, 0.31vw 0.31vw 0 #0a0808;
+  margin: 0;
+  font-weight: normal;
+  gap: 0.1vw;
+  line-height: 1;
 }
 #f_wrapper #f_start_course #intro #intro-text .intro-header-container span {
   color: #894bca;
@@ -891,11 +899,11 @@ html {
   height: 60px;
   margin: 0;
   overflow: visible;
-  top: 0px;
-  right: 0;
+  top: 10px;
+  right: 15px;
   z-index: 11 !important;
   min-width: auto;
-  justify-content: flex-end;
+  justify-content: center;
 }
 #f_wrapper #f_content {
   position: relative;
@@ -1184,9 +1192,10 @@ footer p {
   margin: 0;
   overflow: visible;
   z-index: 2;
-  justify-content: start;
+  justify-content: center;
   top: 15px;
   right: 15px;
+  gap: 5px;
 }
 #f_header_main p {
   margin: 0px;
@@ -1198,14 +1207,59 @@ footer p {
   align-items: center;
   /* float: left; */
   width: 140px;
-  height: 100px;
+  height: auto;
   /* margin-top: 15px; */
   display: block;
 }
 #f_header_main #f_companyLogo_main img {
   position: relative;
-  width: 100%;
+  width: 130px;
   height: auto;
+}
+#f_header_main .full-screen {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  transition: transform 0.5s ease-in-out;
+  cursor: pointer;
+  /* Show tooltip on hover */
+}
+#f_header_main .full-screen:hover {
+  transform: scale(1.125);
+}
+#f_header_main .full-screen.fullScreen {
+  background: url("../assets/images/nav-fullscreen-on.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+#f_header_main .full-screen.offScreen {
+  background: url("../assets/images/nav-fullscreen-off.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+#f_header_main .full-screen::after {
+  content: attr(data-tooltip);
+  /* tooltip text from attribute */
+  position: absolute;
+  top: 100%;
+  /* below the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 6px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  font-family: "Times New Roman", Times, serif;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  margin-top: 4px;
+  z-index: 10;
+}
+#f_header_main .full-screen:hover::after {
+  opacity: 1;
 }
 
 #bgVideo {
@@ -1253,10 +1307,10 @@ footer p {
   margin: 0;
   overflow: visible;
   top: 0px;
-  right: 0;
+  right: 10px;
   z-index: 1 !important;
   min-width: auto;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 /* Dark background */
@@ -1451,11 +1505,11 @@ footer p {
   transform: scale(1.125);
 }
 #introPopup .popup-content .introPopAudio.playing {
-  background: url(../assets/images/music.png) no-repeat;
+  background: url(../assets/images/sound.png) no-repeat;
   background-size: contain;
 }
 #introPopup .popup-content .introPopAudio.mute {
-  background: url(../assets/images/pause.png) no-repeat;
+  background: url(../assets/images/sound_pause.png) no-repeat;
   background-size: contain;
 }
 #introPopup .popup-content img {
@@ -1481,6 +1535,8 @@ footer p {
   width: 130px;
   height: auto;
   margin-right: 10px;
+  justify-content: center;
+  gap: 10px;
   /*  &:after {
       content: "";
       position: absolute;
@@ -1504,8 +1560,54 @@ footer p {
 }
 #f_header #f_companyLogo .logo-bg-patch img {
   position: relative;
-  width: 100%;
+  width: 130px;
   height: auto;
+}
+#f_header .full-screen {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  transition: transform 0.5s ease-in-out;
+  cursor: pointer;
+  top: 2px;
+  /* Show tooltip on hover */
+}
+#f_header .full-screen:hover {
+  transform: scale(1.125);
+}
+#f_header .full-screen.fullScreen {
+  background: url("../assets/images/nav-fullscreen-on.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+#f_header .full-screen.offScreen {
+  background: url("../assets/images/nav-fullscreen-off.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+#f_header .full-screen::after {
+  content: attr(data-tooltip);
+  /* tooltip text from attribute */
+  position: absolute;
+  top: 100%;
+  /* below the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 6px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  font-family: "Times New Roman", Times, serif;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  margin-top: 4px;
+  z-index: 10;
+}
+#f_header .full-screen:hover::after {
+  opacity: 1;
 }
 #f_header #f_courseTitle {
   position: relative;

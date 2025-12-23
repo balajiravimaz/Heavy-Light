@@ -51,6 +51,9 @@ function _pageLoaded() {
 
   //addSlideData();
   addSectionData();
+  // playBtnSounds(_pageData.sections[sectionCnt - 1].endAudio);
+  //   showEndAnimations();
+  checkGlobalAudio();
   assignAudio(
     _audioId,
     _audioIndex,
@@ -101,14 +104,12 @@ function addSectionData() {
         i < _pageData.sections[sectionCnt - 1].content.flipObjects.length;
         i++
       ) {
-        htmlContent += `<div class="flip-container" id="flip-container-${
-          i + 1
-        }">`;
+        htmlContent += `<div class="flip-container" id="flip-container-${i + 1
+          }">`;
 
         htmlContent += '<div class="flipWrap">';
-        htmlContent += `<div class="flipText"><p tabindex="0">${
-          _pageData.sections[sectionCnt - 1].content.flipObjects[i].instText
-        }</p><button class="flipTextAudio"></button></div>`;
+        htmlContent += `<div class="flipText"><p tabindex="0">${_pageData.sections[sectionCnt - 1].content.flipObjects[i].instText
+          }</p><button class="flipTextAudio"></button></div>`;
 
         htmlContent += '<div class="flipBody">';
         // console.log(_pageData.sections[sectionCnt - 1].content.flipObjects[i].images, "ababbababba")
@@ -124,24 +125,21 @@ function addSectionData() {
           htmlContent += '<div class="flip-inner">';
           htmlContent += '<div class="flip-front">';
           htmlContent += '<div class="flip-front-img">';
-          htmlContent += `<img src="${
-            _pageData.sections[sectionCnt - 1].content.flipObjects[i].images[k]
+          htmlContent += `<img src="${_pageData.sections[sectionCnt - 1].content.flipObjects[i].images[k]
               .imageSrc
-          }" alt="">`;
+            }" alt="">`;
           htmlContent += "</div>";
           htmlContent += "</div>";
           htmlContent += '<div class="flip-back">';
           htmlContent += '<div class="flipBackText">';
-          htmlContent += `<img src="${
-            _pageData.sections[sectionCnt - 1].content.flipObjects[i].images[k]
+          htmlContent += `<img src="${_pageData.sections[sectionCnt - 1].content.flipObjects[i].images[k]
               .flipImage
-          }" alt="">`;
+            }" alt="">`;
           htmlContent += "</div>";
           htmlContent += '<div class="flipBackImage">';
-          htmlContent += `<p tabindex="0">${
-            _pageData.sections[sectionCnt - 1].content.flipObjects[i].images[k]
+          htmlContent += `<p tabindex="0">${_pageData.sections[sectionCnt - 1].content.flipObjects[i].images[k]
               .flipText
-          }</p>`;
+            }</p>`;
           htmlContent += "</div>";
           htmlContent += "</div>";
 
@@ -158,9 +156,8 @@ function addSectionData() {
       let headerConent = "";
       let popupDiv = "";
 
-      headerConent += `<div class="confetti"></div><div class="header"><div class="navBtns"><button id="home" data-tooltip="Back"></button><button class="music playing" data-tooltip="Music"></button><button id="info" data-tooltip="Information"></button></div><div class="titleText"><img src="${
-        _pageData.sections[sectionCnt - 1].headerImg
-      }"></div></div>`;
+      headerConent += `<div class="confetti"></div><div class="header"><div class="navBtns"><button id="home" data-tooltip="Back"></button><button class="music playing" data-tooltip="Music"></button><button id="info" data-tooltip="Information"></button></div><div class="titleText"><img src="${_pageData.sections[sectionCnt - 1].headerImg
+        }"></div></div>`;
       popupDiv += '<div class="popup">';
       popupDiv += '<div class="popup-wrap">';
 
@@ -170,14 +167,18 @@ function addSectionData() {
       popupDiv += "</div>";
       popupDiv += "</div>";
       popupDiv += "</div>";
-      popupDiv +=`<div id="introPopup-1"><div class="popup-content">
+      popupDiv += '<div class="greetingsPop">';
+      popupDiv += '<div class="popup-wrap">';
+      popupDiv += "</div>";
+      popupDiv += "</div>";
+      popupDiv += `<div id="introPopup-1"><div class="popup-content">
                     <button class="introPopAudio mute" onclick="togglePopAudio(this, '${_pageData.sections[sectionCnt - 1].infoAudio}')"></button>
                     <button class="introPopclose" data-tooltip="Close" onClick="closePopup('introPopup-1')"></button>
                     <img src="${_pageData.sections[sectionCnt - 1].infoImg}" alt="">
                 </div>
             </div>`;
 
-                        popupDiv +=`<div id="home-popup" class="popup-home" role="dialog" aria-label="Exit confirmation" aria-hidden="false">
+      popupDiv += `<div id="home-popup" class="popup-home" role="dialog" aria-label="Exit confirmation" aria-hidden="false">
     <div class="popup-content modal-box">
       <h2 class="modal-title">Oops!</h2>
       <div class="modal-message">
@@ -199,50 +200,50 @@ function addSectionData() {
         .find(".content-style")
         .append(
           popupDiv +
-            headerConent +
-            '<div class="body"><div class="animat-container"> <div class="dummy-patch"></div>' +
-            htmlContent +
-            "</div> </div>"
+          headerConent +
+          '<div class="body"><div class="animat-container"> <div class="dummy-patch"></div>' +
+          htmlContent +
+          "</div> </div>"
         );
-        $("#flip-container-1").addClass("show")
+      $("#flip-container-1").addClass("show")
       $(".flip-card").on("click", onClickHanlder);
 
       // $("#refresh").on("click", restartActivity);
       // $("#home,#homeBack").on("click", jumtoPage)  
-      
-      $("#refresh").on("click", function(){
+
+      $("#refresh").on("click", function () {
         jumtoPage(4);
       });
-      $("#homeBack").on("click", function(){
+      $("#homeBack").on("click", function () {
         jumtoPage(1)
       });
-      $("#home").on("click", function(){
+      $("#home").on("click", function () {
         $("#home-popup").css('display', 'flex');
       });
-      $(".music").on("click", function(event){
-        let el=event.currentTarget;
-        playClickThen(function() {
+      $(".music").on("click", function (event) {
+        let el = event.currentTarget;
+        playClickThen(function () {
           toggleAudio(el);
         })
-      });   
+      });
       _currentAudio = _pageData.sections[sectionCnt - 1].content.flipObjects[0].instAudio;
       $(".flipTextAudio").on("click", replayLastAudio);
       document.querySelector("#info").addEventListener("click", function (event) {
-    const el = event.currentTarget;
-    playClickThen(function() {
-      // console.log("its wokring")
-        $("#introPopup-1").css('display','flex')
-        $("#introPopup-1").css('opacity','1') 
-        $(".introPopAudio").removeClass('playing');
-    $(".introPopAudio").addClass('mute');
-    
-    // $(".introPopAudio").on("click",function(){  
-    //     console.log("its working");
-        
-    // })       
-    });
-    
-});
+        const el = event.currentTarget;
+        playClickThen(function () {
+          // console.log("its wokring")
+          $("#introPopup-1").css('display', 'flex')
+          $("#introPopup-1").css('opacity', '1')
+          $(".introPopAudio").removeClass('playing');
+          $(".introPopAudio").addClass('mute');
+
+          // $(".introPopAudio").on("click",function(){  
+          //     console.log("its working");
+
+          // })       
+        });
+
+      });
 
       // setCSS(sectionCnt);
     }
@@ -251,15 +252,22 @@ function addSectionData() {
 
 
 
-function stayPage(){
+function stayPage() {
   $("#home-popup").hide();
 }
-function leavePage(){
-  jumtoPage(1);
+function leavePage() {
+  var audio = document.getElementById("simulationAudio");
+  if (audio) {
+    // Stop audio whether it's playing or paused
+    audio.pause();
+    audio.currentTime = 0;
+  }
+
+  jumtoPage(1); 
 }
 
 function jumtoPage(pageNo) {
-  
+
   _controller.pageCnt = pageNo;
 
   _controller.updateViewNow();
@@ -309,11 +317,11 @@ function audioEnd(callback) {
 var clickCount = 0;
 
 function onClickHanlder(e) {
- var $card = $(e.currentTarget);
+  var $card = $(e.currentTarget);
 
- var index = parseInt(e.currentTarget.id.split("-").pop(), 10);
+  var index = parseInt(e.currentTarget.id.split("-").pop(), 10);
 
- var ldx = index-1;
+  var ldx = index - 1;
 
 
   var $card = $(e.currentTarget);
@@ -323,77 +331,87 @@ function onClickHanlder(e) {
 
   disableButtons();
   playBtnSounds(_pageData.sections[sectionCnt - 1].content.btnAudios[0]);
-  setTimeout(function(){
+  setTimeout(function () {
     validateAnswer(ldx, _globalCicked, index);
-  },500)
+  }, 500)
 }
 
-function validateAnswer(ldx, _globalCicked,index){
-  
-  if(_pageData.sections[sectionCnt - 1].content.flipObjects[_globalCicked].images[ldx].isCorrect){
+function validateAnswer(ldx, _globalCicked, index) {
+
+  if (_pageData.sections[sectionCnt - 1].content.flipObjects[_globalCicked].images[ldx].isCorrect) {
     playBtnSounds(_pageData.sections[sectionCnt - 1].content.flipObjects[_globalCicked].images[ldx].audioSrc)
-    
+
     audioEnd(function () {
       console.log("current index", index)
       enableNextFlip(index);
     })
-  }else{
+  } else {
     playBtnSounds(_pageData.sections[sectionCnt - 1].content.flipObjects[_globalCicked].images[ldx].audioSrc);
     audioEnd(function () {
       resetToggle();
-      setTimeout(function(){
+      setTimeout(function () {
         enableButtons();
-      },1000)
+      }, 1000)
     });
-  }   
+  }
 }
 
 function toggleAudio(el) {
   // console.log(event, "current e")
-    // const el = event.currentTarget; 
-    const audio = document.getElementById("audio_src");
+  // const el = event.currentTarget; 
+  const audio = document.getElementById("audio_src");
 
-    // console.log(el, "Target class");
+  // console.log(el, "Target class");
 
-    if (audio.paused) {
-        audio.muted = false;
-        audio.play();
-        el.classList.remove("mute");
-        el.classList.add("playing");
-    } else {
-        audio.pause();
-        el.classList.remove("playing");
-        el.classList.add("mute");
-    }
+  if (audio.paused) {
+    audio.muted = false;
+    audio.play();
+    el.classList.remove("mute");
+    el.classList.add("playing");
+    _controller._globalMusicPlaying = true;
+  } else {
+    audio.pause();
+    el.classList.remove("playing");
+    el.classList.add("mute");
+    _controller._globalMusicPlaying = false;
+  }
 }
 
 
 
-function enableNextFlip(indx){
+function enableNextFlip(indx) {
   _globalCicked++;
-  if(_globalCicked < _pageData.sections[sectionCnt - 1].content.flipObjects.length){
+  if (_globalCicked < _pageData.sections[sectionCnt - 1].content.flipObjects.length) {
     $(`.flip-container`).removeClass('show');
   }
 
-  console.log(indx, indx+1, "showing index")
-  setTimeout(function(){
-    $(`#flip-container-${_globalCicked+1}`).addClass('show')
+  console.log(indx, indx + 1, "showing index")
+  setTimeout(function () {
+    $(`#flip-container-${_globalCicked + 1}`).addClass('show')
     playNext();
-  },300)  
-  
+  }, 300)
+
 }
 
-function playNext(){
+function playNext() {
   // console.log(_globalCicked, "gloplab clicked",_pageData.sections[sectionCnt - 1].content.flipObjects.length)
-  if(_globalCicked == _pageData.sections[sectionCnt - 1].content.flipObjects.length){
+  if (_globalCicked == _pageData.sections[sectionCnt - 1].content.flipObjects.length) {
     playBtnSounds(_pageData.sections[sectionCnt - 1].endAudio);
+    audioEnd(function () {
+      $(".greetingsPop").css("display", "none");
+      $(".greetingsPop").css("opacity", "0");
+      setTimeout(function () {
+        $(".popup").css("display", "flex");
+        $(".popup").css("opacity", "1");
+      }, 100)
+    })
     showEndAnimations();
-  }else if(_globalCicked <= _pageData.sections[sectionCnt - 1].content.flipObjects.length){
+  } else if (_globalCicked <= _pageData.sections[sectionCnt - 1].content.flipObjects.length) {
     _currentAudio = _pageData.sections[sectionCnt - 1].content.flipObjects[_globalCicked].instAudio;
-  playBtnSounds(_pageData.sections[sectionCnt - 1].content.flipObjects[_globalCicked].instAudio);
-   audioEnd(function () {
-    enableButtons();
-   })
+    playBtnSounds(_pageData.sections[sectionCnt - 1].content.flipObjects[_globalCicked].instAudio);
+    audioEnd(function () {
+      enableButtons();
+    })
   }
 
 }
@@ -416,29 +434,28 @@ function showEndAnimations() {
 
   $audio.on("timeupdate", function () {
     var currentTime = this.currentTime;
+    $(".greetingsPop").css("display", "flex");
+    $(".greetingsPop").css("opacity", "1");
 
-    if (currentTime >= 1) {      
+    if (currentTime >= 1) {
       $(".confetti").addClass("show");
       $(".confetti").show();
       setTimeout(function () {
         $(".confetti").removeClass("show");
-      }, 1500);
+      }, 3000);
 
-      setTimeout(function () {
-        $(".popup").css("display", "flex");
-        $(".popup").css("opacity", "1");
-      }, 1500);
 
       $audio.off("timeupdate");
     }
+
   });
 }
 
-function replayLastAudio(){
+function replayLastAudio() {
   console.log(_currentAudio, "Audio plaing");
   playBtnSounds(_currentAudio);
   disableButtons();
-  audioEnd(function(){
+  audioEnd(function () {
     enableButtons();
   })
 }
@@ -454,7 +471,7 @@ function disableButtons() {
   $(".flipTextAudio").prop("disabled", true);
 }
 
-function resetToggle(){
+function resetToggle() {
   $(".flip-card").removeClass('flipped');
 }
 
@@ -547,7 +564,7 @@ function withAudioSync() {
     animateFadeIn($(".animat-container"), 0.5, 0).play(),
     0.3
   );
-  
+
   var rightListTiming = [0.3];
   // for (var k = 0; k < rightListTiming.length; k++) {
   //   _tweenTimeline.add(

@@ -36,11 +36,11 @@
 			}
 		]
 	},
-	"bgVid": [
+	"bgVid": 
 		{
-			"videoSRC": ""
-		}
-	],
+			"videoSRC": "pages/module_1/page_2/video/video_1.mp4"
+		},
+	
 	"sections": [
 		{
 			"slideType": "overview",

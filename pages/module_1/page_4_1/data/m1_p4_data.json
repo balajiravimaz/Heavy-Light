@@ -4,98 +4,40 @@
     "isEmptyAudio": false,
     "audioIndex": 0
   },
-  "bgImgs": [
-    {
-      "imageSRC": "pages/module_1/page_4/images/bg_img.png",
-      "altText": ""
-    },
-    {
-      "imageSRC": "pages/module_1/page_4/images/challenge.svg",
-      "altText": ""
-    },
-    {
-      "imageSRC": "pages/module_1/page_4/images/easy.svg",
-      "altText": ""
-    },
-    {
-      "imageSRC": "pages/module_1/page_4/images/warmup.svg",
-      "altText": ""
-    }
+  "bgImgs": [    
+
   ],
   "imgCollage": {
     "desktop": [
       {
-        "imageSRC": "pages/module_1/page_4/images/bg_img.png",
+        "imageSRC": "assets/images/bg_img.png",
         "altText": ""
       }
     ],
     "portrait": [
       {
-        "imageSRC": "pages/module_1/page_4/images/bg_img.png",
+        "imageSRC": "assets/images/bg_img.png",
         "altText": ""
       }
     ]
   },
-  "bgVid": [
-    {
-      "videoSRC": ""
-    }
-  ],
   "sections": [
     {
-      "slideType": "overview",
+      "slideType": "video",
       "slideTitle": "overview",
-      "headerTitle": "SIMULATION",
+      "headerTitle": "",
       "ost": "",
-      "insText": "​",
       "content": {
-        "text": [""],
-        "sectionArray": [
-          {
-            "imageURL": "pages/module_1/page_4/images/easy.svg",
-            "titleText": "Easy",
-            "imgVisisted": "pages/module_1/page_4/images/easy.svg",
-            "imgActive": "pages/module_1/page_4/images/easy.svg",
-            "sectionID": 1,
-            "sectionIndx": 1,
-            "audioSRC": "assets/audios/5sec.mp3",
-            "isEmptyAudio": false,
-            "audioIndex": 0
-          },
-          {
-            "imageURL": "pages/module_1/page_4/images/warmup.svg",
-            "titleText": "Warm-up",
-            "imgVisisted": "pages/module_1/page_4/images/warmup.svg",
-            "imgActive": "pages/module_1/page_4/images/warmup.svg",
-            "sectionID": 2,
-            "sectionIndx": 2,
-            "audioSRC": "assets/audios/5sec.mp3",
-            "isEmptyAudio": false,
-            "audioIndex": 1
-          },
-          {
-            "imageURL": "pages/module_1/page_4/images/challenge.svg",
-            "titleText": "Challenge",
-            "imgVisisted": "pages/module_1/page_4/images/challenge.svg",
-            "imgActive": "pages/module_1/page_4/images/challenge.svg",
-            "sectionID": 3,
-            "sectionIndx": 3,
-            "audioSRC": "assets/audios/5sec.mp3",
-            "isEmptyAudio": false,
-            "audioIndex": 2
-          }
-        ]
+        "videoPlaceHolderURL":"",
+        "videoURL":"pages/module_1/page_4/videos/main.mp4",
+        "ccTextURL":""
       }
     }
   ],
   "transcriptText": [
     [
-      "There are several key elements that must be addressed during an internal control test. Each button here represents a fundamental aspect of the internal control testing process.",
-      "To learn more about each subject, Select the respective button."
-    ],
-    [""],
-    [""],
-    [""]
+      "As we move toward the conclusion of this course, let’s take a moment to review some key takeaways."
+    ]
   ],
   "ccText": [
     [

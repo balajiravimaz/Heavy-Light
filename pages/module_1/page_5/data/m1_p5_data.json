@@ -23,13 +23,15 @@
     {
       "slideTitle": "Course Objectives",
       "headerTitle": "Heavy - Light",
-      "headerImg":"pages/module_1/page_5/images/header_title.png",
+      "headerImg": "pages/module_1/page_5/images/header_title.png",
       "ost": "<span>Welcome</span> to the playground, look there is a <span>see-saw</span> waiting for us.",
-      "iText": ["<span>Tap</span> on any object to begin."],
-      "idleAudio":"pages/module_1/page_5/audios/idle_audio.mp3",
-      "infoAudio":"pages/module_1/page_5/audios/info_audio.mp3",
-      "infoImg":"pages/module_1/page_5/images/simulation_pop.png",
-      "initAudio":"pages/module_1/page_5/audios/intro_audio.mp3",
+      "iText": [
+        "<span>Tap</span> on any object to begin."
+      ],
+      "idleAudio": "pages/module_1/page_5/audios/idle_audio.mp3",
+      "infoAudio": "pages/module_1/page_5/audios/info_audio.mp3",
+      "infoImg": "pages/module_1/page_5/images/simulation_pop.png",
+      "initAudio": "pages/module_1/page_5/audios/intro_audio.mp3",
       "content": {
         "btnAudios": [
           "pages/module_1/page_5/audios/click.mp3",
@@ -37,37 +39,151 @@
         ],
         "ostAudios": [
           {
-            "audioSRC": "pages/module_1/page_5/audios/tap_another_audio.mp3",
-            "ost": ["Now tap on another object to compare!"],
-            "duration":1000
+            "audioSRC": [
+              "pages/module_1/page_5/audios/reload_1.mp3",
+              "pages/module_1/page_5/audios/reload_2.mp3"
+            ],
+            "replayAudioSrc": [
+              "pages/module_1/page_5/audios/reload_1.mp3",
+              "pages/module_1/page_5/audios/reload_2.mp3"
+            ],
+            "ost": [
+              "<span>Welcome</span> to the playground, look there is a <span>see-saw</span> waiting for us.",
+              "<span>Tap</span> on any object to begin."
+            ],
+            "duration": [
+              100,
+              500
+            ]
           },
           {
-            "audioSRC": "pages/module_1/page_5/audios/audio_2.mp3",
-            "ost": ["Let's compare another two objects.","Click on the <span>object.</span>"],
-            "duration":4000
-          },          
-          {
-            "audioSRC": "pages/module_1/page_5/audios/another_obj.mp3",
-            "ost": ["Click on another object."],
-            "duration":1000
+            "audioSRC": [
+              "pages/module_1/page_5/audios/reload_3.mp3"
+            ],
+            "replayAudioSrc": [
+              "pages/module_1/page_5/audios/reload_3_1.mp3"
+            ],
+            "ost": [
+              "Now tap on another object to compare!"
+            ],
+            "duration": [
+              3000
+            ]
           },
           {
-            "audioSRC": "pages/module_1/page_5/audios/audio_3.mp3",
-            "ost": ["Look! Now only two objects are left, let's <span>compare</span> them too.", "<span>Tap</span> on any one of the objects."],
-            "duration":7000
+            "audioSRC": [
+              "pages/module_1/page_5/audios/click_music.mp3"
+            ],
+            "ost": [
+              ""
+            ],
+            "duration": [
+              1000
+            ]
           },
           {
-            "audioSRC": "pages/module_1/page_5/audios/last_obj.mp3",
-            "ost": ["Now tap on the last one."],
-            "duration":1000
+            "audioSRC": [
+              "pages/module_1/page_5/audios/reload_4.mp3",
+              "pages/module_1/page_5/audios/reload_5.mp3"
+            ],
+            "ost": [
+              "Let's compare another two objects.",
+              "Click on the <span>object.</span>"
+            ],
+            "duration": [
+              10,
+              10
+            ]
           },
           {
-            "audioSRC": "pages/module_1/page_5/audios/final_audio.mp3",
-            "ost": ["<span>Heavy</span> means something that is hard to lift.","<span>LIGHT</span> means something that is easy to lift."],
-            "duration":4000
-          }          
+            "audioSRC": [
+              "pages/module_1/page_5/audios/click_another.mp3"
+            ],
+            "replayAudioSrc": [
+              "pages/module_1/page_5/audios/click_another_reload.mp3"
+            ],
+            "ost": [
+              "Click on another object."
+            ],
+            "duration": [
+              3000
+            ]
+          },
+          {
+            "audioSRC": [
+              "pages/module_1/page_5/audios/click_music.mp3"
+            ],
+            "ost": [
+              ""
+            ],
+            "duration": [
+              1000
+            ]
+          },
+          {
+            "audioSRC": [
+              "pages/module_1/page_5/audios/reload_7.mp3",
+              "pages/module_1/page_5/audios/reload_8.mp3"
+            ],
+            "ost": [
+              "Look! Now only two objects are left, let's <span>compare</span> them too.",
+              "<span>Tap</span> on any one of the objects."
+            ],
+            "duration": [
+              500,
+              100
+            ]
+          },
+          {
+            "audioSRC": ["pages/module_1/page_5/audios/last_audio.mp3"],
+            "replayAudioSrc": [
+              "pages/module_1/page_5/audios/last_reload.mp3"
+            ],
+            "ost": [
+              "Now tap on the last one."
+            ],
+            "duration": [
+              3000
+            ]
+          },
+          {
+            "audioSRC": [
+              "pages/module_1/page_5/audios/click_music.mp3"
+            ],
+            "ost": [
+              ""
+            ],
+            "duration": [
+              1000
+            ]
+          },
+          {
+            "audioSRC": [
+              "pages/module_1/page_5/audios/heavy_final.mp3",
+              "pages/module_1/page_5/audios/light_final.mp3"
+            ],
+            "ost": [
+              "<span>Heavy</span> means something that is hard to lift.",
+              "<span>LIGHT</span> means something that is easy to lift."
+            ],
+            "duration": [
+              2000,
+              100
+            ]
+          },
+          {
+            "audioSRC": [
+              "pages/module_1/page_5/audios/ending.mp3"                            
+            ],
+            "ost": [
+              ""
+            ],
+            "duration": [
+                            
+            ]
+          }
         ],
-        "replayAudios":[
+        "replayAudios": [
           "pages/module_1/page_5/audios/reload_1.mp3",
           "pages/module_1/page_5/audios/reload_2.mp3",
           "pages/module_1/page_5/audios/reload_3.mp3",
@@ -75,7 +191,7 @@
           "pages/module_1/page_5/audios/reload_5.mp3",
           "pages/module_1/page_5/audios/reload_6.mp3",
           "pages/module_1/page_5/audios/reload_7.mp3",
-          "pages/module_1/page_5/audios/reload_8.mp3"                     
+          "pages/module_1/page_5/audios/reload_8.mp3"
         ],
         "text": [
           [
@@ -225,14 +341,12 @@
       }
     }
   ],
-
   "transcriptText": [
     [
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     ]
   ],
-
   "ccText": [
     [
       {

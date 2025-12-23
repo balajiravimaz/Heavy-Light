@@ -79,6 +79,7 @@
 							padding: 0 20px;
 							display: flex;
 							gap: 10px;
+							top: 18px;
 							justify-content: flex-start;
 							align-items: center;
 
@@ -225,12 +226,12 @@
 
 						.titleText {
 							position: relative;
-							width: 500px;
-							height: 70px;
+							// width: 500px;
+							// height: 70px;
 							margin: 0 auto;
 
 							img {
-								width: 400px;
+								width: 330px;
 							}
 						}
 					}
@@ -423,15 +424,16 @@
 						}
 
 						.instruction {
-							color: #6b6b6b;
-							font-size: 25px;
-							font-weight: bold;
+							color: #819DA7;
+							font-size: 28px;
+							// font-weight: bold;
 							text-align: center;
+							max-width: 550xp;
 						}
 
 						.instruction span {
 							color: red;
-							font-weight: bold;
+							// font-weight: bold;
 						}
 
 						.intro-audio {
@@ -460,6 +462,29 @@
 							height: 100%;
 							justify-content: space-around;
 							align-items: center;
+
+							.instruction {
+								color: #819DA7;
+								font-size: 32px;
+								// font-weight: bold;
+								text-align: center;
+							}
+
+							.instruction span {
+								color: red;
+								// font-weight: bold;
+							}
+
+							.intro-audio {
+								width: 25px;
+								height: 25px;
+								background-image: url(../images/introAudio.png);
+								background-repeat: no-repeat;
+								background-size: contain;
+								cursor: pointer;
+								margin-left: 5px;
+								margin-top: 5px;
+							}
 
 							.box {
 								width: 342px;
@@ -638,9 +663,33 @@
 							background: rgba(0, 0, 0, 0.2);
 							backdrop-filter: blur(4px);
 							-webkit-backdrop-filter: blur(4px);
-							background-image: url(../images/successes.gif);
+							// background-image: url(../images/successes.gif);
 							background-size: 100%;
 							z-index: 1111;
+
+							&.show {
+								background-image: url(../images/successes.gif);
+								background-size: cover;
+							}
+
+							.greetingsPop {
+								width: 400px;
+								height: 400px;
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								background: url(../images/great_job.png) no-repeat;
+								background-size: contain;
+								position: relative;
+								background-position: center;
+								display: none;
+								opacity: 0;
+								transition: opacity 0.5s ease-in;
+								justify-content: center;
+								align-items: center;
+								margin: 0 auto;
+								height: 100%;
+							}
 
 							.game-completed-popup {
 								position: relative;
@@ -653,6 +702,11 @@
 								background-repeat: no-repeat;
 								transform: translate(-50%, -50%) scale(1);
 								animation: zoomPulse 2.8s ease-in-out infinite;
+								display: flex;
+								gap: 5px;
+								display: none;
+								opacity: 0;
+								transition: opacity 0.5s ease-in-out;
 
 								@keyframes zoomPulse {
 									0% {
@@ -670,15 +724,15 @@
 							}
 
 							.replay {
-								width: 75px;
-								height: 75px;
+								width: 60px;
+								height: 60px;
 								background: url(../images/replay.png);
 								background-repeat: no-repeat;
 								background-size: contain;
 								margin: 1% 0 2% 2%;
 								position: relative;
-								top: 63%;
-								left: 34%;
+								top: 65%;
+								left: 30%;
 								cursor: pointer;
 								background-color: transparent;
 								border: none;
@@ -716,14 +770,14 @@
 							}
 
 							.home {
-								width: 75px;
-								height: 75px;
+								width: 60px;
+								height: 60px;
 								background: url(../images/back.png);
 								background-repeat: no-repeat;
 								background-size: contain;
 								margin: 1% 0 2% 2%;
 								position: relative;
-								top: 63%;
+								top: 65%;
 								left: 35%;
 								cursor: pointer;
 								background-color: transparent;

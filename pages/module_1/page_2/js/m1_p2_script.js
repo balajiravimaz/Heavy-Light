@@ -54,12 +54,15 @@ function _pageLoaded() {
 
     }
     addSectionData();
+    console.log(_controller._globalMusicPlaying, "global Music");
+    checkGlobalAudio();
     //assignAudio(_audioId, _audioIndex, _pageAudioSync, _forceNavigation, _videoId, _popupAudio, _reloadRequired);
     pagePreLoad();
     setTimeout(function () {
         initPageAnimations();
         showVisitedModule();
     }, 1500)
+
 
 
 }
@@ -81,39 +84,33 @@ function addSectionData() {
 
             imgObj =
 
-  "<div class='top-alignText'>" +
+                "<div class='top-alignText'>" +
 
-    "<div class='instruction'><button class='ins-click instruction_1' id='instruction_1'></button><button class='ins_1 i-txt-toolTip' data-tooltip='Information'></button></div>" +
-    "<div class='instruction'><button class='ins-click instruction_2' id='instruction_2'></button><button class='ins_2 i-txt-toolTip' data-tooltip='Information'></button></div>" +
-    "<div class='instruction'><button class='ins-click instruction_3' id='instruction_3'></button><button class='ins_3 i-txt-toolTip' data-tooltip='Information'></button></div>" +
+                "<div class='instruction'><button class='ins-click instruction_1' id='instruction_1'></button><button class='ins_1 i-txt-toolTip' data-tooltip='Information'></button></div>" +
+                "<div class='instruction'><button class='ins-click instruction_2' id='instruction_2'></button><button class='ins_2 i-txt-toolTip' data-tooltip='Information'></button></div>" +
+                "<div class='instruction'><button class='ins-click instruction_3' id='instruction_3'></button><button class='ins_3 i-txt-toolTip' data-tooltip='Information'></button></div>" +
 
-
-
-  "</div>" +   
-  "<div class='inst-1-audio' id='audio-1' data-audio='" + sectionData.audio1 + "'> </div>" +
-  "<div class='inst-2-audio' id='audio-2' data-audio='" + sectionData.audio2 + "'> </div>" +
-  "<div class='inst-3-audio' id='audio-3' data-audio='" + sectionData.audio3 + "'> </div>" +
-//   "<div class='instruction-footer '>" + sectionData.footer + "</div>";
-"</div>";
+                "</div>" +
+                "<div class='inst-1-audio' id='audio-1' data-audio='" + sectionData.audio1 + "'> </div>" +
+                "<div class='inst-2-audio' id='audio-2' data-audio='" + sectionData.audio2 + "'> </div>" +
+                "<div class='inst-3-audio' id='audio-3' data-audio='" + sectionData.audio3 + "'> </div>" +
+                "</div>";
 
             const container = $('#section-' + sectionCnt)
-            .find('.content-holder')
-            .find('.col-left')
-            .find('.content')
-            .find('.content-bg');
-        
-        container.append(`
+                .find('.content-holder')
+                .find('.col-left')
+                .find('.content')
+                .find('.content-bg');
+
+            container.append(`
             <div class="body">
                 <div class="dummypatch"></div>
-                <div class="image-container">${imgObj}</div>
-                
-                
-                
-            </div>'<audio id="instructionAudio"></audio>'
+                <div class="image-container">${imgObj}</div>                                                
+            </div><audio id="instructionAudio"></audio>
         `);
-        
-        $('#section-' + sectionCnt)
-            .find('.bg-img').append(`
+
+            $('#section-' + sectionCnt)
+                .find('.bg-img').append(`
             <video
                 id="bgVideo"
                 autoplay
@@ -122,14 +119,14 @@ function addSectionData() {
                 playsinline
                 preload="auto"
             >
-                <source src="pages/module_1/page_2/video/video_1.mp4" type="video/mp4">
+                <source src="${_pageData.bgVid.videoSRC}" type="video/mp4">
             </video>
         `);
-        
-         $('#section-' + sectionCnt)
-            .find('.content-holder').append(`<div class='header-container'><div class='home'><button onClick="location.reload()" data-tooltip="Home" class='home-go-to'></button><button class='music playing' data-tooltip="Music"></button><button class='information-icon' data-tooltip="Information"></button></div></div>`);
+            console.log(_pageData.bgVid.videoSRC, "videos");
+            $('#section-' + sectionCnt)
+                .find('.content-holder').append(`<div class='header-container'><div class='home'><button onClick="location.reload()" data-tooltip="Home" class='home-go-to'></button><button class='music playing' data-tooltip="Music"></button><button class='information-icon' data-tooltip="Information"></button></div></div>`);
 
-        $('.content-holder').append(`<div id="introPopup-1">                
+            $('.content-holder').append(`<div id="introPopup-1">                
                 <div class="popup-content">
                     <button class="introPopAudio mute" onclick="togglePopAudio(this, 'assets/audios/info_audio.mp3')"></button>
                     <button class="introPopclose" data-tooltip="Close" onClick="closePopup('introPopup-1')"></button>
@@ -138,12 +135,12 @@ function addSectionData() {
             </div>`)
 
 
-const popup = _pageData.popup; 
-const popup2 = _pageData.popup2; 
-const popup3 = _pageData.popup3; 
+            const popup = _pageData.popup;
+            const popup2 = _pageData.popup2;
+            const popup3 = _pageData.popup3;
 
-const container_popup = $('#section-' + sectionCnt).find('.content-holder');
-      container_popup .append(`<div class="ins_1_popup">
+            const container_popup = $('#section-' + sectionCnt).find('.content-holder');
+            container_popup.append(`<div class="ins_1_popup">
         
         <div class="overlay-layer">
             <div class="audio-style">
@@ -156,7 +153,7 @@ const container_popup = $('#section-' + sectionCnt).find('.content-holder');
 
         </div>`);
 
-        container_popup .append(`<div class="ins_2_popup">
+            container_popup.append(`<div class="ins_2_popup">
         
             <div class="overlay-layer">
                 <div class="audio-style">
@@ -169,7 +166,7 @@ const container_popup = $('#section-' + sectionCnt).find('.content-holder');
 
         </div>`);
 
-        container_popup .append(`<div class="ins_3_popup">
+            container_popup.append(`<div class="ins_3_popup">
         
             <div class="overlay-layer">
             <div class="audio-style">
@@ -185,27 +182,27 @@ const container_popup = $('#section-' + sectionCnt).find('.content-holder');
             $('.ins-click').off('click').on('click', onClickHandler)
 
             $('.information-icon').off('click').on('click', showInfoGlobal)
-            
+
             $('.close-btn').off('click').on('click', onClickinfoClose)
 
             $('.header-container-play').off('click').on('click', onClickinGotoPage)
-            
+
             $('.close_ins_1_popup').off('click').on('click', onClickins_1_popup)
             $('.close_ins_2_popup').off('click').on('click', onClickins_2_popup)
             $('.close_ins_3_popup').off('click').on('click', onClickins_3_popup)
 
             $('.ins_1').off('click').on('click', onClickins_1_popup_show)
-            
+
             $('.ins_2').off('click').on('click', onClickins_2_popup_show)
-            
+
             $('.ins_3').off('click').on('click', onClickins_3_popup_show)
-            
+
             $('.completed-audio').off('click').on('click', onClickAudioHandler2);
 
             //audio
             $('#ins-1-audio-mute').off('click').on('click', onClickpauseAudio1);
             $('#ins-1-audio-unmute').off('click').on('click', onClickplayAudio1);
-            
+
             //audio
             $('#ins-2-audio-mute').off('click').on('click', onClickpauseAudio2);
             $('#ins-2-audio-unmute').off('click').on('click', onClickplayAudio2);
@@ -216,7 +213,7 @@ const container_popup = $('#section-' + sectionCnt).find('.content-holder');
             $("#home-go-to").on("click", jumpToPage);
             $(".music").on("click", toggleAudio);
 
-           
+
         }
         setCSS(sectionCnt);
 
@@ -231,28 +228,32 @@ const container_popup = $('#section-' + sectionCnt).find('.content-holder');
 }
 
 
-function showInfoGlobal(){
+function showInfoGlobal() {
     $("#introPopup-1").css("display", "flex")
     $("#introPopup-1").css("opacity", "1")
+
+    $(".introPopAudio")
+        .removeClass("playing")
+        .addClass("mute");
 }
-function onClickinfo(){
+function onClickinfo() {
     $('.overlay').show();
 }
 
-function onClickinfoClose(){
+function onClickinfoClose() {
     $('.overlay').hide();
 }
 
-function onClickinGotoPage(){
+function onClickinGotoPage() {
     alert("go to next page")
 }
 
-function jumpToPage(){
-      restartPage();
+function jumpToPage() {
+    restartPage();
 }
 
 function toggleAudio(event) {
-    const el = event.currentTarget; 
+    const el = event.currentTarget;
     const audio = document.getElementById("audio_src");
 
     console.log(el, "Target class");
@@ -262,11 +263,14 @@ function toggleAudio(event) {
         audio.play();
         el.classList.remove("mute");
         el.classList.add("playing");
+        _controller._globalMusicPlaying = true;
     } else {
         audio.pause();
         el.classList.remove("playing");
         el.classList.add("mute");
+        _controller._globalMusicPlaying = false;
     }
+    console.log(_controller._globalMusicPlaying, "gloablly");
 }
 
 
@@ -276,9 +280,9 @@ function toggleAudio(event) {
 
 // Ins_1
 
-function onClickins_1_popup(){
+function onClickins_1_popup() {
     if (currentAudio) {
-        currentAudio.pause();   
+        currentAudio.pause();
         //alert('Audio Paused');  
     } else {
         console.log('No audio is currently playing');
@@ -290,21 +294,21 @@ function onClickins_1_popup(){
     $('#ins-1-audio-mute').show();
 }
 
-function onClickins_1_popup_show(){
-    $('.ins_1_popup').css("display","flex");
+function onClickins_1_popup_show() {
+    $('.ins_1_popup').css("display", "flex");
     //onClickAudioHandler2.call($('.inst-1-audio')[0], new Event('click'));
 }
 
-function onClickpauseAudio1(){
-    
+function onClickpauseAudio1() {
+
     onClickAudioHandler2.call($('.inst-1-audio')[0], new Event('click'));
-     if (currentAudio) {
-        currentAudio.play();   
+    if (currentAudio) {
+        currentAudio.play();
         $(currentAudio).off('ended').on('ended', function () {
-             $("#ins-1-audio-unmute").hide();
-             $('#ins-1-audio-mute').show();
+            $("#ins-1-audio-unmute").hide();
+            $('#ins-1-audio-mute').show();
         });
- 
+
     } else {
         console.log('No audio is currently available');
     }
@@ -313,9 +317,9 @@ function onClickpauseAudio1(){
     $('#ins-1-audio-mute').hide();
 }
 
-function onClickplayAudio1(){
+function onClickplayAudio1() {
     if (currentAudio) {
-        currentAudio.pause();   
+        currentAudio.pause();
         //alert('Audio Paused');  
     } else {
         console.log('No audio is currently playing');
@@ -327,9 +331,9 @@ function onClickplayAudio1(){
 
 //ins2 
 
-function onClickins_2_popup(){
+function onClickins_2_popup() {
     if (currentAudio) {
-        currentAudio.pause();   
+        currentAudio.pause();
         //alert('Audio Paused');  
     } else {
         console.log('No audio is currently playing');
@@ -341,21 +345,21 @@ function onClickins_2_popup(){
     $('#ins-2-audio-mute').show();
 }
 
-function onClickins_2_popup_show(){
-    $('.ins_2_popup').css("display","flex");
+function onClickins_2_popup_show() {
+    $('.ins_2_popup').css("display", "flex");
     //onClickAudioHandler2.call($('.inst-2-audio')[0], new Event('click'));
 }
 
-function onClickpauseAudio2(){
-    
+function onClickpauseAudio2() {
+
     onClickAudioHandler2.call($('.inst-2-audio')[0], new Event('click'));
-     if (currentAudio) {
-        currentAudio.play();   
+    if (currentAudio) {
+        currentAudio.play();
         $(currentAudio).off('ended').on('ended', function () {
-             $("#ins-2-audio-unmute").hide();
-             $('#ins-2-audio-mute').show();
+            $("#ins-2-audio-unmute").hide();
+            $('#ins-2-audio-mute').show();
         });
- 
+
     } else {
         console.log('No audio is currently available');
     }
@@ -364,9 +368,9 @@ function onClickpauseAudio2(){
     $('#ins-2-audio-mute').hide();
 }
 
-function onClickplayAudio2(){
+function onClickplayAudio2() {
     if (currentAudio) {
-        currentAudio.pause();   
+        currentAudio.pause();
         //alert('Audio Paused');  
     } else {
         console.log('No audio is currently playing');
@@ -378,9 +382,9 @@ function onClickplayAudio2(){
 
 // Ins_3
 
-function onClickins_3_popup(){
+function onClickins_3_popup() {
     if (currentAudio) {
-        currentAudio.pause();   
+        currentAudio.pause();
         //alert('Audio Paused');  
     } else {
         console.log('No audio is currently playing');
@@ -392,21 +396,21 @@ function onClickins_3_popup(){
     $('#ins-3-audio-mute').show();
 }
 
-function onClickins_3_popup_show(){
-    $('.ins_3_popup').css("display","flex");
+function onClickins_3_popup_show() {
+    $('.ins_3_popup').css("display", "flex");
     //onClickAudioHandler3.call($('.inst-3-audio')[0], new Event('click'));
 }
 
-function onClickpauseAudio3(){
-    
+function onClickpauseAudio3() {
+
     onClickAudioHandler2.call($('.inst-3-audio')[0], new Event('click'));
-     if (currentAudio) {
-        currentAudio.play();   
+    if (currentAudio) {
+        currentAudio.play();
         $(currentAudio).off('ended').on('ended', function () {
-             $("#ins-3-audio-unmute").hide();
-             $('#ins-3-audio-mute').show();
+            $("#ins-3-audio-unmute").hide();
+            $('#ins-3-audio-mute').show();
         });
- 
+
     } else {
         console.log('No audio is currently available');
     }
@@ -415,9 +419,9 @@ function onClickpauseAudio3(){
     $('#ins-3-audio-mute').hide();
 }
 
-function onClickplayAudio3(){
+function onClickplayAudio3() {
     if (currentAudio) {
-        currentAudio.pause();   
+        currentAudio.pause();
         //alert('Audio Paused');  
     } else {
         console.log('No audio is currently playing');
@@ -440,7 +444,7 @@ function onClickAudioHandler2(e) {
     // Get or create the audio element
     const audio = document.getElementById('instructionAudio') || new Audio();
     currentAudio = audio;  // Store the current audio element for future control
-    
+
     // Set audio source and play
     audio.src = audioSrc;
     audio.currentTime = 0;
@@ -458,11 +462,11 @@ function onClickHandler(evt) {
     var id = $(this).attr('id');
     var arr = id.split('_')
     var num = Number(arr[arr.length - 1]) - 1;
-    console.log(id,num, "Number");
+    console.log(id, num, "Number");
 
     var body = $('#section-' + sectionCnt).find('.content-holder').find('.col-mid').find('.content').find('.content-bg').find('.body')
     //var sectionArray = _pageData.sections[sectionCnt - 1].content.sectionArray;
-    var jumpToPage = [2,3,1,2, 37, 59];
+    var jumpToPage = [2, 3, 1, 2, 37, 59];
     console.log(jumpToPage[num], "working apges");
 
     //var jumpToPage = sectionArray.sectionID
@@ -482,7 +486,7 @@ function onClickHandler(evt) {
             break;
     }
 }
- 
+
 
 function setCSS($sectionCnt) {
     _wrapperWidth = $('#f_wrapper').outerWidth()
@@ -677,12 +681,12 @@ function withAudioSync() {
         _tweenTimeline.add(animateFadeIn(body.find('.text-container').find('li').eq(k), 0.5, 0).play(), rightListTiming[k])
     }
 
-         var boxTiming1 = [0.5, 0.9, 1.2, 1.5]
-        _tweenTimeline.add(animateFadeIn(body.find('.text-container').find('.ins-txt '), 0.5).play(), 1)
-        _tweenTimeline.add(animateFadeOut(body.find('.dummypatch '), 0.5).play(), 1)
-        for (var k = 0; k < boxTiming1.length; k++) {
-            _tweenTimeline.add(animateFadeIn(body.find('.box').eq(k), 0.5, 0).play(), boxTiming1[k])
-        }
+    var boxTiming1 = [0.5, 0.9, 1.2, 1.5]
+    _tweenTimeline.add(animateFadeIn(body.find('.text-container').find('.ins-txt '), 0.5).play(), 1)
+    _tweenTimeline.add(animateFadeOut(body.find('.dummypatch '), 0.5).play(), 1)
+    for (var k = 0; k < boxTiming1.length; k++) {
+        _tweenTimeline.add(animateFadeIn(body.find('.box').eq(k), 0.5, 0).play(), boxTiming1[k])
+    }
 
     // if (_currentAudioIndex == 0) {
     //     var boxTiming1 = [0.5, 0.9, 1.2, 1.5]

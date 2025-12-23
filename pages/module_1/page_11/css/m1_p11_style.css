@@ -97,6 +97,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   padding: 0 20px;
   display: flex;
   gap: 10px;
+  top: 18px;
   justify-content: flex-start;
   align-items: center;
 }
@@ -226,12 +227,10 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
 }
 #section-1 .content-holder .col-left .content .content-bg .header-container .titleText {
   position: relative;
-  width: 500px;
-  height: 70px;
   margin: 0 auto;
 }
 #section-1 .content-holder .col-left .content .content-bg .header-container .titleText img {
-  width: 400px;
+  width: 330px;
 }
 #section-1 .content-holder .col-left .content .content-bg > .main-text {
   display: flex !important;
@@ -386,14 +385,13 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   display: none;
 }
 #section-1 .content-holder .col-left .content .content-bg > .body .instruction {
-  color: #6b6b6b;
-  font-size: 25px;
-  font-weight: bold;
+  color: #819DA7;
+  font-size: 28px;
   text-align: center;
+  max-width: 550xp;
 }
 #section-1 .content-holder .col-left .content .content-bg > .body .instruction span {
   color: red;
-  font-weight: bold;
 }
 #section-1 .content-holder .col-left .content .content-bg > .body .intro-audio {
   width: 25px;
@@ -419,6 +417,24 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   height: 100%;
   justify-content: space-around;
   align-items: center;
+}
+#section-1 .content-holder .col-left .content .content-bg > .body .game-container .instruction {
+  color: #819DA7;
+  font-size: 32px;
+  text-align: center;
+}
+#section-1 .content-holder .col-left .content .content-bg > .body .game-container .instruction span {
+  color: red;
+}
+#section-1 .content-holder .col-left .content .content-bg > .body .game-container .intro-audio {
+  width: 25px;
+  height: 25px;
+  background-image: url(../images/introAudio.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-top: 5px;
 }
 #section-1 .content-holder .col-left .content .content-bg > .body .game-container .box {
   width: 342px;
@@ -556,9 +572,30 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  background-image: url(../images/successes.gif);
   background-size: 100%;
   z-index: 1111;
+}
+#section-1 .content-holder .col-left .content .content-bg > .body .game-completed.show {
+  background-image: url(../images/successes.gif);
+  background-size: cover;
+}
+#section-1 .content-holder .col-left .content .content-bg > .body .game-completed .greetingsPop {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../images/great_job.png) no-repeat;
+  background-size: contain;
+  position: relative;
+  background-position: center;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 100%;
 }
 #section-1 .content-holder .col-left .content .content-bg > .body .game-completed .game-completed-popup {
   position: relative;
@@ -571,6 +608,11 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   background-repeat: no-repeat;
   transform: translate(-50%, -50%) scale(1);
   animation: zoomPulse 2.8s ease-in-out infinite;
+  display: flex;
+  gap: 5px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 @keyframes zoomPulse {
   0% {
@@ -584,15 +626,15 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   }
 }
 #section-1 .content-holder .col-left .content .content-bg > .body .game-completed .replay {
-  width: 75px;
-  height: 75px;
+  width: 60px;
+  height: 60px;
   background: url(../images/replay.png);
   background-repeat: no-repeat;
   background-size: contain;
   margin: 1% 0 2% 2%;
   position: relative;
-  top: 63%;
-  left: 34%;
+  top: 65%;
+  left: 30%;
   cursor: pointer;
   background-color: transparent;
   border: none;
@@ -626,14 +668,14 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   opacity: 1;
 }
 #section-1 .content-holder .col-left .content .content-bg > .body .game-completed .home {
-  width: 75px;
-  height: 75px;
+  width: 60px;
+  height: 60px;
   background: url(../images/back.png);
   background-repeat: no-repeat;
   background-size: contain;
   margin: 1% 0 2% 2%;
   position: relative;
-  top: 63%;
+  top: 65%;
   left: 35%;
   cursor: pointer;
   background-color: transparent;

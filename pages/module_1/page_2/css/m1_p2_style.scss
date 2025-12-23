@@ -453,7 +453,7 @@
 		position: absolute;
 		width: 100%;
 		height: 12%;
-		top: 0;
+		top: 5px;
 		left: 0;
 	}
 
@@ -1374,7 +1374,7 @@
 			}
 
 			&.playing {
-				background: url(../images/music.png) no-repeat;
+				background: url(../images/specker.png) no-repeat;
 				background-size: contain;
 			}
 

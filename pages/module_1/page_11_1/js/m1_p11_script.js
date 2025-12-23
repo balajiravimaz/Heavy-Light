@@ -53,6 +53,7 @@ function _pageLoaded() {
 
     }
     addSectionData();
+    checkGlobalAudio();
 
 
     assignAudio(_audioId, _audioIndex, _pageAudioSync, _forceNavigation, _videoId, _popupAudio, _reloadRequired);
@@ -99,7 +100,7 @@ function addSectionData() {
 
             let htmlObj = '',
                 imgObj =
-                    "<div class='game-completed'> <div class='game-completed-popup'><button class='replay'></div><button class='home'></div></div> </div>" +
+                    "<div class='game-completed'> <div class='game-completed-popup'><button class='replay' data-tooltip='Replay'></button><button data-tooltip='Home' class='home'></button></div> </div>" +
                     "<div class='game-container'>" +
                     "<div class='dummy-box'></div>" +
                     "<div class='box'>" +
@@ -154,9 +155,6 @@ function addSectionData() {
             $(".home").on("click", function () {
                 jumtoPage(1)
             });
-            $("#home").on("click", function(){
-                replayGameInfro();
-            })
 
             $(".music").on("click", function (event) {
         let el = event.currentTarget;
@@ -176,10 +174,9 @@ function addSectionData() {
             });
             // $("#home,#homeBack").on("click", function(){
             //     jumtoPage(1)
-            // });
+            // });$()
 
-
-
+            $("#home").on("click", showHome);
         }
         setCSS(sectionCnt);
 
@@ -189,8 +186,18 @@ function addSectionData() {
     if ((bookMarkArray[0] == '1') || (bookMarkArray[0] == 1)) {
         _visitedArr = bookMarkArray;
     }
+}
 
 
+function showHome(){
+    $("#home-popup").css("display", "flex");
+}
+
+function stayPage() {
+    $("#home-popup").hide();
+}
+function leavePage() {
+    jumtoPage(1);
 }
 
 function jumtoPage(pageNo) {
@@ -200,12 +207,6 @@ function jumtoPage(pageNo) {
     _controller.updateViewNow();
 }
 
-function stayPage() {
-    $("#home-popup").hide();
-}
-function leavePage() {
-    jumtoPage(1);
-}
 
 function onClickAudioHandler(e) {
     $('.dummy-box').show();
@@ -276,11 +277,11 @@ function replayGame() {
 }
 
 function replayGameInfro() {
-    $('#home-popup').css("display", "flex");
+    $('.overlay').css("display", "flex");
 }
 
 function staybtnClickPopup() {
-    $('#home-popup').css("display", "none");
+    $('.overlay').css("display", "none");
 }
 
 $(document).on('drop', '.drop-area', function (e) {
@@ -459,11 +460,13 @@ function toggleAudio(el) {
     audio.play();
     el.classList.remove("mute");
     el.classList.add("playing");
+    _controller._globalMusicPlaying = true;
   } else {
     audio.pause();
     audio.currentTime = 0;
     el.classList.remove("playing");
     el.classList.add("mute");
+    _controller._globalMusicPlaying = false;
   }
 }
 

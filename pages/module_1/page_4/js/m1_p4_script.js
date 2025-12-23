@@ -123,7 +123,7 @@ function addSectionData() {
                         htmlObj += '<div class="sub-section video">';
 
             htmlObj +=
-                '<div class="video-holder"><video controls autoplay muted loop playsinline  preload="auto"class="video" id="video-player-' +sectionCnt +'" poster=""><source src="' +
+                '<div class="video-holder"><video controls autoplay playsinline  preload="auto"class="video" id="video-player-' +sectionCnt +'" poster=""><source src="' +
                 _pageData.sections[sectionCnt - 1].content.videoURL +
                 '" type="video/mp4"></source><track kind="captions" src="" srclang="en" label="English" default></video><button class="play-btn" aria-label="Play Videos" tabindex="0"><div class="play-icon"></div></button><div>';
             

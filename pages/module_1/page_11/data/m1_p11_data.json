@@ -62,7 +62,7 @@
 					"instruction": "pages/module_1/page_11/audios/audio1.mp3",
 					"correct": "pages/module_1/page_11/audios/correctDragNDrop.mp3",
 					"wrong": "pages/module_1/page_11/audios/incorrectDragNDrop.mp3",
-					"success": "pages/module_1/page_11/audios/GoodJobAudio.mp3"
+					"success": "pages/module_1/page_11/audios/final_audio.mp3"
 				  },
 				  "dropZones": [
 					{ "id": "heavy", "label": "HEAVY", "accept": "heavy" },

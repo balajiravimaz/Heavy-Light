@@ -99,7 +99,7 @@ function addSectionData() {
 
             let htmlObj = '',
                 imgObj =
-                    "<div class='game-completed'> <div class='game-completed-popup'><button class='replay' data-tooltip='Replay'></button><button data-tooltip='Home' class='home'></button></div> </div>" +
+                    "<div class='game-completed'> <div class='greetingsPop'></div><div class='game-completed-popup'><button class='replay' data-tooltip='Replay'></button><button data-tooltip='Back' class='home'></button></div> </div>" +
                     "<div class='game-container'>" +
                     "<div class='dummy-box'></div>" +
                     "<div class='box'>" +
@@ -156,11 +156,11 @@ function addSectionData() {
             });
 
             $(".music").on("click", function (event) {
-        let el = event.currentTarget;
-        playClickThen(function () {
-          toggleAudio(el);
-        })
-      });
+                let el = event.currentTarget;
+                playClickThen(function () {
+                    toggleAudio(el);
+                })
+            });
 
             $('.stay-btn').off('click').on('click', staybtnClickPopup)
 
@@ -188,7 +188,7 @@ function addSectionData() {
 }
 
 
-function showHome(){
+function showHome() {
     $("#home-popup").css("display", "flex");
 }
 
@@ -196,9 +196,15 @@ function stayPage() {
     $("#home-popup").hide();
 }
 function leavePage() {
-    jumtoPage(1);
-}
+  var audio = document.getElementById("simulationAudio");
+  if (audio) {
+    // Stop audio whether it's playing or paused
+    audio.pause();
+    audio.currentTime = 0;
+  }
 
+  jumtoPage(1); 
+}
 function jumtoPage(pageNo) {
 
     _controller.pageCnt = pageNo;
@@ -253,11 +259,24 @@ function onClickAudioHandler2(e) {
     audio.src = audioSrc;
     audio.currentTime = 0;
 
+    audio.onended = function () {
+        onAudioEndedCallback();
+    };
+
+
     audio.play().catch(err => {
         console.error('Audio play failed:', err);
     });
 }
 
+function onAudioEndedCallback() {
+    console.log("not workings");
+    $(".greetingsPop").css("display", "none");
+    $(".greetingsPop").css("opacity", "0");
+    $('.game-completed').removeClass("show");
+    $(".game-completed-popup").css("display", "flex")
+    $(".game-completed-popup").css("opacity", "1")
+}
 
 /* ================= DRAG START ================= */
 $(document).on('dragstart', '.object', function (e) {
@@ -297,6 +316,7 @@ $(document).on('drop', '.drop-area', function (e) {
         if (!draggedEl.hasClass('correct')) {
             correctCount++;
             onClickAudioHandler2.call($('.completed-correct')[0], new Event('click'));
+            // onAudioEndedCallback();
         }
 
         $(this).append(draggedEl);
@@ -304,6 +324,13 @@ $(document).on('drop', '.drop-area', function (e) {
 
         if (correctCount === totalObjects) {
             $('.game-completed').show();
+            setTimeout(function () {
+                $(".greetingsPop").css("display", "flex");
+                $(".greetingsPop").css("opacity", "1");
+            }, 300);
+            setTimeout(function () {
+                $('.game-completed').addClass("show");
+            }, 1000)
             onClickAudioHandler2.call($('.completed-audio')[0], new Event('click'));
         }
 
@@ -449,22 +476,22 @@ function getModuleLevelpageVisited() {
 }
 
 function toggleAudio(el) {
-  // const el = event.currentTarget;
-  const audio = document.getElementById("audio_src");
+    // const el = event.currentTarget;
+    const audio = document.getElementById("audio_src");
 
-  console.log(el, "Target class");
+    console.log(el, "Target class");
 
-  if (audio.paused) {
-    audio.muted = false;
-    audio.play();
-    el.classList.remove("mute");
-    el.classList.add("playing");
-  } else {
-    audio.pause();
-    audio.currentTime = 0;
-    el.classList.remove("playing");
-    el.classList.add("mute");
-  }
+    if (audio.paused) {
+        audio.muted = false;
+        audio.play();
+        el.classList.remove("mute");
+        el.classList.add("playing");
+    } else {
+        audio.pause();
+        audio.currentTime = 0;
+        el.classList.remove("playing");
+        el.classList.add("mute");
+    }
 }
 
 function onClickHandler(evt) {

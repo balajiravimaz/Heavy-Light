@@ -8,6 +8,8 @@
     width: 130px;
     height: auto;
     margin-right: 10px;
+    justify-content: center;
+    gap: 10px;
 
     /*  &:after {
         content: "";
@@ -31,10 +33,63 @@
         }*/
       img {
         position: relative;
-        width: 100%;
+        width: 130px;
         height: auto;
       }
     }
+  }
+
+  .full-screen {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+    top: 2px;
+
+    &:hover {
+      transform: scale(1.125);
+    }
+
+    &.fullScreen {
+      background: url('../assets/images/nav-fullscreen-on.png') no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    &.offScreen {
+      background: url('../assets/images/nav-fullscreen-off.png') no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    &::after {
+      content: attr(data-tooltip);
+      /* tooltip text from attribute */
+      position: absolute;
+      top: 100%;
+      /* below the button */
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      font-size: 12px;
+      padding: 4px 6px;
+      border-radius: 5px;
+      white-space: nowrap;
+      opacity: 0;
+      font-family: 'Times New Roman', Times, serif;
+      pointer-events: none;
+      transition: opacity 0.2s;
+      margin-top: 4px;
+      z-index: 10;
+    }
+
+    /* Show tooltip on hover */
+    &:hover::after {
+      opacity: 1;
+    }
+
   }
 
   #f_courseTitle {

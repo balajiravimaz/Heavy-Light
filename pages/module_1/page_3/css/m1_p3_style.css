@@ -385,14 +385,14 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   width: 100%;
   height: 100%;
   top: 0;
-  -o-object-fit: cover;
-  object-fit: cover;
+  -o-object-fit: unset;
+     object-fit: unset;
 }
 #section-1 .header-container {
   position: absolute;
   width: 100%;
   height: 12%;
-  top: 0;
+  top: 5px;
   left: 0;
 }
 #section-1 .home {
@@ -1139,7 +1139,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   transform: scale(1.125);
 }
 #introPopup-1 .popup-content .introPopAudio.playing {
-  background: url(../images/music.png) no-repeat;
+  background: url(../images/specker.png) no-repeat;
   background-size: contain;
 }
 #introPopup-1 .popup-content .introPopAudio.mute {
