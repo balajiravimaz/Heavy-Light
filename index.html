@@ -519,6 +519,15 @@
     <script src="./js/templates/js/jquery-asAccordion.js"></script>
     <!-- SCORM Init-->
     <script type="text/javascript">
+                window.addEventListener("load", () => {
+            const audio = document.getElementById("audio_src");
+
+            if (sessionStorage.getItem("stopAudio")) {
+                audio.pause();
+                audio.currentTime = 0;
+                sessionStorage.removeItem("stopAudio");
+            }
+        });
         var isScorm = true;
         			var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
         			if (isScorm) {
@@ -670,15 +679,7 @@ function toggleAudio(el) {
     }
 }
 
-        window.addEventListener("load", () => {
-            const audio = document.getElementById("audio_src");
 
-            if (sessionStorage.getItem("stopAudio")) {
-                audio.pause();
-                audio.currentTime = 0;
-                sessionStorage.removeItem("stopAudio");
-            }
-        });
 
 
     </script>
