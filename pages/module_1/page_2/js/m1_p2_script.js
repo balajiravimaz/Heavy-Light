@@ -215,6 +215,15 @@ function addSectionData() {
 
 
         }
+        window.addEventListener("load", () => {
+            const audio = document.getElementById("audio_src");
+
+            if (sessionStorage.getItem("stopAudio")) {
+                audio.pause();
+                audio.currentTime = 0;
+                sessionStorage.removeItem("stopAudio");
+            }
+        });
         setCSS(sectionCnt);
 
     }
@@ -232,15 +241,7 @@ function goHome() {
     location.reload();
 }
 
-window.addEventListener("load", () => {
-    const audio = document.getElementById("audio_src");
 
-    if (sessionStorage.getItem("stopAudio")) {
-        audio.pause();
-        audio.currentTime = 0;
-        sessionStorage.removeItem("stopAudio");
-    }
-});
 
 function showInfoGlobal() {
     $("#introPopup-1").css("display", "flex")
