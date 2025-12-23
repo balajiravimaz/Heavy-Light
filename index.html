@@ -670,6 +670,16 @@ function toggleAudio(el) {
     }
 }
 
+        window.addEventListener("load", () => {
+            const audio = document.getElementById("audio_src");
+
+            if (sessionStorage.getItem("stopAudio")) {
+                audio.pause();
+                audio.currentTime = 0;
+                sessionStorage.removeItem("stopAudio");
+            }
+        });
+
 
     </script>
     <script type="text/javascript" src="./js/templates/js/page_plugin.js"></script>
