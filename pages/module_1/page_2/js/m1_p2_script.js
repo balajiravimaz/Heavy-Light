@@ -124,7 +124,7 @@ function addSectionData() {
         `);
             console.log(_pageData.bgVid.videoSRC, "videos");
             $('#section-' + sectionCnt)
-                .find('.content-holder').append(`<div class='header-container'><div class='home'><button onClick="location.reload()" data-tooltip="Home" class='home-go-to'></button><button class='music playing' data-tooltip="Music"></button><button class='information-icon' data-tooltip="Information"></button></div></div>`);
+                .find('.content-holder').append(`<div class='header-container'><div class='home'><button onClick="goHome()" data-tooltip="Home" class='home-go-to'></button><button class='music playing' data-tooltip="Music"></button><button class='information-icon' data-tooltip="Information"></button></div></div>`);
 
             $('.content-holder').append(`<div id="introPopup-1">                
                 <div class="popup-content">
@@ -227,6 +227,14 @@ function addSectionData() {
 
 }
 
+function goHome() {
+    const audio = document.getElementById("audio_src");
+    if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+    }
+    location.reload();
+}
 
 function showInfoGlobal() {
     $("#introPopup-1").css("display", "flex")
