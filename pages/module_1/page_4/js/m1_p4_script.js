@@ -246,7 +246,9 @@ function onVideoPlayHandler() {
 function jumtoPage(){
     // const audio = document.getElementById("audio_src").pause();
       _controller.pageCnt = 0;
-    
+      if(_controller._globalMusicPlaying){
+        document.getElementById("audio_src").play();
+      }
       setTimeout(function(){
         $("footer").find("p").show();
       },100)

@@ -386,7 +386,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   justify-content: center;
   align-items: flex-start;
   padding: 20px 15px 0px 15px;
-  max-width: 680px;
+  max-width: 700px;
   margin: 0 auto;
   height: 150px;
 }
@@ -413,8 +413,6 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   height: 160px;
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style > .body .animat-container .left-side .wrap .text p {
-  opacity: 0;
-  transition: opacity 0.5s ease;
   /* fade duration */
   font-weight: normal;
   position: absolute;
@@ -423,10 +421,13 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   gap: 5px;
   align-items: center;
   text-align: center;
+  margin-top: 10px;
   /* so texts overlap */
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style > .body .animat-container .left-side .wrap .text p .wrapTextaudio {
   position: relative;

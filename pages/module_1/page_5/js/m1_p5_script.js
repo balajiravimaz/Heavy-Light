@@ -660,6 +660,7 @@ function playBtnSounds(audioObj, callback) {
 function showEndScreen(){
   console.log(_btnClicked, "end screen");
   clearGlobalAudios();
+
   _btnClicked++;
   console.log(_btnClicked,_pageData.sections[sectionCnt - 1].content.ostAudios[_btnClicked], "end screen");
    playBtnSounds(_pageData.sections[sectionCnt - 1].content.ostAudios[_btnClicked]);
@@ -808,6 +809,9 @@ function onClickHanlder(e) {
     // const ostData = _pageData.sections[sectionCnt - 1].content.ostAudios[_globalCicked];
     playBtnSounds(_pageData.sections[sectionCnt - 1].content.ostAudios[_btnClicked]);
     clearText();
+     setTimeout(function () {
+    $(".bar-holding").css("transform", "rotate(-5deg)");
+  }, 500)
 
   }
 
@@ -820,10 +824,12 @@ function onClickHanlder(e) {
 
   if (clickCount === 2) {
     _globalCicked++;
+    setTimeout(function(){
+      evaluateSeesaw();
+    },200)
     playBtnSounds(_pageData.sections[sectionCnt - 1].content.ostAudios[_btnClicked]);
     clearText();
-    audioEnd(function () {
-      evaluateSeesaw();
+    audioEnd(function () {      
       checkHeavyLight(leftWeight, rightWeight)
       // setTimeout(evaluateSeesaw, 1000);
       // setTimeout(() => checkHeavyLight(leftWeight, rightWeight), 2000);
@@ -843,7 +849,7 @@ function onClickHanlder(e) {
       left: targetRect.left + scrollLeft,
       top: targetRect.top + scrollTop
     },
-    700,
+    300,
     function () {
       $img.appendTo(targetDiv).css({
         position: "relative",
@@ -853,9 +859,7 @@ function onClickHanlder(e) {
       });
     }
   );
-  setTimeout(function () {
-    $(".bar-holding").css("transform", "rotate(-5deg)");
-  }, 500)
+ 
 }
 
 
@@ -963,6 +967,7 @@ function showEndAnimations() {
     var currentTime = this.currentTime;
     $(".greetingsPop").css("display", "flex");
     $(".greetingsPop").css("opacity", "1");
+    IdleAudioManager.stop();
 
     if (currentTime >= 1) {
       $(".confetti").addClass("show");

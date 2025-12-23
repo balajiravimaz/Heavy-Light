@@ -87,7 +87,7 @@
               "pages/module_1/page_5/audios/reload_5.mp3"
             ],
             "ost": [
-              "Let's compare another two objects.",
+              "Now let's <span>compare</span> another two objects.",
               "Click on the <span>object.</span>"
             ],
             "duration": [
@@ -103,7 +103,7 @@
               "pages/module_1/page_5/audios/click_another_reload.mp3"
             ],
             "ost": [
-              "Click on another object."
+              "Click on another <span>object.</span>"
             ],
             "duration": [
               3000
@@ -126,7 +126,7 @@
               "pages/module_1/page_5/audios/reload_8.mp3"
             ],
             "ost": [
-              "Look! Now only two objects are left, let's <span>compare</span> them too.",
+              "Look! Now only two objects are left, <br> let's <span>compare</span> them too.",
               "<span>Tap</span> on any one of the objects."
             ],
             "duration": [

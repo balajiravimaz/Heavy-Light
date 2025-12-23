@@ -442,6 +442,7 @@ function showEndAnimations() {
       $(".confetti").show();
       setTimeout(function () {
         $(".confetti").removeClass("show");
+        $(".confetti").hide();
       }, 3000);
 
 
