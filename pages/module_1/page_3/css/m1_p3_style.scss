@@ -115,6 +115,7 @@
 							z-index: 1;
 							background-color: transparent;
 							opacity: 0;
+							display: none !important;
 						}
 
 						&>.text-container {
@@ -358,6 +359,11 @@
 							.i-txt-toolTip {
 								position: absolute;
 								background-color: transparent;
+								transition: transform 0.5s ease-in;
+								animation: none !important;
+								&:hover{
+									transform: scale(1.125);
+								}
 
 								&::after {
 									content: attr(data-tooltip);
@@ -367,7 +373,11 @@
 									/* below the button */
 									left: 50%;
 									transform: translateX(-50%);
-									background: #333;
+									background: rgba(0, 0, 0, .85);
+									font-weight: bold;
+									white-space: nowrap;
+									box-shadow: 0 .1vw 1vw rgba(0, 0, 0, .6);
+									border: 1px solid rgba(255, 255, 255, .2);
 									color: #fff;
 									font-size: 12px;
 									padding: 4px 6px;
@@ -445,8 +455,8 @@
 		width: 100%;
 		height: 100%;
 		top: 0;
-		// -o-object-fit: cover;
-		object-fit: unset;
+		-o-object-fit: cover;
+		object-fit: cover;
 	}
 
 	.header-container {
@@ -470,6 +480,11 @@
 		button {
 			// background: transparent;
 			border: none;
+			animation: none !important;
+			transition: transform 0.5s ease-in;
+			&:hover{
+				transform: scale(1.125);
+			}
 
 			&::after {
 				content: attr(data-tooltip);
@@ -479,7 +494,11 @@
 				/* below the button */
 				left: 50%;
 				transform: translateX(-50%);
-				background: #333;
+				background: rgba(0, 0, 0, .85);
+				font-weight: bold;
+				white-space: nowrap;
+				box-shadow: 0 .1vw 1vw rgba(0, 0, 0, .6);
+				border: 1px solid rgba(255, 255, 255, .2);
 				color: #fff;
 				font-size: 12px;
 				padding: 4px 6px;
@@ -1309,7 +1328,11 @@
 			/* below the button */
 			left: 50%;
 			transform: translateX(-50%);
-			background: #333;
+			background: rgba(0, 0, 0, .85);
+			font-weight: bold;
+			white-space: nowrap;
+			box-shadow: 0 .1vw 1vw rgba(0, 0, 0, .6);
+			border: 1px solid rgba(255, 255, 255, .2);
 			color: #fff;
 			font-size: 12px;
 			padding: 4px 6px;
@@ -1391,7 +1414,11 @@
 				/* below the button */
 				left: 50%;
 				transform: translateX(-50%);
-				background: #333;
+				background: rgba(0, 0, 0, .85);
+				font-weight: bold;
+				white-space: nowrap;
+				box-shadow: 0 .1vw 1vw rgba(0, 0, 0, .6);
+				border: 1px solid rgba(255, 255, 255, .2);
 				color: #fff;
 				font-size: 12px;
 				padding: 4px 6px;

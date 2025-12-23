@@ -246,9 +246,11 @@ h2 {}
                               cursor: pointer;
                               width: 50px;
                               height: 50px;
+                              transition: transform 0.5s ease-in;
 
                               &:hover {
-                                   animation: slowInFastOut 0.5s ease-in-out;
+                                   transform: scale(1.125);
+                                   // animation: slowInFastOut 0.5s ease-in-out;
                               }
 
                               &::after {
@@ -259,9 +261,13 @@ h2 {}
                                    /* below the button */
                                    left: 50%;
                                    transform: translateX(-50%);
-                                   background: #333;
-                                   font-family: 'Times New Roman', Times, serif;
+                                   background: rgba(0, 0, 0, .85);
+                                   font-weight: bold;
+                                   white-space: nowrap;
+                                   box-shadow: 0 .1vw 1vw rgba(0, 0, 0, .6);
+                                   border: 1px solid rgba(255, 255, 255, .2);
                                    color: #fff;
+                                   font-family: 'Times New Roman', Times, serif;
                                    font-size: 12px;
                                    padding: 4px 6px;
                                    border-radius: 5px;
@@ -296,20 +302,20 @@ h2 {}
                          font-size: 100px;
                          font-family: 'Alphakind', Arial, sans-serif !important;
                          line-height: 0.9;
-                         text-shadow: 0.1vw 0.1vw 0 #000, 0.26vw 0.26vw 0 #000000, 0.31vw 0.31vw 0 #0a0808;
+                         text-shadow: 1px 1px 0 #000, 3px 3px 0 #000, 4px 4px 0 #0a0808;
                          margin: 0;
                          font-weight: normal;
                          // display: flex;
                          // justify-content: center;
-                         gap: 0.1vw;
                          line-height: 1;
+                         letter-spacing: 2px;
 
                          span {
                               color: #894bca;
-                              font-weight: bold;
+                              // font-weight: bold;
                               /* Purple */
                               font-size: 100px;
-                              text-shadow: 0.1vw 0.1vw 0 #000, 0.2vw 0.2vw 0 #000;
+                              // text-shadow: 0.1vw 0.1vw 0 #000, 0.2vw 0.2vw 0 #000;
                               box-sizing: border-box;
                               font-family: 'Alphakind', Arial, sans-serif;
                          }
@@ -943,10 +949,10 @@ footer {
           position: relative;
           width: 50px;
           height: 50px;
-          transition:transform 0.5s ease-in-out;
+          transition: transform 0.5s ease-in-out;
           cursor: pointer;
 
-          &:hover{
+          &:hover {
                transform: scale(1.125);
           }
 
@@ -970,7 +976,11 @@ footer {
                /* below the button */
                left: 50%;
                transform: translateX(-50%);
-               background: #333;
+               background: rgba(0, 0, 0, .85);
+               font-weight: bold;
+               white-space: nowrap;
+               box-shadow: 0 .1vw 1vw rgba(0, 0, 0, .6);
+               border: 1px solid rgba(255, 255, 255, .2);
                color: #fff;
                font-size: 12px;
                padding: 4px 6px;
@@ -979,7 +989,7 @@ footer {
                opacity: 0;
                font-family: 'Times New Roman', Times, serif;
                pointer-events: none;
-               transition: opacity 0.2s;
+               transition: opacity 0.2s ease;
                margin-top: 4px;
                z-index: 10;
           }
@@ -1220,7 +1230,11 @@ footer {
                     /* below the button */
                     left: 50%;
                     transform: translateX(-50%);
-                    background: #333;
+                    background: rgba(0, 0, 0, .85);
+                    font-weight: bold;
+                    white-space: nowrap;
+                    box-shadow: 0 .1vw 1vw rgba(0, 0, 0, .6);
+                    border: 1px solid rgba(255, 255, 255, .2);
                     color: #fff;
                     font-size: 12px;
                     padding: 4px 6px;

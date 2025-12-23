@@ -2582,7 +2582,7 @@ function setButtonState(btn, isFullscreen) {
     btn.classList.toggle("offScreen", isFullscreen);
     btn.setAttribute(
         "data-tooltip",
-        isFullscreen ? "Normal View" : "Full Screen"
+        isFullscreen ? "Normal View" : "Fullscreen"
     );
 }
 

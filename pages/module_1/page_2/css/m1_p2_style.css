@@ -120,6 +120,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   z-index: 1;
   background-color: transparent;
   opacity: 0;
+  display: none !important;
 }
 #section-1 .content-holder .col-left .content .content-bg > .body > .text-container {
   opacity: 0;
@@ -312,7 +313,12 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
 #section-1 .content-holder .col-left .content .content-bg > .body > .image-container .i-txt-toolTip {
   position: absolute;
   background-color: transparent;
+  transition: transform 0.5s ease-in-out;
+  animation: none !important;
   /* Show tooltip on hover */
+}
+#section-1 .content-holder .col-left .content .content-bg > .body > .image-container .i-txt-toolTip:hover {
+  transform: scale(1.125);
 }
 #section-1 .content-holder .col-left .content .content-bg > .body > .image-container .i-txt-toolTip::after {
   content: attr(data-tooltip);
@@ -322,7 +328,11 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   /* below the button */
   left: 50%;
   transform: translateX(-50%);
-  background: #333;
+  background: rgba(0, 0, 0, 0.85);
+  font-weight: bold;
+  white-space: nowrap;
+  box-shadow: 0 0.1vw 1vw rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
   font-size: 12px;
   padding: 4px 6px;
@@ -405,6 +415,11 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
 }
 #section-1 .home button {
   border: none;
+  transition: transform 0.5s ease-in;
+  animation: none !important;
+}
+#section-1 .home button:hover {
+  transform: scale(1.125);
 }
 #section-1 .home button::after {
   content: attr(data-tooltip);
@@ -414,7 +429,11 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   /* below the button */
   left: 50%;
   transform: translateX(-50%);
-  background: #333;
+  background: rgba(0, 0, 0, 0.85);
+  font-weight: bold;
+  white-space: nowrap;
+  box-shadow: 0 0.1vw 1vw rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
   font-size: 12px;
   padding: 4px 6px;
@@ -723,7 +742,11 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   /* below the button */
   left: 50%;
   transform: translateX(-50%);
-  background: #333;
+  background: rgba(0, 0, 0, 0.85);
+  font-weight: bold;
+  white-space: nowrap;
+  box-shadow: 0 0.1vw 1vw rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
   font-size: 12px;
   padding: 4px 6px;
@@ -944,7 +967,11 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   /* below the button */
   left: 50%;
   transform: translateX(-50%);
-  background: #333;
+  background: rgba(0, 0, 0, 0.85);
+  font-weight: bold;
+  white-space: nowrap;
+  box-shadow: 0 0.1vw 1vw rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
   font-size: 12px;
   padding: 4px 6px;
@@ -1077,7 +1104,11 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   /* below the button */
   left: 50%;
   transform: translateX(-50%);
-  background: #333;
+  background: rgba(0, 0, 0, 0.85);
+  font-weight: bold;
+  white-space: nowrap;
+  box-shadow: 0 0.1vw 1vw rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
   font-size: 12px;
   padding: 4px 6px;
@@ -1167,7 +1198,11 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   /* below the button */
   left: 50%;
   transform: translateX(-50%);
-  background: #333;
+  background: rgba(0, 0, 0, 0.85);
+  font-weight: bold;
+  white-space: nowrap;
+  box-shadow: 0 0.1vw 1vw rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
   font-size: 12px;
   padding: 4px 6px;

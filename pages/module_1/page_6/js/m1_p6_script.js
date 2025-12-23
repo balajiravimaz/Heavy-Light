@@ -182,7 +182,7 @@ function addSectionData() {
     <div class="popup-content modal-box">
       <h2 class="modal-title">Oops!</h2>
       <div class="modal-message">
-        <p>If you leave the game then you have to start from beginning.</p>     
+        <p>If you leave the fun game then you have to start from beginning.</p>     
         <p class="modal-question">Are you sure you want to leave?</p>   
       </div>      
       <div class="modal-buttons">
