@@ -358,6 +358,7 @@ Controller.prototype.checkPreLoaderHide = function () {
                 switch (e.type) {
                     case "click":
                         $("#f_preloader_wrapper").show();
+                        playClickThen();
                         onLaunchCourse();
                         document.getElementById("audio_src").play();
                         document.getElementById("audio_src").volume = 0.6;
@@ -2552,8 +2553,12 @@ function checkGlobalAudio() {
     });
 }
 function toggleFullscreen(btn) {
+
+    playClickThen()
+
     const doc = document;
     const elem = doc.documentElement;
+
 
     const isFullscreen =
         doc.fullscreenElement ||
@@ -2575,6 +2580,7 @@ function toggleFullscreen(btn) {
 
         setButtonState(btn, false);
     }
+
 }
 
 function setButtonState(btn, isFullscreen) {

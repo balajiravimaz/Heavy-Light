@@ -582,7 +582,7 @@
 
 document.querySelector(".introInfo").addEventListener("click", function (event) {
     const el = event.currentTarget;
-    playClickThen(function() {
+    playClickThen();
         $("#introPopup").css('display','flex')
         $("#introPopup").css('opacity','1') 
         $(".introPopAudio").removeClass('playing');
@@ -592,13 +592,14 @@ document.querySelector(".introInfo").addEventListener("click", function (event) 
     //     console.log("its working");
         
     // })       
-    });
+ 
     
 });
 
 
 function closePopup(ldx){
     // console.log("its ");
+    playClickThen();
     document.getElementById(ldx).style.display = 'none';
     let audio = document.getElementById("popupAudio");
     if(audio.src){
@@ -614,56 +615,47 @@ let clickLocked = false;
 
 document.querySelector(".music").addEventListener("click", function (event) {
     const el = event.currentTarget;
-    playClickThen(function() {
+    playClickThen();
         toggleAudio(el);
-    });
 });
 
 function togglePopAudio(el, src) {
     const audio = document.getElementById("popupAudio");
+    playClickThen();
 
-    // If this is a different audio source, load it
-    if (audio.src !== el.baseURI + src) {
+    // helper
+    function setState(state) {
+        el.classList.remove("mute", "playing");
+        el.classList.add(state);
+    }
+
+    // If this is a different audio source
+    if (!audio.src || audio.src !== new URL(src, document.baseURI).href) {
         audio.src = src;
         audio.load();
         audio.muted = false;
-        // Reset all buttons' states (optional)
-        document.querySelectorAll('.introPopAudio').forEach(btn => {
-            btn.classList.replace('playing', 'mute');
-        });
-        el.classList.replace('mute', 'playing');
+        audio.currentTime = 0;
         audio.play();
+
+        setState("playing"); // ✅ FIX
         return;
     }
 
-    // Toggle play/pause for the same audio
+    // Toggle play/pause
     if (audio.paused) {
         audio.play();
-        el.classList.replace("mute", "playing");
+        setState("playing");
     } else {
         audio.pause();
         audio.currentTime = 0;
-        el.classList.replace("playing", "mute");
+        setState("mute"); // default state
     }
 }
 
-
-
-function playClickThen(callback) {
-    if (clickLocked) return;
-    clickLocked = true;
-
+function playClickThen() {
     clickSound.currentTime = 0;
-    clickSound.play();
-
-    setTimeout(() => {
-        clickLocked = false;
-        if (typeof callback === "function") {
-            callback();
-        }
-    }, 1000); // 1 second
+    clickSound.play().catch(() => {});
 }
-
 
 function toggleAudio(el) {
     const audio = document.getElementById("audio_src");

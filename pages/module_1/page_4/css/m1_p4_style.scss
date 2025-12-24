@@ -112,7 +112,8 @@
               position: relative;
               animation: none !important;
               transition: transform 0.5s ease-in;
-              &:hover{
+
+              &:hover {
                 transform: scale(1.125)
               }
 
@@ -126,14 +127,15 @@
                 transform: translateX(-50%);
                 background: rgba(0, 0, 0, .85);
                 font-weight: bold;
-                white-space: nowrap;
-                box-shadow: 0 .1vw 1vw rgba(0, 0, 0, .6);
-                border: 1px solid rgba(255, 255, 255, .2);
                 color: #fff;
-                font-size: 12px;
-                padding: 4px 6px;
+                white-space: nowrap;
+                box-shadow: 0 2px 19px rgba(0, 0, 0, 0.6);
+                border: 1px solid rgba(255, 255, 255, .3);
+                color: #fff;
+                font-size: 10px;
+                padding: 3px 5px;
+                border-radius: 4px;
                 font-family: 'Times New Roman', Times, serif;
-                border-radius: 5px;
                 white-space: nowrap;
                 opacity: 0;
                 pointer-events: none;

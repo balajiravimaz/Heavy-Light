@@ -54,7 +54,7 @@ function _pageLoaded() {
     }
     addSectionData();
 
-
+    checkGlobalAudio();
     assignAudio(_audioId, _audioIndex, _pageAudioSync, _forceNavigation, _videoId, _popupAudio, _reloadRequired);
     pagePreLoad();
     setTimeout(function () {
@@ -120,7 +120,7 @@ function addSectionData() {
 
 
 
-            $('#section-' + sectionCnt).find('.content-holder').find('.col-left').find('.content').find('.content-bg').append('<div class="header-container"><div class="navBtns"><button id="home" data-tooltip="Back"></button><button class="music playing" data-tooltip="Music"></button></div><div class="titleText"><img src="pages/module_1/page_11/images/heading-text.png"></div></div><div class="body"><div class="dummypatch"></div><div class="top-alignText"><div class="instruction">' + sectionData.instruction + '</div><div class="intro-audio" data-audio=' + gameData.audio.instruction + '> </div><div class="completed-audio" data-audio=' + gameData.audio.success + '> </div><div class="completed-correct" data-audio=' + gameData.audio.correct + '> </div><div class="completed-wrong" data-audio=' + gameData.audio.wrong + '> </div></div><div class="image-container">' + imgObj + '</div></div><audio id="instructionAudio"></audio>');
+            $('#section-' + sectionCnt).find('.content-holder').find('.col-left').find('.content').find('.content-bg').append('<div class="header-container"><div class="navBtns"><button id="home" data-tooltip="Back"></button><button class="music playing" data-tooltip="Music"></button></div><div class="titleText"><img src="pages/module_1/page_11/images/heading-text.png"></div></div><div class="body"><div class="dummypatch"></div><div class="top-alignText"><div class="instruction">' + sectionData.instruction + '</div><button class="intro-audio" data-audio=' + gameData.audio.instruction + '> </button><div class="completed-audio" data-audio=' + gameData.audio.success + '> </div><div class="completed-correct" data-audio=' + gameData.audio.correct + '> </div><div class="completed-wrong" data-audio=' + gameData.audio.wrong + '> </div></div><div class="image-container">' + imgObj + '</div></div><audio id="instructionAudio"></audio>');
 
 
             $('.content-holder').append(`<div id="home-popup" class="popup-home" role="dialog" aria-label="Exit confirmation" aria-hidden="false">
@@ -149,17 +149,18 @@ function addSectionData() {
             // $('#home').off('click').on('click', replayGameInfro)
 
             $(".replay").on("click", function () {
+                playClickThen();
                 jumtoPage(5);
             });
             $(".home").on("click", function () {
+                playClickThen();
                 jumtoPage(1)
             });
 
             $(".music").on("click", function (event) {
+                playClickThen();
                 let el = event.currentTarget;
-                playClickThen(function () {
                     toggleAudio(el);
-                })
             });
 
             $('.stay-btn').off('click').on('click', staybtnClickPopup)
@@ -169,6 +170,7 @@ function addSectionData() {
             correctCount = 0;
 
             $(".close-btn").on("click", function () {
+                playClickThen();
                 jumtoPage(1);///change after
             });
             // $("#home,#homeBack").on("click", function(){
@@ -180,7 +182,10 @@ function addSectionData() {
         setCSS(sectionCnt);
 
     }
-
+//   $("#courseAudio").on("ended", function () {
+//     console.log("Course audio was ended");
+//     $(".intro-audio").prop('disabled', false);
+//   });
     //showVisitedModule();
     if ((bookMarkArray[0] == '1') || (bookMarkArray[0] == 1)) {
         _visitedArr = bookMarkArray;
@@ -189,13 +194,16 @@ function addSectionData() {
 
 
 function showHome() {
+    playClickThen();
     $("#home-popup").css("display", "flex");
 }
 
 function stayPage() {
+    playClickThen();
     $("#home-popup").hide();
 }
 function leavePage() {
+    playClickThen();
   var audio = document.getElementById("simulationAudio");
   if (audio) {
     // Stop audio whether it's playing or paused
@@ -214,6 +222,8 @@ function jumtoPage(pageNo) {
 
 
 function onClickAudioHandler(e) {
+      $("#courseAudio")[0].pause();
+    playClickThen();
     $('.dummy-box').show();
     e.stopPropagation();
     const audioSrc = $(this).data('audio');
@@ -242,6 +252,7 @@ function onClickAudioHandler(e) {
 }
 
 function onClickAudioHandler2(e) {
+    playClickThen();
     //alert("Success");
     e.stopPropagation();
     const audioSrc = $(this).data('audio');
@@ -291,6 +302,7 @@ $(document).on('dragover', '.drop-area', function (e) {
 /* ================= DROP ================= */
 
 function replayGame() {
+    playClickThen();
     location.reload();
 }
 
@@ -299,6 +311,7 @@ function replayGameInfro() {
 }
 
 function staybtnClickPopup() {
+    
     $('.overlay').css("display", "none");
 }
 
@@ -486,11 +499,13 @@ function toggleAudio(el) {
         audio.play();
         el.classList.remove("mute");
         el.classList.add("playing");
+        _controller._globalMusicPlaying = true;
     } else {
         audio.pause();
         audio.currentTime = 0;
         el.classList.remove("playing");
         el.classList.add("mute");
+        _controller._globalMusicPlaying = false;
     }
 }
 

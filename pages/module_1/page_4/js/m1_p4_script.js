@@ -244,6 +244,7 @@ function onVideoPlayHandler() {
 
 
 function jumtoPage(){
+    playClickThen();
     // const audio = document.getElementById("audio_src").pause();
       _controller.pageCnt = 0;
       if(_controller._globalMusicPlaying){

@@ -159,7 +159,7 @@ function addSectionData() {
                 <div class="unmute" id="ins-1-audio-unmute"></div> 
             </div>    
             <div class="text-pos"></div>
-            <button class="close_ins_1_popup" data-tooltip="close"></button>
+            <button class="close_ins_1_popup" data-tooltip="Close"></button>
         </div> 
 
         </div>`);
@@ -172,7 +172,7 @@ function addSectionData() {
                     <div class="unmute" id="ins-2-audio-unmute"></div> 
                 </div>    
                 <div class="text-pos"></div>
-                <button class="close_ins_2_popup" data-tooltip="close"></button>
+                <button class="close_ins_2_popup" data-tooltip="Close"></button>
             </div> 
 
         </div>`);
@@ -231,6 +231,7 @@ function addSectionData() {
 }
 
 function onClickinfo() {
+    playClickThen();
     $("#introPopup-1").css("display", "flex");
     $("#introPopup-1").css("opacity", "1");
        $(".introPopAudio")
@@ -239,6 +240,7 @@ function onClickinfo() {
 }
 
 function onClickinfoClose() {
+    playClickThen();
     $('.overlay').hide();
 }
 
@@ -247,11 +249,13 @@ function onClickinGotoPage() {
 }
 
 function jumpToPage() {
+    playClickThen();
     _controller.pageCnt = 0;
     _controller.updateViewNow();
 }
 
 function toggleAudio(event) {
+    playClickThen();
     const el = event.currentTarget;
     const audio = document.getElementById("audio_src");
 
@@ -277,6 +281,7 @@ function toggleAudio(event) {
 // Ins_1
 
 function onClickins_1_popup() {
+    playClickThen();
     if (currentAudio) {
         currentAudio.pause();
         //alert('Audio Paused');  
@@ -291,11 +296,13 @@ function onClickins_1_popup() {
 }
 
 function onClickins_1_popup_show() {
+    playClickThen();
     $('.ins_1_popup').css("display", "flex");
     //onClickAudioHandler2.call($('.inst-1-audio')[0], new Event('click'));
 }
 
 function onClickpauseAudio1() {
+    playClickThen();
 
     onClickAudioHandler2.call($('.inst-1-audio')[0], new Event('click'));
     if (currentAudio) {
@@ -314,6 +321,7 @@ function onClickpauseAudio1() {
 }
 
 function onClickplayAudio1() {
+    playClickThen();
     if (currentAudio) {
         currentAudio.pause();
         //alert('Audio Paused');  
@@ -328,6 +336,7 @@ function onClickplayAudio1() {
 //ins2 
 
 function onClickins_2_popup() {
+    playClickThen();
     if (currentAudio) {
         currentAudio.pause();
         //alert('Audio Paused');  
@@ -342,12 +351,13 @@ function onClickins_2_popup() {
 }
 
 function onClickins_2_popup_show() {
+    playClickThen();
     $('.ins_2_popup').css("display", "flex");
     //onClickAudioHandler2.call($('.inst-2-audio')[0], new Event('click'));
 }
 
 function onClickpauseAudio2() {
-
+playClickThen();
     onClickAudioHandler2.call($('.inst-2-audio')[0], new Event('click'));
     if (currentAudio) {
         currentAudio.play();
@@ -365,6 +375,7 @@ function onClickpauseAudio2() {
 }
 
 function onClickplayAudio2() {
+    playClickThen();
     if (currentAudio) {
         currentAudio.pause();
         //alert('Audio Paused');  
@@ -381,6 +392,7 @@ function onClickplayAudio2() {
 var currentAudio = null; // Global reference to the current audio
 
 function onClickAudioHandler2(e) {
+    playClickThen();
     e.stopPropagation();
     const audioSrc = $(this).data('audio');
     if (!audioSrc) {
@@ -402,6 +414,7 @@ function onClickAudioHandler2(e) {
 }
 
 function onClickHandler(evt) {
+    playClickThen();
     var eventType = evt.type;
     console.log("clicked")
     var targetButton = $(this);

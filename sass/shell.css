@@ -645,13 +645,13 @@ html {
   background: rgba(0, 0, 0, 0.85);
   font-weight: bold;
   white-space: nowrap;
-  box-shadow: 0 0.1vw 1vw rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #fff;
   font-family: "Times New Roman", Times, serif;
-  font-size: 12px;
-  padding: 4px 6px;
-  border-radius: 5px;
+  box-shadow: 0 2px 19px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 10px;
+  padding: 3px 5px;
+  border-radius: 4px;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
@@ -1225,6 +1225,9 @@ footer p {
   cursor: pointer;
   /* Show tooltip on hover */
 }
+#f_header_main .full-screen:disabled {
+  pointer-events: none;
+}
 #f_header_main .full-screen:hover {
   transform: scale(1.125);
 }
@@ -1249,12 +1252,12 @@ footer p {
   background: rgba(0, 0, 0, 0.85);
   font-weight: bold;
   white-space: nowrap;
-  box-shadow: 0 0.1vw 1vw rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 19px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: #fff;
-  font-size: 12px;
-  padding: 4px 6px;
-  border-radius: 5px;
+  font-size: 10px;
+  padding: 3px 5px;
+  border-radius: 4px;
   white-space: nowrap;
   opacity: 0;
   font-family: "Times New Roman", Times, serif;
@@ -1484,12 +1487,12 @@ footer p {
   background: rgba(0, 0, 0, 0.85);
   font-weight: bold;
   white-space: nowrap;
-  box-shadow: 0 0.1vw 1vw rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 19px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: #fff;
-  font-size: 12px;
-  padding: 4px 6px;
-  border-radius: 5px;
+  font-size: 10px;
+  padding: 3px 5px;
+  border-radius: 4px;
   white-space: nowrap;
   opacity: 0;
   font-family: "Times New Roman", Times, serif;
@@ -1605,12 +1608,12 @@ footer p {
   background: rgba(0, 0, 0, 0.85);
   font-weight: bold;
   white-space: nowrap;
-  box-shadow: 0 0.1vw 1vw rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 19px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: #fff;
-  font-size: 12px;
-  padding: 4px 6px;
-  border-radius: 5px;
+  font-size: 10px;
+  padding: 3px 5px;
+  border-radius: 4px;
   white-space: nowrap;
   opacity: 0;
   font-family: "Times New Roman", Times, serif;

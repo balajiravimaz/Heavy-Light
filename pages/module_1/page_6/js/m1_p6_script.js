@@ -218,19 +218,19 @@ function addSectionData() {
         jumtoPage(1)
       });
       $("#home").on("click", function () {
+        playClickThen();
         $("#home-popup").css('display', 'flex');
       });
       $(".music").on("click", function (event) {
+        playClickThen();
         let el = event.currentTarget;
-        playClickThen(function () {
           toggleAudio(el);
-        })
       });
       _currentAudio = _pageData.sections[sectionCnt - 1].content.flipObjects[0].instAudio;
       $(".flipTextAudio").on("click", replayLastAudio);
       document.querySelector("#info").addEventListener("click", function (event) {
+        playClickThen();
         const el = event.currentTarget;
-        playClickThen(function () {
           // console.log("its wokring")
           $("#introPopup-1").css('display', 'flex')
           $("#introPopup-1").css('opacity', '1')
@@ -241,8 +241,6 @@ function addSectionData() {
           //     console.log("its working");
 
           // })       
-        });
-
       });
 
       // setCSS(sectionCnt);
@@ -253,9 +251,11 @@ function addSectionData() {
 
 
 function stayPage() {
+  playClickThen();
   $("#home-popup").hide();
 }
 function leavePage() {
+  playClickThen();
   var audio = document.getElementById("simulationAudio");
   if (audio) {
     // Stop audio whether it's playing or paused
@@ -267,6 +267,7 @@ function leavePage() {
 }
 
 function jumtoPage(pageNo) {
+  playClickThen();
 
   _controller.pageCnt = pageNo;
 
@@ -317,6 +318,7 @@ function audioEnd(callback) {
 var clickCount = 0;
 
 function onClickHanlder(e) {
+  playClickThen();
   var $card = $(e.currentTarget);
 
   var index = parseInt(e.currentTarget.id.split("-").pop(), 10);
@@ -330,7 +332,7 @@ function onClickHanlder(e) {
   $card.toggleClass("flipped");
 
   disableButtons();
-  playBtnSounds(_pageData.sections[sectionCnt - 1].content.btnAudios[0]);
+  // playBtnSounds(_pageData.sections[sectionCnt - 1].content.btnAudios[0]);
   setTimeout(function () {
     validateAnswer(ldx, _globalCicked, index);
   }, 500)
@@ -357,6 +359,7 @@ function validateAnswer(ldx, _globalCicked, index) {
 }
 
 function toggleAudio(el) {
+  playClickThen();
   // console.log(event, "current e")
   // const el = event.currentTarget; 
   const audio = document.getElementById("audio_src");
@@ -430,6 +433,7 @@ function restartActivity() {
 
 function showEndAnimations() {
   var $audio = $("#simulationAudio");
+  closePopup('introPopup-1');
   console.log("Audio ending");
 
   $audio.on("timeupdate", function () {
@@ -453,6 +457,7 @@ function showEndAnimations() {
 }
 
 function replayLastAudio() {
+  playClickThen();
   console.log(_currentAudio, "Audio plaing");
   playBtnSounds(_currentAudio);
   disableButtons();

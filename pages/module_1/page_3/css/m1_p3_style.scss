@@ -361,7 +361,8 @@
 								background-color: transparent;
 								transition: transform 0.5s ease-in;
 								animation: none !important;
-								&:hover{
+
+								&:hover {
 									transform: scale(1.125);
 								}
 
@@ -376,12 +377,12 @@
 									background: rgba(0, 0, 0, .85);
 									font-weight: bold;
 									white-space: nowrap;
-									box-shadow: 0 .1vw 1vw rgba(0, 0, 0, .6);
-									border: 1px solid rgba(255, 255, 255, .2);
+									box-shadow: 0 2px 19px rgba(0, 0, 0, 0.6);
+									border: 1px solid rgba(255, 255, 255, .3);
 									color: #fff;
-									font-size: 12px;
-									padding: 4px 6px;
-									border-radius: 5px;
+									font-size: 10px;
+									padding: 3px 5px;
+									border-radius: 4px;
 									font-family: 'Times New Roman', Times, serif;
 									white-space: nowrap;
 									opacity: 0;
@@ -482,7 +483,8 @@
 			border: none;
 			animation: none !important;
 			transition: transform 0.5s ease-in;
-			&:hover{
+
+			&:hover {
 				transform: scale(1.125);
 			}
 
@@ -497,12 +499,12 @@
 				background: rgba(0, 0, 0, .85);
 				font-weight: bold;
 				white-space: nowrap;
-				box-shadow: 0 .1vw 1vw rgba(0, 0, 0, .6);
-				border: 1px solid rgba(255, 255, 255, .2);
+				box-shadow: 0 2px 19px rgba(0, 0, 0, 0.6);
+				border: 1px solid rgba(255, 255, 255, .3);
 				color: #fff;
-				font-size: 12px;
-				padding: 4px 6px;
-				border-radius: 5px;
+				font-size: 10px;
+				padding: 3px 5px;
+				border-radius: 4px;
 				white-space: nowrap;
 				font-family: 'Times New Roman', Times, serif;
 				opacity: 0;
@@ -1331,12 +1333,12 @@
 			background: rgba(0, 0, 0, .85);
 			font-weight: bold;
 			white-space: nowrap;
-			box-shadow: 0 .1vw 1vw rgba(0, 0, 0, .6);
-			border: 1px solid rgba(255, 255, 255, .2);
+			box-shadow: 0 2px 19px rgba(0, 0, 0, 0.6);
+			border: 1px solid rgba(255, 255, 255, .3);
 			color: #fff;
-			font-size: 12px;
-			padding: 4px 6px;
-			border-radius: 5px;
+			font-size: 10px;
+			padding: 3px 5px;
+			border-radius: 4px;
 			white-space: nowrap;
 			opacity: 0;
 			font-family: 'Times New Roman', Times, serif;
@@ -1417,12 +1419,12 @@
 				background: rgba(0, 0, 0, .85);
 				font-weight: bold;
 				white-space: nowrap;
-				box-shadow: 0 .1vw 1vw rgba(0, 0, 0, .6);
-				border: 1px solid rgba(255, 255, 255, .2);
+				box-shadow: 0 2px 19px rgba(0, 0, 0, 0.6);
+				border: 1px solid rgba(255, 255, 255, .3);
 				color: #fff;
-				font-size: 12px;
-				padding: 4px 6px;
-				border-radius: 5px;
+				font-size: 10px;
+				padding: 3px 5px;
+				border-radius: 4px;
 				white-space: nowrap;
 				font-family: 'Times New Roman', Times, serif;
 				opacity: 0;

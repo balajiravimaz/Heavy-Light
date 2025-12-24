@@ -220,13 +220,13 @@ function addSectionData() {
         jumtoPage(0)
       });
       $("#home").on("click", function () {
+        playClickThen();
         $("#home-popup").css('display', 'flex');
       });
       $(".music").on("click", function (event) {
+        playClickThen();
         let el = event.currentTarget;
-        playClickThen(function () {
           toggleAudio(el);
-        })
       });
       _currentAudio = _pageData.sections[sectionCnt - 1].initAudio;
       // $(".wrapTextAudio").on("click", replayLastAudio);
@@ -237,21 +237,13 @@ function addSectionData() {
       })
 
       document.querySelector("#info").addEventListener("click", function (event) {
+        playClickThen();
         const el = event.currentTarget;
-        playClickThen(function () {
           // console.log("its wokring")
           $("#introPopup-1").css('display', 'flex')
           $("#introPopup-1").css('opacity', '1')
           $(".introPopAudio").removeClass('playing');
-          $(".introPopAudio").addClass('mute');
-
-
-
-          // $(".introPopAudio").on("click",function(){  
-          //     console.log("its working");
-
-          // })       
-        });
+          $(".introPopAudio").addClass('mute');   
 
 
       });
@@ -270,11 +262,13 @@ function addSectionData() {
 
 
 function stayPage() {
+  playClickThen();
   $("#home-popup").hide();
 }
 
 
 function leavePage() {
+  playClickThen();
   const audio = document.getElementById("simulationAudio");
   if (audio) {
     // Stop audio whether it's playing or paused
@@ -287,7 +281,7 @@ function leavePage() {
 
 
 function jumtoPage(pageNo) {
-
+playClickThen();
   _controller.pageCnt = pageNo;
   _controller.updateViewNow();
 }
@@ -295,6 +289,7 @@ function jumtoPage(pageNo) {
 
 
 function disableAll() {
+  playClickThen();
   $("#home,#music,#info,.wrapTextaudio").prop("disabled", true);
   const audio = document.getElementById("audio_src");
   console.log(_controller._globalMusicPlaying, "GlobalMsuci");
@@ -308,6 +303,7 @@ function disableAll() {
 
 
 function enableAll() {
+  playClickThen();
   $("#home,#music,#info,.wrapTextaudio").prop("disabled", false);
   const audio = document.getElementById("audio_src");
   if (_controller._globalMusicPlaying) {
@@ -322,6 +318,7 @@ function enableAll() {
 
 
 function audioCallback(targetTimeInSeconds, callback) {
+ 
   const audio = document.getElementById("simulationAudio");
 
   if (!audio) return;
@@ -349,6 +346,7 @@ function audioCallback(targetTimeInSeconds, callback) {
 
 
 function togglePop1Audio(el, src) {
+  playClickThen();
   const audio = document.getElementById("popupAudio"); // ✅ correct audio element
 
   // If this is a different audio source, load it
@@ -387,7 +385,7 @@ var IdleAudioManager = (function () {
 
   function init(audioSrc) {
     if (!audioSrc) {
-      console.error("idleAudio is missing");
+      // console.error("idleAudio is missing");
       return;
     }
     audioIdle = new Audio(audioSrc);
@@ -435,6 +433,7 @@ var IdleAudioManager = (function () {
 
 
 function startSimulation(btn) {
+  playClickThen();
   var audio = document.getElementById("simulationAudio");
   var hasAudio = !!audio.getAttribute("src");
 
@@ -464,8 +463,8 @@ function startSimulation(btn) {
 
 
 
-
 function toggleAudio(el) {
+  playClickThen();
   // const el = event.currentTarget;
   const audio = document.getElementById("audio_src");
 
@@ -671,6 +670,7 @@ function showEndScreen(){
 }
 
 function replayLastAudio(btnElement) {
+  playClickThen();
   const audio = document.getElementById("simulationAudio");
 
   if (btnElement.classList.contains("playing")) {
@@ -963,6 +963,7 @@ function restartActivity() {
 
 function showEndAnimations() {
   var $audio = $("#simulationAudio");
+  closePopup('introPopup-1')
   clearText();
   console.log("Audio ending");
   IdleAudioManager.stop();
@@ -992,6 +993,7 @@ function showEndAnimations() {
 
   });
 }
+
 
 // function playVisualAudioChainSync(
 //   firstAudio,
@@ -1043,68 +1045,24 @@ function showEndAnimations() {
 //     audio.src = audios[index];
 //     audio.load();
 
-//     audio.onplay = () => {
-//       appendTextOnTop(texts[index], classes[index]);
-//       setActive(classes[index]);
-//       audio.onplay = null;
-//     };
+//     // ✅ Apply text/class immediately (before play)
+//     appendTextOnTop(texts[index], classes[index]);
+//     setActive(classes[index]);
+
+//     audio.play().catch(() => { });
 
 //     audio.onended = () => {
 //       audio.onended = null;
 //       index++;
 //       playCurrent();
 //     };
-
-//     audio.play().catch(() => {});
 //   }
 
 //   audio.onpause = () => {
-//     // intentionally empty → preserve UI state
+//     // freeze UI — do nothing
 //   };
 
-//   audio.onplay = null;
-//   audio.onended = null;
-
 //   playCurrent();
-// }
-
-
-// function playAudioChain(firstAudio, secondAudio, firstText, secondText, firstCls, secondCls, delay = 0, onComplete) {
-//   const audio = document.getElementById("simulationAudio");
-
-//   console.log(firstText, secondText, "texts");
-
-//   // 1️⃣ Play first audio
-//   if (firstAudio) {
-//     appendTextOnTop(firstText, firstCls); // call when first audio starts
-//     playBtnSounds(firstAudio);
-
-//     if (secondAudio) {
-//       // 2️⃣ Wait for first audio to finish
-//       audioEnd(() => {
-//         audio.onended = null; // remove old listener
-
-//         setTimeout(() => {
-//           // 3️⃣ Play second audio
-//           appendTextOnTop(secondText, secondCls); // call when second audio starts
-//           playBtnSounds(secondAudio);
-
-//           // 4️⃣ Wait for second audio to finish
-//           audioEnd(() => {
-//             audio.onended = null;
-//             if (typeof onComplete === "function") onComplete();
-//           });
-
-//         }, delay);
-//       });
-//     } else {
-//       // Only first audio exists
-//       audioEnd(() => {
-//         audio.onended = null;
-//         if (typeof onComplete === "function") onComplete();
-//       });
-//     }
-//   }
 // }
 
 
@@ -1142,6 +1100,11 @@ function playVisualAudioChainSync(
     if (cls) $(`.${cls}`).addClass("active");
   }
 
+  function showTextAndClass() {
+    appendTextOnTop(texts[index], classes[index]);
+    setActive(classes[index]);
+  }
+
   function playCurrent() {
     if (index >= audios.length) {
       setTimeout(() => {
@@ -1153,16 +1116,31 @@ function playVisualAudioChainSync(
       return;
     }
 
+    // Load current audio
     audio.pause();
-    audio.currentTime = 0;
-    audio.src = audios[index];
-    audio.load();
+    if (audio.src !== audios[index]) {
+      audio.src = audios[index];
+      audio.load();
+      audio.currentTime = 0;
+    }
 
-    // ✅ Apply text/class immediately (before play)
-    appendTextOnTop(texts[index], classes[index]);
-    setActive(classes[index]);
+    // Only show text/class when audio starts
+    const playAudio = () => {
+      showTextAndClass();
+      audio.play().catch(() => {});
+    };
 
-    audio.play().catch(() => { });
+    // If not paused, play immediately
+    if (!_isSimulationPaused) {
+      playAudio();
+    }
+
+    // Expose resume function for global Play
+    audio.resumeChain = function () {
+      if (!_isSimulationPaused && audio.paused) {
+        playAudio();
+      }
+    };
 
     audio.onended = () => {
       audio.onended = null;
@@ -1175,8 +1153,13 @@ function playVisualAudioChainSync(
     // freeze UI — do nothing
   };
 
-  playCurrent();
+  // Start chain if not paused
+  if (!_isSimulationPaused) {
+    playCurrent();
+  }
 }
+
+
 
 
 
