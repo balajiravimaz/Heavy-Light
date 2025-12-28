@@ -99,7 +99,7 @@ function addSectionData() {
 
             let htmlObj = '',
                 imgObj =
-                    "<div class='game-completed'> <div class='greetingsPop'></div><div class='game-completed-popup'><button class='replay' data-tooltip='Replay'></button><button data-tooltip='Back' class='home'></button></div> </div>" +
+                    "<div class='game-completed'> <div class='success'></div><div class='greetingsPop'></div><div class='game-completed-popup'><button class='replay' data-tooltip='Replay'></button><button data-tooltip='Back' class='home'></button></div> </div>" +
                     "<div class='game-container'>" +
                     "<div class='dummy-box'></div>" +
                     "<div class='box'>" +
@@ -160,7 +160,7 @@ function addSectionData() {
             $(".music").on("click", function (event) {
                 playClickThen();
                 let el = event.currentTarget;
-                    toggleAudio(el);
+                toggleAudio(el);
             });
 
             $('.stay-btn').off('click').on('click', staybtnClickPopup)
@@ -177,15 +177,18 @@ function addSectionData() {
             //     jumtoPage(1)
             // });$()
 
-            $("#home").on("click", showHome);
+            $("#home").on("click", function () {
+                showHome();
+            });
         }
         setCSS(sectionCnt);
 
     }
-//   $("#courseAudio").on("ended", function () {
-//     console.log("Course audio was ended");
-//     $(".intro-audio").prop('disabled', false);
-//   });
+    $("#courseAudio").on("ended", function () {
+        console.log("Course audio was ended");
+        $(".dummy-box").hide();
+        resetSimulationAudio();
+    });
     //showVisitedModule();
     if ((bookMarkArray[0] == '1') || (bookMarkArray[0] == 1)) {
         _visitedArr = bookMarkArray;
@@ -193,25 +196,43 @@ function addSectionData() {
 }
 
 
+var AudioController = (() => {
+    const audio = document.getElementById("courseAudio");
+
+    const hasAudio = () => audio && audio.src;
+
+    return {
+        play() {
+            if (hasAudio()) audio.play();
+        },
+        pause() {
+            if (hasAudio()) audio.pause();
+        }
+    };
+})();
+
+
 function showHome() {
     playClickThen();
+    AudioController.pause();
     $("#home-popup").css("display", "flex");
 }
 
 function stayPage() {
     playClickThen();
+    AudioController.play();
     $("#home-popup").hide();
 }
 function leavePage() {
     playClickThen();
-  var audio = document.getElementById("simulationAudio");
-  if (audio) {
-    // Stop audio whether it's playing or paused
-    audio.pause();
-    audio.currentTime = 0;
-  }
+    var audio = document.getElementById("simulationAudio");
+    if (audio) {
+        // Stop audio whether it's playing or paused
+        audio.pause();
+        audio.currentTime = 0;
+    }
 
-  jumtoPage(1); 
+    jumtoPage(1);
 }
 function jumtoPage(pageNo) {
 
@@ -222,7 +243,7 @@ function jumtoPage(pageNo) {
 
 
 function onClickAudioHandler(e) {
-      $("#courseAudio")[0].pause();
+    $("#courseAudio")[0].pause();
     playClickThen();
     $('.dummy-box').show();
     e.stopPropagation();
@@ -232,7 +253,7 @@ function onClickAudioHandler(e) {
         return;
     }
 
-    const audio = document.getElementById('instructionAudio');
+    const audio = document.getElementById('courseAudio');
     if (!audio) {
         console.log('Audio element not found');
         return;
@@ -247,9 +268,28 @@ function onClickAudioHandler(e) {
 
     audio.addEventListener('ended', function () {
         console.log('Audio finished playing');
+        resetSimulationAudio();
         $('.dummy-box').hide();
     });
 }
+
+
+function resetSimulationAudio() {
+    const audioElement = document.getElementById("courseAudio");
+    if (!audioElement) return;
+
+    audioElement.pause();
+    audioElement.removeAttribute("src");
+
+    const source = audioElement.querySelector("source");
+    if (source) source.src = "";
+
+    audioElement.load();
+    audioElement.onended = null;
+}
+
+
+
 
 function onClickAudioHandler2(e) {
     playClickThen();
@@ -282,11 +322,11 @@ function onClickAudioHandler2(e) {
 
 function onAudioEndedCallback() {
     console.log("not workings");
-    $(".greetingsPop").css("display", "none");
-    $(".greetingsPop").css("opacity", "0");
-    $('.game-completed').removeClass("show");
-    $(".game-completed-popup").css("display", "flex")
-    $(".game-completed-popup").css("opacity", "1")
+    // $(".greetingsPop").css("visibility", "hidden");
+    // $(".greetingsPop").css("opacity", "0");
+    // $('.game-completed').find('.success').removeClass('show')
+    // $(".game-completed-popup").css("visibility", "visible")
+    // $(".game-completed-popup").css("opacity", "1")
 }
 
 /* ================= DRAG START ================= */
@@ -311,7 +351,7 @@ function replayGameInfro() {
 }
 
 function staybtnClickPopup() {
-    
+
     $('.overlay').css("display", "none");
 }
 
@@ -338,12 +378,21 @@ $(document).on('drop', '.drop-area', function (e) {
         if (correctCount === totalObjects) {
             $('.game-completed').show();
             setTimeout(function () {
-                $(".greetingsPop").css("display", "flex");
+                $(".greetingsPop").css("visibility", "visible");
                 $(".greetingsPop").css("opacity", "1");
-            }, 300);
+            }, 100);
             setTimeout(function () {
-                $('.game-completed').addClass("show");
+                $('.game-completed').find(".success").addClass("show");
             }, 1000)
+            setTimeout(function () {
+                $(".greetingsPop").css("visibility", "hidden");
+                $(".greetingsPop").css("opacity", "0");                
+                $(".game-completed-popup").css("visibility", "visible")
+                $(".game-completed-popup").css("opacity", "1")
+            },2000)
+            setTimeout(function(){
+                $('.game-completed').find('.success').removeClass('show')
+            },2500)
             onClickAudioHandler2.call($('.completed-audio')[0], new Event('click'));
         }
 
@@ -603,7 +652,7 @@ function withAudioSync() {
 
     var boxTiming1 = [0.5, 0.9, 1.2, 1.5]
     _tweenTimeline.add(animateFadeIn(body.find('.text-container').find('.ins-txt '), 0.5).play(), 1)
-    _tweenTimeline.add(animateFadeOut(body.find('.dummy-box'), 0.5).play(), 6)
+    // _tweenTimeline.add(animateFadeOut(body.find('.dummy-box'), 0.5).play(), 6)
     for (var k = 0; k < boxTiming1.length; k++) {
         _tweenTimeline.add(animateFadeIn(body.find('.box').eq(k), 0.5, 0).play(), boxTiming1[k])
     }

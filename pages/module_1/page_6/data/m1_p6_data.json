@@ -1,10 +1,140 @@
 {
   "mainAudio": {
-    "audioSRC": "pages/module_1/page_6/audios/heavy.mp3",
+    "audioSRC": "assets/audios/1sec.mp3",
     "isEmptyAudio": false,
     "audioIndex": 0
   },
-  "bgImgs": [],
+  "bgImgs": [
+    {
+      "imageSRC": "pages/module_1/page_6/images/confetti.gif",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/img_1.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/img_2.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/img_3.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/img_4.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/img_5.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/img_6.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/img_7.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/img_8.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/img_9.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/img_10.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/simulation.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/fun_game.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/great_job.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/back.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/bg_music.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/bg_pause.png",
+      "altText": ""
+    },
+    
+    {
+      "imageSRC": "pages/module_1/page_6/images/bg_music.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/close.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/bg_pause.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/correct.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/header_bg.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/header_title.png",
+      "altText": ""
+    },    
+    {
+      "imageSRC": "pages/module_1/page_6/images/info.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/info_disabled.png",
+      "altText": ""
+    },    
+    {
+      "imageSRC": "pages/module_1/page_6/images/music.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/mute.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/pause.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/reload.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/replay.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/right_bg.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_6/images/wrong.png",
+      "altText": ""
+    }    
+  ],
   "imgCollage": {
     "desktop": [
       {
@@ -26,9 +156,10 @@
       "headerImg": "pages/module_1/page_6/images/header_title.png",
       "ost": "",
       "iText": "Click on the <span>Heavy</span> object. <span class='audio'></span>",
-      "endAudio":"pages/module_1/page_6/audios/final_audio.mp3",
-      "infoImg":"pages/module_1/page_6/images/fun_game.png",
-      "infoAudio":"pages/module_1/page_6/audios/info_audio.mp3",
+      "endAudio": "pages/module_1/page_6/audios/final_audio.mp3",
+      "infoImg": "pages/module_1/page_6/images/fun_game.png",
+      "infoAudio": "pages/module_1/page_6/audios/info_audio.mp3",
+      "introAudio": "pages/module_1/page_6/audios/heavy.mp3",
       "content": {
         "btnAudios": [
           "pages/module_1/page_6/audios/click.mp3",
@@ -42,7 +173,6 @@
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
           ]
         ],
-
         "flipObjects": [
           {
             "id": 1,
@@ -57,7 +187,6 @@
                 "flipText": "Good Job!",
                 "isCorrect": true
               },
-
               {
                 "imageSrc": "pages/module_1/page_6/images/img_2.png",
                 "audioSrc": "pages/module_1/page_6/audios/try_again.mp3",
@@ -96,12 +225,11 @@
             "instAudio": "pages/module_1/page_6/audios/heavy.mp3",
             "images": [
               {
-                
-                  "imageSrc": "pages/module_1/page_6/images/img_5.png",
-                  "audioSrc": "pages/module_1/page_6/audios/try_again.mp3",
-                  "flipImage": "pages/module_1/page_6/images/wrong.png",
-                  "flipText": "Try Again!",
-                  "isCorrect": false
+                "imageSrc": "pages/module_1/page_6/images/img_5.png",
+                "audioSrc": "pages/module_1/page_6/audios/try_again.mp3",
+                "flipImage": "pages/module_1/page_6/images/wrong.png",
+                "flipText": "Try Again!",
+                "isCorrect": false
               },
               {
                 "imageSrc": "pages/module_1/page_6/images/img_6.png",
@@ -125,7 +253,6 @@
                 "flipText": "Try Again!",
                 "isCorrect": false
               },
-
               {
                 "imageSrc": "pages/module_1/page_6/images/img_8.png",
                 "audioSrc": "pages/module_1/page_6/audios/boat_light.mp3",
@@ -161,14 +288,12 @@
       }
     }
   ],
-
   "transcriptText": [
     [
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     ]
   ],
-
   "ccText": [
     [
       {

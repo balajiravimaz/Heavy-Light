@@ -148,7 +148,7 @@ function addSectionData() {
       let headerConent = '';
       let popupDiv = '';
 
-      headerConent += `<div class="confetti"></div><div class="header"><div class="navBtns"><button id="home" data-tooltip="Back"></button><button id="music" class="music playing" data-tooltip="Music"></button><button id="info" data-tooltip="Information"></button><button id="simulationToggle" onClick="startSimulation(this)" class="play" data-tooltip="Pause"></button></div><div class="titleText"><img src="${_pageData.sections[sectionCnt - 1].headerImg}"></div></div>`
+      headerConent += `<div class="confetti"></div><div class="header"><div class="navBtns"><button id="home" data-tooltip="Back"></button><button id="music" class="music playing" data-tooltip="Music"></button><button id="info" data-tooltip="Information"></button><button id="simulationToggle" onClick="playPauseSimulation(this)" class="play" data-tooltip="Pause"></button></div><div class="titleText"><img src="${_pageData.sections[sectionCnt - 1].headerImg}"></div></div>`
       popupDiv += '<div class="popup">'
       popupDiv += '<div class="popup-wrap">'
 
@@ -165,7 +165,7 @@ function addSectionData() {
 
       popupDiv += `<div id="introPopup-1"><div class="popup-content">
                     <button class="introPopAudio mute" onclick="togglePop1Audio(this, '${_pageData.sections[sectionCnt - 1].infoAudio}')"></button>
-                    <button class="introPopclose" data-tooltip="Close" onClick="closePopup('introPopup-1')"></button>
+                    <button class="introPopclose" data-tooltip="Close" onClick="closeIntroPop('introPopup-1')"></button>
                     <img src="${_pageData.sections[sectionCnt - 1].infoImg}" alt="">
                 </div>
             </div>`;
@@ -174,7 +174,7 @@ function addSectionData() {
     <div class="popup-content modal-box">
       <h2 class="modal-title">Oops!</h2>
       <div class="modal-message">
-        <p>If you leave the simulation then you ave to start from beginning.</p>
+        <p>If you leave the simulation then you have to start from beginning.</p>
         <p class="modal-question">Are you sure you want to leave?</p>
       </div>
     
@@ -221,12 +221,13 @@ function addSectionData() {
       });
       $("#home").on("click", function () {
         playClickThen();
+        AudioController.pause();
         $("#home-popup").css('display', 'flex');
       });
       $(".music").on("click", function (event) {
         playClickThen();
         let el = event.currentTarget;
-          toggleAudio(el);
+        toggleAudio(el);
       });
       _currentAudio = _pageData.sections[sectionCnt - 1].initAudio;
       // $(".wrapTextAudio").on("click", replayLastAudio);
@@ -238,14 +239,13 @@ function addSectionData() {
 
       document.querySelector("#info").addEventListener("click", function (event) {
         playClickThen();
+        AudioController.pause();
         const el = event.currentTarget;
-          // console.log("its wokring")
-          $("#introPopup-1").css('display', 'flex')
-          $("#introPopup-1").css('opacity', '1')
-          $(".introPopAudio").removeClass('playing');
-          $(".introPopAudio").addClass('mute');   
-
-
+        // console.log("its wokring")
+        $("#introPopup-1").css('display', 'flex')
+        $("#introPopup-1").css('opacity', '1')
+        $(".introPopAudio").removeClass('playing');
+        $(".introPopAudio").addClass('mute');
       });
       // _btnClicked =10;
       // showEndScreen();
@@ -263,6 +263,7 @@ function addSectionData() {
 
 function stayPage() {
   playClickThen();
+  AudioController.play();
   $("#home-popup").hide();
 }
 
@@ -281,7 +282,7 @@ function leavePage() {
 
 
 function jumtoPage(pageNo) {
-playClickThen();
+  playClickThen();
   _controller.pageCnt = pageNo;
   _controller.updateViewNow();
 }
@@ -299,6 +300,7 @@ function disableAll() {
 
   disableButtons();
   $(".image-container").addClass("paused");
+  IdleAudioManager.stop();
 }
 
 
@@ -310,15 +312,16 @@ function enableAll() {
     audio.muted = false;
     audio.play();
   }
-  if((audioOneCompleted && audioTwoCompleted) || (audioOneCompleted)){
+  if ((audioOneCompleted && audioTwoCompleted) || (audioOneCompleted)) {
     enableButtons();
   }
   $(".image-container").removeClass("paused");
+  IdleAudioManager.start();
 }
 
 
 function audioCallback(targetTimeInSeconds, callback) {
- 
+
   const audio = document.getElementById("simulationAudio");
 
   if (!audio) return;
@@ -431,8 +434,23 @@ var IdleAudioManager = (function () {
   };
 })();
 
+var AudioController = (() => {
+  const audio = document.getElementById("simulationAudio");
 
-function startSimulation(btn) {
+  const hasAudio = () => audio && audio.src;
+
+  return {
+    play() {
+      if (hasAudio()) audio.play();
+    },
+    pause() {
+      if (hasAudio()) audio.pause();
+    }
+  };
+})();
+
+
+function playPauseSimulation(btn) {
   playClickThen();
   var audio = document.getElementById("simulationAudio");
   var hasAudio = !!audio.getAttribute("src");
@@ -460,6 +478,7 @@ function startSimulation(btn) {
   }
 
 }
+
 
 
 
@@ -640,7 +659,7 @@ function playBtnSounds(audioObj, callback) {
         activeAudioSequence = null;
         $(".dummy-patch").hide();
         enableButtons();
-        if(_btnClicked == 9){
+        if (_btnClicked == 9) {
           showEndScreen();
         }
         callback && callback();
@@ -659,13 +678,13 @@ function playBtnSounds(audioObj, callback) {
   playNext();
 }
 
-function showEndScreen(){
+function showEndScreen() {
   console.log(_btnClicked, "end screen");
   clearGlobalAudios();
 
   _btnClicked++;
-  console.log(_btnClicked,_pageData.sections[sectionCnt - 1].content.ostAudios[_btnClicked], "end screen");
-   playBtnSounds(_pageData.sections[sectionCnt - 1].content.ostAudios[_btnClicked]);
+  console.log(_btnClicked, _pageData.sections[sectionCnt - 1].content.ostAudios[_btnClicked], "end screen");
+  playBtnSounds(_pageData.sections[sectionCnt - 1].content.ostAudios[_btnClicked]);
   showEndAnimations();
 }
 
@@ -812,9 +831,9 @@ function onClickHanlder(e) {
     // const ostData = _pageData.sections[sectionCnt - 1].content.ostAudios[_globalCicked];
     playBtnSounds(_pageData.sections[sectionCnt - 1].content.ostAudios[_btnClicked]);
     clearText();
-     setTimeout(function () {
-    $(".bar-holding").css("transform", "rotate(-5deg)");
-  }, 500)
+    setTimeout(function () {
+      $(".bar-holding").css("transform", "rotate(-5deg)");
+    }, 500)
 
   }
 
@@ -827,12 +846,12 @@ function onClickHanlder(e) {
 
   if (clickCount === 2) {
     _globalCicked++;
-    setTimeout(function(){
+    setTimeout(function () {
       evaluateSeesaw();
-    },200)
+    }, 200)
     playBtnSounds(_pageData.sections[sectionCnt - 1].content.ostAudios[_btnClicked]);
     clearText();
-    audioEnd(function () {      
+    audioEnd(function () {
       checkHeavyLight(leftWeight, rightWeight)
       // setTimeout(evaluateSeesaw, 1000);
       // setTimeout(() => checkHeavyLight(leftWeight, rightWeight), 2000);
@@ -862,7 +881,7 @@ function onClickHanlder(e) {
       });
     }
   );
- 
+
 }
 
 
@@ -960,6 +979,16 @@ function restartActivity() {
 
 }
 
+function closeIntroPop(ldx) {
+  playClickThen();
+  AudioController.play();
+  document.getElementById(ldx).style.display = 'none';
+  let audio = document.getElementById("popupAudio");
+  if (audio.src) {
+    audio.pause();
+    audio.currentTime = 0;
+  }
+}
 
 function showEndAnimations() {
   var $audio = $("#simulationAudio");
@@ -970,21 +999,23 @@ function showEndAnimations() {
 
   $audio.on("timeupdate", function () {
     var currentTime = this.currentTime;
-    $(".greetingsPop").css("display", "flex");
+    $(".greetingsPop").css("visibility", "visible");
     $(".greetingsPop").css("opacity", "1");
-    
+
 
     if (currentTime >= 1) {
       $(".confetti").addClass("show");
-      $(".confetti").show();
+      // $(".confetti").show();
+      setTimeout(function () {
+        $(".greetingsPop").css("visibility", "hidden");
+        $(".greetingsPop").css("opacity", "0");
+        $(".popup").css("visibility", "visible");
+        $(".popup").css("opacity", "1");
+      }, 1500)
       setTimeout(function () {
         $(".confetti").removeClass("show");
-        $(".confetti").hide();
-        $(".greetingsPop").css("display", "none");
-        $(".greetingsPop").css("opacity", "0");
-        $(".popup").css("display", "flex");
-        $(".popup").css("opacity", "1");
-      }, 3000);
+        // $(".confetti").hide();
+      }, 2000);
 
 
 
@@ -1127,7 +1158,7 @@ function playVisualAudioChainSync(
     // Only show text/class when audio starts
     const playAudio = () => {
       showTextAndClass();
-      audio.play().catch(() => {});
+      audio.play().catch(() => { });
     };
 
     // If not paused, play immediately

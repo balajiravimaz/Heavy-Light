@@ -4,7 +4,164 @@
     "isEmptyAudio": false,
     "audioIndex": 0
   },
-  "bgImgs": [],
+  "bgImgs": [
+    {
+      "imageSRC": "pages/module_1/page_5/images/confetti.gif",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/img_1.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/img_2.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/img_3.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/img_4.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/img_5.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/img_6.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/simulation.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/simulation_pop.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/great_job.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/audio_disabled.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/audio_mute_disabled.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/back.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/back_disabled.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/bar.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/bg_music.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/bg_pause.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/close.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/decor.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/hand.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/header_bg.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/header_title.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/home.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/info.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/info_disabled.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/left.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/music.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/music_disabled.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/nav-music-off.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/pause.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/pause_sim.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/play_sim.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/reload.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/right.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/right_bg.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/sea_saw.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/simulation.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/simulation_pop.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_5/images/stars.gif",
+      "altText": ""
+    }
+  ],
   "imgCollage": {
     "desktop": [
       {
@@ -135,7 +292,9 @@
             ]
           },
           {
-            "audioSRC": ["pages/module_1/page_5/audios/last_audio.mp3"],
+            "audioSRC": [
+              "pages/module_1/page_5/audios/last_audio.mp3"
+            ],
             "replayAudioSrc": [
               "pages/module_1/page_5/audios/last_reload.mp3"
             ],
@@ -173,14 +332,12 @@
           },
           {
             "audioSRC": [
-              "pages/module_1/page_5/audios/ending.mp3"                            
+              "pages/module_1/page_5/audios/ending.mp3"
             ],
             "ost": [
               ""
             ],
-            "duration": [
-                            
-            ]
+            "duration": []
           }
         ],
         "replayAudios": [

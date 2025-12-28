@@ -2,21 +2,21 @@
 var _preloadData, _pageData;
 var _pagePreloadArray = {
   image: 1,
-  audio: -1,
+  audio: 1,
   video: 1,
   data: -1,
 }; // item not availble please assign value 1.
 var jsonSRC = "pages/module_1/page_6/data/m1_p6_data.json?v=";
 _pageAudioSync = true;
 _forceNavigation = false;
-_audioRequired = true;
+_audioRequired = false;
 _videoRequired = false;
 storeCurrentAudioTime = 0;
 _popupAudio = false;
 _reloadRequired = true;
 _globalCicked = 0;
 _currentAudio = null;
-
+_isPlayed = false;
 _checkAudioFlag = false;
 _tweenTimeline = null;
 _popTweenTimeline = null;
@@ -74,6 +74,11 @@ function addSectionData() {
   for (let n = 0; n < _pageData.sections.length; n++) {
     sectionCnt = n + 1;
     if (sectionCnt == 1) {
+      playBtnSounds(_pageData.sections[sectionCnt - 1].introAudio);
+      audioEnd(function () {
+        $(".dummy-patch").hide();
+        resetSimulationAudio();
+      })
       // $("#section-" + sectionCnt)
       //   .find(".content-holder")
       //   .find(".col-left")
@@ -173,7 +178,7 @@ function addSectionData() {
       popupDiv += "</div>";
       popupDiv += `<div id="introPopup-1"><div class="popup-content">
                     <button class="introPopAudio mute" onclick="togglePopAudio(this, '${_pageData.sections[sectionCnt - 1].infoAudio}')"></button>
-                    <button class="introPopclose" data-tooltip="Close" onClick="closePopup('introPopup-1')"></button>
+                    <button class="introPopclose" data-tooltip="Close" onClick="closeIntroPop('introPopup-1')"></button>
                     <img src="${_pageData.sections[sectionCnt - 1].infoImg}" alt="">
                 </div>
             </div>`;
@@ -220,6 +225,7 @@ function addSectionData() {
       $("#home").on("click", function () {
         playClickThen();
         $("#home-popup").css('display', 'flex');
+        AudioController.pause();
       });
       $(".music").on("click", function (event) {
         playClickThen();
@@ -230,6 +236,7 @@ function addSectionData() {
       $(".flipTextAudio").on("click", replayLastAudio);
       document.querySelector("#info").addEventListener("click", function (event) {
         playClickThen();
+        AudioController.pause();
         const el = event.currentTarget;
           // console.log("its wokring")
           $("#introPopup-1").css('display', 'flex')
@@ -252,6 +259,7 @@ function addSectionData() {
 
 function stayPage() {
   playClickThen();
+  AudioController.play();
   $("#home-popup").hide();
 }
 function leavePage() {
@@ -306,10 +314,31 @@ function playBtnSounds(soundFile) {
 
 
 
+function resetSimulationAudio() {
+  console.log("Balajia");
 
-function audioEnd(callback) {
+  const audioElement = document.getElementById("simulationAudio");
+  if (!audioElement) return;
+
+  audioElement.pause();
+
+  audioElement.src = "";
+  audioElement.removeAttribute("src");
+
+  const source = audioElement.querySelector("source");
+  if (source) source.src = "";
+
+  audioElement.load(); 
+  audioElement.onended = null;
+}
+
+
+
+
+
+function audioEnd(callback) {  
   const audio = document.getElementById("simulationAudio");
-  audio.onended = null; // remove previous handlers
+  audio.onended = null;
   audio.onended = () => {
     if (typeof callback === "function") callback();
   };
@@ -345,11 +374,13 @@ function validateAnswer(ldx, _globalCicked, index) {
 
     audioEnd(function () {
       console.log("current index", index)
+      resetSimulationAudio();
       enableNextFlip(index);
     })
   } else {
     playBtnSounds(_pageData.sections[sectionCnt - 1].content.flipObjects[_globalCicked].images[ldx].audioSrc);
     audioEnd(function () {
+      resetSimulationAudio();
       resetToggle();
       setTimeout(function () {
         enableButtons();
@@ -380,6 +411,21 @@ function toggleAudio(el) {
   }
 }
 
+var AudioController = (() => {
+  const audio = document.getElementById("simulationAudio");
+
+  const hasAudio = () => audio && audio.src;
+
+  return {
+    play() {
+      if (hasAudio()) audio.play();
+    },
+    pause() {
+      if (hasAudio()) audio.pause();
+    }
+  };
+})();
+
 
 
 function enableNextFlip(indx) {
@@ -401,18 +447,20 @@ function playNext() {
   if (_globalCicked == _pageData.sections[sectionCnt - 1].content.flipObjects.length) {
     playBtnSounds(_pageData.sections[sectionCnt - 1].endAudio);
     audioEnd(function () {
-      $(".greetingsPop").css("display", "none");
-      $(".greetingsPop").css("opacity", "0");
-      setTimeout(function () {
-        $(".popup").css("display", "flex");
-        $(".popup").css("opacity", "1");
-      }, 100)
-    })
+      resetSimulationAudio();
+      // $(".greetingsPop").css("display", "none");
+      // $(".greetingsPop").css("opacity", "0");
+      // setTimeout(function () {
+      //   $(".popup").css("display", "flex");
+      //   $(".popup").css("opacity", "1");
+      // }, 100)
+    })    
     showEndAnimations();
   } else if (_globalCicked <= _pageData.sections[sectionCnt - 1].content.flipObjects.length) {
     _currentAudio = _pageData.sections[sectionCnt - 1].content.flipObjects[_globalCicked].instAudio;
     playBtnSounds(_pageData.sections[sectionCnt - 1].content.flipObjects[_globalCicked].instAudio);
     audioEnd(function () {
+      resetSimulationAudio();
       enableButtons();
     })
   }
@@ -438,22 +486,38 @@ function showEndAnimations() {
 
   $audio.on("timeupdate", function () {
     var currentTime = this.currentTime;
-    $(".greetingsPop").css("display", "flex");
+    $(".greetingsPop").css("visibility", "visible");
     $(".greetingsPop").css("opacity", "1");
 
     if (currentTime >= 1) {
       $(".confetti").addClass("show");
       $(".confetti").show();
+      setTimeout(function(){
+        $(".greetingsPop").css("visibility", "hidden");
+      $(".greetingsPop").css("opacity", "0");
+      $(".popup").css("visibility", "visible");
+        $(".popup").css("opacity", "1");
+      },1500)
       setTimeout(function () {
         $(".confetti").removeClass("show");
-        $(".confetti").hide();
-      }, 3000);
-
+        $(".confetti").hide();                
+      }, 2000);
 
       $audio.off("timeupdate");
     }
 
   });
+}
+
+function closeIntroPop(ldx) {
+  playClickThen();
+  AudioController.play();
+  document.getElementById(ldx).style.display = 'none';
+  let audio = document.getElementById("popupAudio");
+  if (audio.src) {
+    audio.pause();
+    audio.currentTime = 0;
+  }
 }
 
 function replayLastAudio() {
@@ -462,6 +526,7 @@ function replayLastAudio() {
   playBtnSounds(_currentAudio);
   disableButtons();
   audioEnd(function () {
+    resetSimulationAudio();
     enableButtons();
   })
 }

@@ -588,9 +588,19 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   background-size: 100%;
   z-index: 1111;
 }
-#section-1 .content-holder .col-left .content .content-bg > .body .game-completed.show {
+#section-1 .content-holder .col-left .content .content-bg > .body .game-completed .success {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   background-image: url(../images/successes.gif);
   background-size: cover;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5 ease-in;
+}
+#section-1 .content-holder .col-left .content .content-bg > .body .game-completed .success.show {
+  visibility: visible;
+  opacity: 1;
 }
 #section-1 .content-holder .col-left .content .content-bg > .body .game-completed .greetingsPop {
   width: 400px;
@@ -602,7 +612,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   background-size: contain;
   position: relative;
   background-position: center;
-  display: none;
+  visibility: hidden;
   opacity: 0;
   transition: opacity 0.5s ease-in;
   justify-content: center;
@@ -611,7 +621,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   height: 100%;
 }
 #section-1 .content-holder .col-left .content .content-bg > .body .game-completed .game-completed-popup {
-  position: relative;
+  position: absolute;
   width: 40%;
   height: 456px;
   top: 59%;
@@ -623,7 +633,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   animation: zoomPulse 2.8s ease-in-out infinite;
   display: flex;
   gap: 5px;
-  display: none;
+  visibility: hidden;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }

@@ -18,6 +18,381 @@
     },
     {
       "src": "assets/images/home_info.png"
+    },
+    {
+      "src": "pages/module_1/page_2/images/back.png"
+    },
+    {
+      "src": "pages/module_1/page_2/images/bg_pause.png"
+    },
+    {
+      "src": "pages/module_1/page_2/images/close.png"
+    },
+    {
+      "src": "pages/module_1/page_2/images/game.png"
+    },
+    {
+      "src": "pages/module_1/page_2/images/Game_Info.png"
+    },
+    {
+      "src": "pages/module_1/page_2/images/Global_Info.png"
+    },
+    {
+      "src": "pages/module_1/page_2/images/H_L.png"
+    },
+    {
+      "src": "pages/module_1/page_2/images/home.png"
+    },
+    {
+      "src": "pages/module_1/page_2/images/info.png"
+    },
+    {
+      "src": "pages/module_1/page_2/images/music.png"
+    },
+    {
+      "src": "pages/module_1/page_2/images/pause.png"
+    },
+    {
+      "src": "pages/module_1/page_2/images/sim.png"
+    },
+    {
+      "src": "pages/module_1/page_2/images/Simulation_info.png"
+    },
+    {
+      "src": "pages/module_1/page_2/images/close.png"
+    },
+    {
+      "src": "pages/module_1/page_2/images/specker.png"
+    },
+    {
+      "src": "pages/module_1/page_2/images/story.png"
+    },
+    {
+      "src": "pages/module_1/page_2/images/Story_Time_Info.png"
+    },
+    {
+      "src": "pages/module_1/page_3/images/back.png"
+    },
+    {
+      "src": "pages/module_1/page_3/images/bg_pause.png"
+    },
+    {
+      "src": "pages/module_1/page_3/images/close.png"
+    },
+    {
+      "src": "pages/module_1/page_3/images/Fun-Game!_Info.png"
+    },
+    {
+      "src": "pages/module_1/page_3/images/game.png"
+    },
+    {
+      "src": "pages/module_1/page_3/images/Game_Info.png"
+    },
+    {
+      "src": "pages/module_1/page_3/images/Global_Info.png"
+    },
+    {
+      "src": "pages/module_1/page_3/images/H_L.png"
+    },
+    {
+      "src": "pages/module_1/page_3/images/home.png"
+    },
+    {
+      "src": "pages/module_1/page_3/images/info.png"
+    },
+    {
+      "src": "pages/module_1/page_3/images/music.png"
+    },
+    {
+      "src": "pages/module_1/page_3/images/pause.png"
+    },
+    {
+      "src": "pages/module_1/page_3/images/sim.png"
+    },
+    {
+      "src": "pages/module_1/page_3/images/Sorting-Game_Info.png"
+    },
+    {
+      "src": "pages/module_1/page_3/images/specker.png"
+    },
+    {
+      "src": "pages/module_1/page_3/images/Story_Time_Info.png"
+    },
+    {
+      "src": "pages/module_1/page_3/images/story1.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/confetti.gif"
+    },
+    {
+      "src": "pages/module_1/page_5/images/img_1.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/img_2.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/img_3.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/img_4.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/img_5.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/img_6.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/simulation.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/simulation_pop.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/great_job.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/audio_disabled.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/audio_mute_disabled.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/back.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/back_disabled.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/bar.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/bg_music.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/bg_pause.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/close.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/decor.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/hand.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/header_bg.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/header_title.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/home.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/info.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/info_disabled.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/left.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/music.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/music_disabled.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/nav-music-off.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/pause.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/pause_sim.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/play_sim.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/reload.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/right.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/right_bg.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/sea_saw.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/simulation.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/simulation_pop.png"
+    },
+    {
+      "src": "pages/module_1/page_5/images/stars.gif"
+    },
+    {
+      "src": "pages/module_1/page_6/images/confetti.gif"
+    },
+    {
+      "src": "pages/module_1/page_6/images/img_1.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/img_2.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/img_3.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/img_4.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/img_5.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/img_6.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/img_7.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/img_8.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/img_9.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/img_10.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/simulation.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/fun_game.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/great_job.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/back.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/bg_music.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/bg_pause.png"
+    },    
+    {
+      "src": "pages/module_1/page_6/images/bg_music.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/close.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/bg_pause.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/correct.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/header_bg.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/header_title.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/info.png"
+    },    
+    {
+      "src": "pages/module_1/page_6/images/left_bg.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/music.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/mute.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/pause.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/reload.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/replay.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/right_bg.png"
+    },
+    {
+      "src": "pages/module_1/page_6/images/wrong.png"
+    },
+    {
+      "src": "pages/module_1/page_11/images/successes.gif"
+    },
+    {
+      "src": "pages/module_1/page_11/images/back.png"
+    },
+    {
+      "src": "pages/module_1/page_11/images/bg_music.png"
+    },
+    {
+      "src": "pages/module_1/page_11/images/bg_pause.png"
+    },
+    {
+      "src": "pages/module_1/page_11/images/border.png"
+    },
+    {
+      "src": "pages/module_1/page_11/images/car.png"
+    },
+    {
+      "src": "pages/module_1/page_11/images/chair.png"
+    },
+    {
+      "src": "pages/module_1/page_11/images/flower.png"
+    },
+    {
+      "src": "pages/module_1/page_11/images/gameCompleted.png"
+    },
+    {
+      "src": "pages/module_1/page_11/images/great_job.png"
+    },
+    {
+      "src": "pages/module_1/page_11/images/header.png"
+    },
+    {
+      "src": "pages/module_1/page_11/images/heading-text.png"
+    },
+    {
+      "src": "pages/module_1/page_11/images/home.png"
+    },
+    {
+      "src": "pages/module_1/page_11/images/introAudio.png"
+    },
+    {
+      "src": "pages/module_1/page_11/images/leaf.png"
+    },
+    {
+      "src": "pages/module_1/page_11/images/mute.png"
+    },
+    {
+      "src": "pages/module_1/page_11/images/placement.png"
+    },
+    {
+      "src": "pages/module_1/page_11/images/replay.png"
+    },
+    {
+      "src": "pages/module_1/page_11/images/sponge.png"
+    },
+    {
+      "src": "pages/module_1/page_11/images/stone.png"
     }
   ],
   "audios": [
@@ -38,6 +413,210 @@
     },
     {
       "src": "assets/audios/click.mp3"
+    },
+    {
+      "src": "pages/module_1/page_2/audios/audio1.mp3"
+    },
+    {
+      "src": "pages/module_1/page_2/audios/audio2.mp3"
+    },
+    {
+      "src": "pages/module_1/page_2/audios/audio3.mp3"
+    },
+    {
+      "src": "pages/module_1/page_3/audios/funGame.mp3"
+    },
+    {
+      "src": "pages/module_1/page_3/audios/info_audio.mp3"
+    },
+    {
+      "src": "pages/module_1/page_3/audios/sortingGame.mp3"
+    },    
+    {
+      "src": "pages/module_1/page_5/audios/audio_2.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/audio_3.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/ball_heavy.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/ball_light.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/banana_heavy.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/bannana_light.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/bg_music.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/bgm_music.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/blast.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/book_heavy.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/book_light.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/clap.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/click.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/click_another.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/click_another_reload.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/compare_audio.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/click_music.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/ending.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/final_audio.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/great_job.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/heavy_final.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/idle_audio.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/info_audio.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/intro_audio.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/last_audio.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/last_reload.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/leaf_light.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/light_final.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/pumkin_heavy.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/reload_1.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/reload_2.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/reload_3.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/reload_3_1.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/reload_4.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/reload_5.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/reload_6.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/reload_7.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/reload_8.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/reload_9.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/straberry_heavy.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/straberry_light.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/tap_another_audio.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/tap_any_one.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/tap_audio.mp3"
+    },
+    {
+      "src": "pages/module_1/page_5/audios/two_obj.mp3"
+    },
+    {
+      "src": "pages/module_1/page_6/audios/boat_light.mp3"
+    },
+    {
+      "src": "pages/module_1/page_6/audios/book_heavy.mp3"
+    },
+    {
+      "src": "pages/module_1/page_6/audios/bucket_heavy.mp3"
+    },
+    {
+      "src": "pages/module_1/page_6/audios/click.mp3"
+    },
+    {
+      "src": "pages/module_1/page_6/audios/fina-audio.mp3"
+    },
+    {
+      "src": "pages/module_1/page_6/audios/final_audio.mp3"
+    },
+    {
+      "src": "pages/module_1/page_6/audios/heavy.mp3"
+    },
+    {
+      "src": "pages/module_1/page_6/audios/idle_audio.mp3"
+    },
+    {
+      "src": "pages/module_1/page_6/audios/info_audio.mp3"
+    },
+    {
+      "src": "pages/module_1/page_6/audios/light.mp3"
+    },
+    {
+      "src": "pages/module_1/page_6/audios/pumkin_heavy.mp3"
+    },
+    {
+      "src": "pages/module_1/page_6/audios/try_again.mp3"
+    },
+    {
+      "src": "pages/module_1/page_11/audios/audio1.mp3"
+    },
+    {
+      "src": "pages/module_1/page_11/audios/correctDragNDrop.mp3"
+    },
+    {
+      "src": "pages/module_1/page_11/audios/final_audio.mp3"
+    },
+    {
+      "src": "pages/module_1/page_11/audios/GoodJobAudio.mp3"
+    },
+    {
+      "src": "pages/module_1/page_11/audios/incorrectDragNDrop.mp3"
     }
   ],
   "videos": [
@@ -49,6 +628,9 @@
     },
     {
       "src": "pages/module_1/page_3/video/bg_video.mp4"
+    },
+    {
+      "src": "pages/module_1/page_4/videos/main.mp4"
     }
   ]
 }

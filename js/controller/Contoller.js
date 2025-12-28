@@ -517,7 +517,7 @@ function checkDummyMediaLoaded() {
                 $("#f_start_course").hide();
                 $("#helpVideoHolder").hide();
                 $(".hideMain").show();
-                $("#f_preloader_page").show();
+                // $("#f_preloader_page").show();
                 $('#f_header').find('#f_companyLogo').find('img').focus()
                 //-------SCROM ----------
                 //console.log("isScorm", isScorm)
@@ -526,7 +526,6 @@ function checkDummyMediaLoaded() {
                     if (pipwerks.SCORM.get("cmi.suspend_data") != "") {
                         $("#intro").hide();
                         showResumeButton();
-
                     }
                     else {
                         _controller.pageCnt = 0;
@@ -1466,7 +1465,7 @@ Controller.prototype.updateViewNow = function () {
     }
 
     //imageLoader('startAnimation("f_pageLoaderImg")')
-    $("#f_preloader_page").show();
+    // $("#f_preloader_page").show();
     $("#f_hintBtn").hide();
     $(".buttonTrap").show();
     $("#f_header").show()

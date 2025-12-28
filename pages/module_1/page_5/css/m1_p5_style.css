@@ -169,11 +169,14 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   width: 100%;
   height: 100%;
   z-index: 1111;
-  display: none;
-}
-#section-1 .content-holder .col-left .content .content-bg .content-style .confetti.show {
+  opacity: 0;
+  visibility: hidden;
   background: url("../images/confetti.gif") no-repeat center;
   background-size: contain;
+}
+#section-1 .content-holder .col-left .content .content-bg .content-style .confetti.show {
+  opacity: 1;
+  visibility: visible;
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style .header {
   background: url("../images/header_bg.png") repeat;
@@ -667,7 +670,8 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   height: auto;
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style .popup {
-  display: none;
+  display: flex;
+  visibility: hidden;
   opacity: 0;
   inset: 0;
   background: rgba(0, 0, 0, 0.2);
@@ -794,7 +798,8 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   color: #fff;
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style .greetingsPop {
-  display: none;
+  visibility: hidden;
+  display: flex;
   opacity: 0;
   inset: 0;
   background: rgba(0, 0, 0, 0.2);

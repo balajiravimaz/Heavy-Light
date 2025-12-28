@@ -681,9 +681,20 @@
 							background-size: 100%;
 							z-index: 1111;
 
-							&.show {
+							.success {
+								position: absolute;
+								width: 100%;
+								height: 100%;
 								background-image: url(../images/successes.gif);
 								background-size: cover;
+								visibility: hidden;
+								opacity: 0;
+								transition: opacity 0.5 ease-in;
+
+								&.show {
+									visibility: visible;
+									opacity: 1;
+								}
 							}
 
 							.greetingsPop {
@@ -696,7 +707,7 @@
 								background-size: contain;
 								position: relative;
 								background-position: center;
-								display: none;
+								visibility: hidden;
 								opacity: 0;
 								transition: opacity 0.5s ease-in;
 								justify-content: center;
@@ -706,7 +717,7 @@
 							}
 
 							.game-completed-popup {
-								position: relative;
+								position: absolute;
 								width: 40%;
 								height: 456px;
 								top: 59%;
@@ -718,7 +729,7 @@
 								animation: zoomPulse 2.8s ease-in-out infinite;
 								display: flex;
 								gap: 5px;
-								display: none;
+								visibility: hidden;
 								opacity: 0;
 								transition: opacity 0.5s ease-in-out;
 

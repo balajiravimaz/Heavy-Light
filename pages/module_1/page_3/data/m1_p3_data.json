@@ -6,21 +6,77 @@
 	},
 	"bgImgs": [
 		{
-			"imageSRC": "pages/module_1/page_3/video/video_11.mp4",
+			"imageSRC": "pages/module_1/page_3/video/bg_video.mp4",
 			"altText": ""
 		},
 		{
-			"imageSRC": "pages/module_1/page_3/images/icon01_done.svg",
+			"imageSRC": "pages/module_1/page_3/images/back.png",
 			"altText": ""
 		},
 		{
-			"imageSRC": "pages/module_1/page_3/images/icon02_done.svg",
+			"imageSRC": "pages/module_1/page_3/images/bg_pause.png",
 			"altText": ""
 		},
 		{
-			"imageSRC": "pages/module_1/page_3/images/icon03_done.svg",
+			"imageSRC": "pages/module_1/page_3/images/close.png",
 			"altText": ""
-		}		
+		},
+		{
+			"imageSRC": "pages/module_1/page_3/images/Fun-Game!_Info.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_3/images/game.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_3/images/Game_Info.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_3/images/Global_Info.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_3/images/H_L.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_3/images/home.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_3/images/info.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_3/images/music.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_3/images/pause.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_3/images/sim.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_3/images/Sorting-Game_Info.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_3/images/specker.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_3/images/Story_Time_Info.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_3/images/story1.png",
+			"altText": ""
+		}
 	],
 	"imgCollage": {
 		"desktop": [

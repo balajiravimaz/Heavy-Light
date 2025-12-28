@@ -10,35 +10,19 @@
 			"altText": ""
 		},
 		{
-			"imageSRC": "pages/module_1/page_2/images/icon01_done.svg",
+			"imageSRC": "pages/module_1/page_2/video/audio1.mp3",
 			"altText": ""
 		},
 		{
-			"imageSRC": "pages/module_1/page_2/images/icon02_done.svg",
+			"imageSRC": "pages/module_1/page_2/video/audio2.mp3",
 			"altText": ""
 		},
 		{
-			"imageSRC": "pages/module_1/page_2/images/icon03_done.svg",
+			"imageSRC": "pages/module_1/page_2/video/audio3.mp3",
 			"altText": ""
 		},
 		{
-			"imageSRC": "pages/module_1/page_2/images/H_L.png",
-			"altText": ""
-		},
-		{
-			"imageSRC": "pages/module_1/page_2/images/sim.png",
-			"altText": ""
-		},
-		{
-			"imageSRC": "pages/module_1/page_2/images/story.png",
-			"altText": ""
-		},
-		{
-			"imageSRC": "pages/module_1/page_2/images/music.png",
-			"altText": ""
-		},
-		{
-			"imageSRC": "pages/module_1/page_2/images/pause.png",
+			"imageSRC": "pages/module_1/page_2/images/back.png",
 			"altText": ""
 		},
 		{
@@ -46,11 +30,27 @@
 			"altText": ""
 		},
 		{
-			"imageSRC": "pages/module_1/page_2/images/Simulation_info.png",
+			"imageSRC": "pages/module_1/page_2/images/close.png",
 			"altText": ""
 		},
 		{
-			"imageSRC": "pages/module_1/page_2/images/specker.png",
+			"imageSRC": "pages/module_1/page_2/images/game.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/Game_Info.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/Global_Info.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/H_L.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/home.png",
 			"altText": ""
 		},
 		{
@@ -62,15 +62,15 @@
 			"altText": ""
 		},
 		{
-			"imageSRC": "pages/module_1/page_2/images/home.png",
+			"imageSRC": "pages/module_1/page_2/images/pause.png",
 			"altText": ""
 		},
 		{
-			"imageSRC": "pages/module_1/page_2/images/Global_Info.png",
+			"imageSRC": "pages/module_1/page_2/images/sim.png",
 			"altText": ""
 		},
 		{
-			"imageSRC": "pages/module_1/page_2/images/Game_Info.png",
+			"imageSRC": "pages/module_1/page_2/images/Simulation_info.png",
 			"altText": ""
 		},
 		{
@@ -78,7 +78,15 @@
 			"altText": ""
 		},
 		{
-			"imageSRC": "pages/module_1/page_2/images/back.png",
+			"imageSRC": "pages/module_1/page_2/images/specker.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/story.png",
+			"altText": ""
+		},
+		{
+			"imageSRC": "pages/module_1/page_2/images/Story_Time_Info.png",
 			"altText": ""
 		}
 	],

@@ -4,8 +4,7 @@
     "isEmptyAudio": false,
     "audioIndex": 0
   },
-  "bgImgs": [    
-
+  "bgImgs": [
   ],
   "imgCollage": {
     "desktop": [
@@ -28,9 +27,9 @@
       "headerTitle": "",
       "ost": "",
       "content": {
-        "videoPlaceHolderURL":"",
-        "videoURL":"pages/module_1/page_4/videos/main.mp4",
-        "ccTextURL":""
+        "videoPlaceHolderURL": "",
+        "videoURL": "pages/module_1/page_4/videos/main.mp4",
+        "ccTextURL": ""
       }
     }
   ],

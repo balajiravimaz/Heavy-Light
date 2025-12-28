@@ -295,7 +295,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   align-items: center;
   height: 100%;
   width: 100%;
-  opacity: 0;
+  opacity: 1;
   max-width: 700px;
   position: relative;
 }
@@ -449,7 +449,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   width: 60px;
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style .popup {
-  display: none;
+  visibility: hidden;
   opacity: 0;
   inset: 0;
   background: rgba(0, 0, 0, 0.2);
@@ -457,6 +457,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   -webkit-backdrop-filter: blur(4px);
   position: absolute;
   top: 50%;
+  display: flex;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
@@ -574,9 +575,10 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   color: #fff;
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style .greetingsPop {
-  display: none;
+  visibility: hidden;
   opacity: 0;
   inset: 0;
+  display: flex;
   background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);

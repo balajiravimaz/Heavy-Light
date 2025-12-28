@@ -4,24 +4,88 @@
 		"isEmptyAudio": false,
 		"audioIndex": 0
 	},
-	"bgImgs": [
-		{
-			"imageSRC": "",
-			"altText": ""
-		},
-		{
-			"imageSRC": "pages/module_1/page_11/images/icon01_done.svg",
-			"altText": ""
-		},
-		{
-			"imageSRC": "pages/module_1/page_11/images/icon02_done.svg",
-			"altText": ""
-		},
-		{
-			"imageSRC": "pages/module_1/page_11/images/icon03_done.svg",
-			"altText": ""
-		}
-	],
+"bgImgs": [
+    {
+      "imageSRC": "pages/module_1/page_11/images/successes.gif",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_11/images/back.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_11/images/bg_music.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_11/images/bg_pause.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_11/images/border.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_11/images/car.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_11/images/chair.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_11/images/flower.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_11/images/gameCompleted.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_11/images/great_job.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_11/images/header.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_11/images/heading-text.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_11/images/home.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_11/images/introAudio.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_11/images/leaf.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_11/images/mute.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_11/images/placement.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_11/images/replay.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_11/images/sponge.png",
+      "altText": ""
+    },
+    {
+      "imageSRC": "pages/module_1/page_11/images/stone.png",
+      "altText": ""
+    }        
+  ],
 	"imgCollage": {
 		"desktop": [
 			{
