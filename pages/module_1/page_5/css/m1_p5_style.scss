@@ -173,7 +173,7 @@
 							opacity: 0;
 							visibility: hidden;
 							background: url('../images/confetti.gif') no-repeat center;
-							background-size: contain;
+							background-size: cover;
 
 							&.show {
 								opacity: 1;

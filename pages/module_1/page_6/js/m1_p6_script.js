@@ -491,7 +491,7 @@ function showEndAnimations() {
 
     if (currentTime >= 1) {
       $(".confetti").addClass("show");
-      $(".confetti").show();
+      // $(".confetti").show();
       setTimeout(function(){
         $(".greetingsPop").css("visibility", "hidden");
       $(".greetingsPop").css("opacity", "0");
@@ -500,7 +500,7 @@ function showEndAnimations() {
       },1500)
       setTimeout(function () {
         $(".confetti").removeClass("show");
-        $(".confetti").hide();                
+        // $(".confetti").hide();                
       }, 2000);
 
       $audio.off("timeupdate");

@@ -1465,7 +1465,7 @@ Controller.prototype.updateViewNow = function () {
     }
 
     //imageLoader('startAnimation("f_pageLoaderImg")')
-    // $("#f_preloader_page").show();
+    $("#f_preloader_page").show();
     $("#f_hintBtn").hide();
     $(".buttonTrap").show();
     $("#f_header").show()

@@ -170,11 +170,15 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
   width: 100%;
   height: 100%;
   z-index: 11111;
-  display: none;
-}
-#section-1 .content-holder .col-left .content .content-bg .content-style .confetti.show {
+  visibility: hidden;
+  opacity: 0;
   background: url("../images/confetti.gif") no-repeat center;
   background-size: cover;
+  transition: opacity 0.5 ease-in;
+}
+#section-1 .content-holder .col-left .content .content-bg .content-style .confetti.show {
+  visibility: visible;
+  opacity: 1;
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style .header {
   background: url("../images/header_bg.png") repeat;
@@ -724,7 +728,7 @@ $bg-position: -120px -120px, 0 0, 20px 50px, 25px 55px, 50px 125px;*/
           backdrop-filter: blur(4px);
   justify-content: center;
   align-items: center;
-  z-index: 10001;
+  z-index: 1111111;
 }
 #section-1 .content-holder .col-left .content .content-bg .content-style #home-popup .popup-content {
   position: fixed;
