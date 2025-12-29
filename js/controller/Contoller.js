@@ -517,7 +517,7 @@ function checkDummyMediaLoaded() {
                 $("#f_start_course").hide();
                 $("#helpVideoHolder").hide();
                 $(".hideMain").show();
-                // $("#f_preloader_page").show();
+                $("#f_preloader_page").show();
                 $('#f_header').find('#f_companyLogo').find('img').focus()
                 //-------SCROM ----------
                 //console.log("isScorm", isScorm)

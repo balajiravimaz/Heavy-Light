@@ -3896,7 +3896,7 @@ footer p {
   top: 0;
   left: 0;
   display: block;
-  background-color: #97d885;
+  background: rgba(0, 0, 0, 0);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -3909,7 +3909,7 @@ footer p {
   top: 0;
   left: 0;
   display: block;
-  background-color: #97d885;
+  background-color: transparent;
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 1;
@@ -4047,6 +4047,42 @@ footer p {
 }
 .f_loaderImage .loading-text::before:nth-child(4) {
   background-color: #feb242;
+}
+.f_loaderImage .loader, .f_loaderImage .loader:before, .f_loaderImage .loader:after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  animation-fill-mode: both;
+  animation: bblFadInOut 1.8s infinite ease-in-out;
+}
+.f_loaderImage .loader {
+  color: #FFF;
+  font-size: 7px;
+  position: relative;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  animation-delay: -0.16s;
+}
+.f_loaderImage .loader:before,
+.f_loaderImage .loader:after {
+  content: "";
+  position: absolute;
+  top: 0;
+}
+.f_loaderImage .loader:before {
+  left: -3.5em;
+  animation-delay: -0.32s;
+}
+.f_loaderImage .loader:after {
+  left: 3.5em;
+}
+@keyframes bblFadInOut {
+  0%, 80%, 100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
 }
 
 #f_progressBarContainer {
